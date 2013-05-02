@@ -1,4 +1,3 @@
-
 -- MOTOR BASES DE DATOS MySQL
 
 -- DATABASE: inmoapp_development
@@ -24,7 +23,7 @@ CREATE TABLE inmob(
 	site_web VARCHAR(25),
 	-- owners 
   CONSTRAINT pk_inmob PRIMARY KEY (id_inmob)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS owners;
 CREATE TABLE owners(

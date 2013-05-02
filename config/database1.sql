@@ -1,3 +1,4 @@
+
 -- MOTOR BASES DE DATOS MySQL
 
 -- DATABASE: inmoapp_development
@@ -13,7 +14,7 @@ CREATE TABLE users(
   CONSTRAINT pk_users PRIMARY KEY (id_users)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS inmob;
+DROP TABLE IF EXISTS inmob; -- Inmobiliarias
 CREATE TABLE inmob(
 	id_inmob INT(11) NOT NULL AUTO_INCREMENT,
 	nam VARCHAR(30),
@@ -23,9 +24,9 @@ CREATE TABLE inmob(
 	site_web VARCHAR(25),
 	-- owners 
   CONSTRAINT pk_inmob PRIMARY KEY (id_inmob)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
-DROP TABLE IF EXISTS owners;
+DROP TABLE IF EXISTS owners; -- Dueños
 CREATE TABLE owners(
     id_owners INT(11) NOT NULL AUTO_INCREMENT,
     nam VARCHAR(20),
@@ -36,7 +37,7 @@ CREATE TABLE owners(
   CONSTRAINT fk_owners_inmobb FOREIGN KEY (id_inmob) REFERENCES inmob (id_inmob)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS buildings;
+DROP TABLE IF EXISTS buildings; -- Inmuebles
 CREATE TABLE buildings(
     id_buildings  INT(11) NOT NULL AUTO_INCREMENT,
     typ ENUM('land','farm','house','garage'),

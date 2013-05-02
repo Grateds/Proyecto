@@ -2,6 +2,7 @@ package com.unrc.app;
 
 import com.unrc.app.models.User;
 import com.unrc.app.models.Building;
+import com.unrc.app.models.Owners;
 
 import org.javalite.activejdbc.Base;
 import org.slf4j.Logger;
@@ -27,6 +28,15 @@ public class Inmo {
         i.set("txt", "Gran propiedad");
         i.set("price", "150000");
         i.set("v_a", "venta");
+        i.saveIt();
+        
+        Owners o = new Owners(); 
+        
+        i.set("id_owners", "1");
+        i.set("nam", "Raquel");
+        i.set("adress", "barrio");
+        i.set("email", "Raquel@Gmail.com");
+        i.set("id_inmob", "1");
         i.saveIt();
         
         System.out.println( "Hello World!" );

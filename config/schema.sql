@@ -15,7 +15,7 @@ CREATE TABLE users(
   CONSTRAINT pk_users PRIMARY KEY (id_user)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS citys; -- Inmobiliarias
+DROP TABLE IF EXISTS citys; 
 CREATE TABLE citys(
     id_city INT(20) NOT NULL AUTO_INCREMENT,
     nam VARCHAR (20) NOT NULL,  

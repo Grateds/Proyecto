@@ -1,3 +1,5 @@
+-- Compila perfecto, falta colocar las clausulas de restricciones.
+
 -- MOTOR BASES DE DATOS MySQL
 
 -- DATABASE: inmoapp_development
@@ -13,14 +15,14 @@ CREATE TABLE users(
   CONSTRAINT pk_users PRIMARY KEY (id_user)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS citys; 
+DROP TABLE IF EXISTS citys; -- Inmobiliarias
 CREATE TABLE citys(
     id_city INT(20) NOT NULL AUTO_INCREMENT,
     nam VARCHAR (20) NOT NULL,  
   CONSTRAINT pk_citys PRIMARY KEY (id_city)
 );
 	
-DROP TABLE IF EXISTS realstates; 
+DROP TABLE IF EXISTS realstates; -- Inmobiliarias
 CREATE TABLE realstates(
 	id_realstate INT(20) NOT NULL AUTO_INCREMENT,
 	nam VARCHAR(30),
@@ -35,7 +37,7 @@ CREATE TABLE realstates(
   CONSTRAINT fk_realstates_citys FOREIGN KEY (id_city) REFERENCES citys (id_city)
 );
 
-DROP TABLE IF EXISTS owners; 
+DROP TABLE IF EXISTS owners; -- Dueños
 CREATE TABLE owners(
     id_owner INT(20) NOT NULL AUTO_INCREMENT,
     nam VARCHAR(20),
@@ -48,7 +50,7 @@ CREATE TABLE owners(
   CONSTRAINT fk_owners_citys FOREIGN KEY (id_city) REFERENCES citys (id_city)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS buildings; 
+DROP TABLE IF EXISTS buildings; -- Inmuebles
 CREATE TABLE buildings(
     id_building INT(11) NOT NULL AUTO_INCREMENT,
     typ ENUM('land','farm','house','garage'),

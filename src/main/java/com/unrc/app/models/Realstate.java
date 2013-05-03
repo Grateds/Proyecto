@@ -2,7 +2,7 @@ package com.unrc.app.models;
 
 import org.javalite.activejdbc.Model;
 
-public class RealState extends Model {
+public class Realstate extends Model {
     static{
       validatePresenceOf("name", "phone");
   }

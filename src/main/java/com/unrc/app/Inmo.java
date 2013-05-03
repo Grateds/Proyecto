@@ -19,26 +19,32 @@ public class Inmo {
         e.set("first_name", "John");
         e.set("last_name", "Doe");
         e.saveIt();
+        
+        /* Primero crear un dueño */
+        Owner o = new Owner(); 
+        
+        o.set("nam", "Raquel");
+        o.set("id_city", "1");
+        o.set("neighborhood", "Santa Rosa");
+        o.set("street", "Sobremonte");
+        o.set("n_street", "153");
+        o.set("email", "Raquel@Gmail.com");
+        o.saveIt();
     
+        /* Segundo crear un inmueble */
         Building i = new Building();
    
         i.set("typ", "land");
-        i.set("id_owners", "1");
-        i.set("adress", "ciudad");
-        i.set("txt", "Gran propiedad");
+        i.set("id_owner", "1");
+        i.set("id_city", "1");
+        i.set("neighborhood", "Santa Rosa");
+        i.set("street", "Sobremonte");
+        i.set("n_street", "153");
+        i.set("description", "Gran propiedad");
         i.set("price", "150000");
-        i.set("v_a", "venta");
+        i.set("operation", "venta");
         i.saveIt();
         
-        Owner o = new Owner(); 
-        
-        o.set("id_owners", "1");
-        o.set("nam", "Raquel");
-        o.set("adress", "barrio");
-        o.set("email", "Raquel@Gmail.com");
-        o.set("id_inmob", "1");
-        o.saveIt();
-       
         System.out.println( "Hello World!" );
     }
 }

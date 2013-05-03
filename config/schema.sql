@@ -66,3 +66,9 @@ CREATE TABLE buildings(
   CONSTRAINT fk_buildings_citys FOREIGN KEY (id_city) REFERENCES citys (id_city),
   CONSTRAINT fk_buildings_owners FOREIGN KEY (id_owner) REFERENCES owners (id_owner)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO citys (nam)
+	VALUES  ('Rio Cuarto'),
+			('Achiras'),
+			('Alcira Gigena'),
+			('Ucacha');

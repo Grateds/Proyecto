@@ -23,7 +23,7 @@ public class Inmo {
         /* Primero crear un dueño */
         Owner o = new Owner(); 
         
-        o.set("nam", "Raquel");
+        o.set("name", "Raquel");
         o.set("id_city", "1");
         o.set("neighborhood", "Santa Rosa");
         o.set("street", "Sobremonte");

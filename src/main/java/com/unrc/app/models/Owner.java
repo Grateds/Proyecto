@@ -4,6 +4,6 @@ import org.javalite.activejdbc.Model;
 
 public class Owner extends Model {
   static{
-       validatePresenceOf("name", "email");
+       validatePresenceOf("first_name", "last_name", "email");
   }
 }

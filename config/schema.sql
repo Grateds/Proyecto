@@ -6,7 +6,7 @@
 
 CREATE DATABASE /*!32312 IF NOT EXISTS*/ inmoapp_development;
 
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users; -- Usuario
 CREATE TABLE users(
     id_user  INT(11) NOT NULL AUTO_INCREMENT,
     email VARCHAR(60),
@@ -15,7 +15,7 @@ CREATE TABLE users(
   CONSTRAINT pk_users PRIMARY KEY (id_user)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS citys; 
+DROP TABLE IF EXISTS citys; -- Ciudad
 CREATE TABLE citys(
     id_city INT(20) NOT NULL AUTO_INCREMENT,
     name VARCHAR (20) NOT NULL,  

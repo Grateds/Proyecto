@@ -40,7 +40,8 @@ CREATE TABLE realstates(
 DROP TABLE IF EXISTS owners; -- Dueños
 CREATE TABLE owners(
     id_owner INT(20) NOT NULL AUTO_INCREMENT,
-    name VARCHAR(20),
+    first_name VARCHAR(56),
+    last_name VARCHAR(56),
     id_city INT (20),
     neighborhood VARCHAR(30) DEFAULT NULL,
     street VARCHAR(30) DEFAULT NULL,

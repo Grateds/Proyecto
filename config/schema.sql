@@ -18,14 +18,14 @@ CREATE TABLE users(
 DROP TABLE IF EXISTS citys; 
 CREATE TABLE citys(
     id_city INT(20) NOT NULL AUTO_INCREMENT,
-    nam VARCHAR (20) NOT NULL,  
-  CONSTRAINT pk_citys PRIMARY KEY (id_city)
+    name VARCHAR (20) NOT NULL,  
+  CONSTRAINT pk_citys PRIMARY KEY (id_city) 
 );
 	
 DROP TABLE IF EXISTS realstates; -- Inmobiliarias
 CREATE TABLE realstates(
 	id_realstate INT(20) NOT NULL AUTO_INCREMENT,
-	nam VARCHAR(30),
+	name VARCHAR(30),
 	id_city INT(20),
 	neighborhood VARCHAR(30) DEFAULT NULL,
 	street VARCHAR(30) DEFAULT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE realstates(
 DROP TABLE IF EXISTS owners; -- Dueños
 CREATE TABLE owners(
     id_owner INT(20) NOT NULL AUTO_INCREMENT,
-    nam VARCHAR(20),
+    name VARCHAR(20),
     id_city INT (20),
     neighborhood VARCHAR(30) DEFAULT NULL,
     street VARCHAR(30) DEFAULT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE buildings(
   CONSTRAINT fk_buildings_owners FOREIGN KEY (id_owner) REFERENCES owners (id_owner)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO citys (nam)
+INSERT INTO citys (name)
 	VALUES  ('Rio Cuarto'),
 			('Achiras'),
 			('Alcira Gigena'),

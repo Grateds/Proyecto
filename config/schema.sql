@@ -7,7 +7,12 @@
 
 CREATE DATABASE /*!32312 IF NOT EXISTS*/ inmoapp_development;
 
+<<<<<<< HEAD
 DROP TABLE IF EXISTS users; -- Usuarios
+=======
+-- Table: Usuario
+DROP TABLE IF EXISTS users; 
+>>>>>>> c8d895f21b81ad76eb451cf7cbdfbb27edbe91df
 CREATE TABLE users(
     id_user  INT(11) NOT NULL AUTO_INCREMENT,
     email VARCHAR(60),
@@ -16,14 +21,20 @@ CREATE TABLE users(
   CONSTRAINT pk_users PRIMARY KEY (id_user)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+<<<<<<< HEAD
 DROP TABLE IF EXISTS citys; -- Ciudades
+=======
+-- Table: Ciudad
+DROP TABLE IF EXISTS citys; 
+>>>>>>> c8d895f21b81ad76eb451cf7cbdfbb27edbe91df
 CREATE TABLE citys(
     id_city INT(20) NOT NULL AUTO_INCREMENT,
     name VARCHAR (20) NOT NULL,  
   CONSTRAINT pk_citys PRIMARY KEY (id_city) 
 );
-	
-DROP TABLE IF EXISTS realstates; -- Inmobiliarias
+
+-- Table: Inmobiliarias	
+DROP TABLE IF EXISTS realstates; 
 CREATE TABLE realstates(
 	id_realstate INT(20) NOT NULL AUTO_INCREMENT,
 	name VARCHAR(30),
@@ -38,7 +49,8 @@ CREATE TABLE realstates(
   CONSTRAINT fk_realstates_citys FOREIGN KEY (id_city) REFERENCES citys (id_city)
 );
 
-DROP TABLE IF EXISTS owners; -- Dueños
+-- Table: Dueños
+DROP TABLE IF EXISTS owners; 
 CREATE TABLE owners(
     id_owner INT(20) NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(56),
@@ -52,7 +64,8 @@ CREATE TABLE owners(
   CONSTRAINT fk_owners_citys FOREIGN KEY (id_city) REFERENCES citys (id_city)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS buildings; -- Inmuebles
+-- Table: Inmuebles
+DROP TABLE IF EXISTS buildings; 
 CREATE TABLE buildings(
     id_building INT(11) NOT NULL AUTO_INCREMENT,
     type ENUM('land','farm','house','garage'),

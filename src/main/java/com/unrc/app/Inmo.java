@@ -35,7 +35,7 @@ public class Inmo {
         /* Segundo crear un inmueble */
         Building i = new Building();
    
-        i.set("typ", "land");
+        i.set("type", "land");
         i.set("id_owner", "1");
         i.set("id_city", "1");
         i.set("neighborhood", "Santa Rosa");

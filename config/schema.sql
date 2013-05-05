@@ -1,4 +1,5 @@
--- Compila perfecto, falta colocar las clausulas de restricciones.
+
+-- Integrantes: Abuzaid - Astorga - Marconi
 
 -- MOTOR BASES DE DATOS MySQL
 
@@ -6,7 +7,7 @@
 
 CREATE DATABASE /*!32312 IF NOT EXISTS*/ inmoapp_development;
 
-DROP TABLE IF EXISTS users; -- Usuario
+DROP TABLE IF EXISTS users; -- Usuarios
 CREATE TABLE users(
     id_user  INT(11) NOT NULL AUTO_INCREMENT,
     email VARCHAR(60),
@@ -15,7 +16,7 @@ CREATE TABLE users(
   CONSTRAINT pk_users PRIMARY KEY (id_user)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS citys; -- Ciudad
+DROP TABLE IF EXISTS citys; -- Ciudades
 CREATE TABLE citys(
     id_city INT(20) NOT NULL AUTO_INCREMENT,
     name VARCHAR (20) NOT NULL,  
@@ -54,7 +55,7 @@ CREATE TABLE owners(
 DROP TABLE IF EXISTS buildings; -- Inmuebles
 CREATE TABLE buildings(
     id_building INT(11) NOT NULL AUTO_INCREMENT,
-    typ ENUM('land','farm','house','garage'),
+    type ENUM('land','farm','house','garage'),
     id_owner INT(20),
     id_city INT(20),
     neighborhood VARCHAR(30) DEFAULT NULL,

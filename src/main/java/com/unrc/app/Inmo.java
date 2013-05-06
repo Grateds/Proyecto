@@ -51,7 +51,6 @@ public class Inmo {
         /* Crear una inmobiliaria */
         Realstate r = new Realstate();
         
-        r.set("id_realstate", "1");
         r.set("name", "Vienes Raices Imperio"); 
         r.set("id_city", "1");
         r.set("neighborhood", "Centro");

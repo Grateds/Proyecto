@@ -35,7 +35,7 @@ CREATE TABLE realstates(
 	email VARCHAR(60),
 	site_web VARCHAR(25),
   CONSTRAINT pk_realstate PRIMARY KEY (id_realstate),
-  CONSTRAINT fk_realstates_citys FOREIGN KEY (id_city) REFERENCES citys (id_city)
+  CONSTRAINT fk_realstates_citys FOREIGN KEY (id_city) REFERENCES citys (id_city) ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS owners; -- Dueños
@@ -49,7 +49,7 @@ CREATE TABLE owners(
     n_street INT (10) DEFAULT NULL,
     email VARCHAR(60),
   CONSTRAINT pk_owners PRIMARY KEY (id_owner),
-  CONSTRAINT fk_owners_citys FOREIGN KEY (id_city) REFERENCES citys (id_city)
+  CONSTRAINT fk_owners_citys FOREIGN KEY (id_city) REFERENCES citys (id_city) ON DELETE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS buildings; -- Inmuebles
@@ -65,8 +65,8 @@ CREATE TABLE buildings(
     price FLOAT(10), 
     operation ENUM('venta','alquiler'),
   CONSTRAINT pk_buildings PRIMARY KEY (id_building),
-  CONSTRAINT fk_buildings_citys FOREIGN KEY (id_city) REFERENCES citys (id_city),
-  CONSTRAINT fk_buildings_owners FOREIGN KEY (id_owner) REFERENCES owners (id_owner)
+  CONSTRAINT fk_buildings_citys FOREIGN KEY (id_city) REFERENCES citys (id_city) ON DELETE CASCADE,
+  CONSTRAINT fk_buildings_owners FOREIGN KEY (id_owner) REFERENCES owners (id_owner) ON DELETE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO citys (name)

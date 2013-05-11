@@ -3,12 +3,13 @@ package com.unrc.app;
 import com.unrc.app.models.User;
 import com.unrc.app.models.Building;
 import com.unrc.app.models.Owner;
-import com.unrc.app.models.Realstate;
+import com.unrc.app.models.RealEstate;
 
 import org.javalite.activejdbc.Base;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@SuppressWarnings("unused")
 public class Inmo {
     public static void main( String[] args )
     {
@@ -16,7 +17,6 @@ public class Inmo {
         
          /* Usuario */
         User e = new User();
-   
         e.set("email", "user@email.com");
         e.set("first_name", "John");
         e.set("last_name", "Doe");
@@ -24,7 +24,6 @@ public class Inmo {
         
         /* Primero crear un dueño */
         Owner o = new Owner(); 
-        
         o.set("first_name", "Raquel");
         o.set("last_name", "Zulma");
         o.set("id_city", "1");
@@ -36,10 +35,8 @@ public class Inmo {
     
         /* Segundo crear un inmueble */
         Building i = new Building();
-   
         i.set("type", "land");
-        i.set("id_owner", "1");
-        i.set("id_city", "1");
+        i.set("owner_id", o.getId());
         i.set("neighborhood", "Santa Rosa");
         i.set("street", "Sobremonte");
         i.set("n_street", "153");
@@ -49,7 +46,7 @@ public class Inmo {
         i.saveIt();
         
         /* Crear una inmobiliaria */
-        Realstate r = new Realstate();
+        RealEstate r = new RealEstate();
         
         r.set("name", "Vienes Raices Imperio"); 
         r.set("id_city", "1");

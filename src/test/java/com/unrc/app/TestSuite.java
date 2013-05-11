@@ -8,7 +8,8 @@ import org.junit.runners.Suite.SuiteClasses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@SuppressWarnings("unused")
 @RunWith(Suite.class)
-@Suite.SuiteClasses( { InmoTest.class, UserSpec.class } )
+@Suite.SuiteClasses( { InmoTest.class, UserSpec.class, OwnerSpec.class, BuildingSpec.class, CitySpec.class, RealEstateSpec.class } )
 public class TestSuite {
 }

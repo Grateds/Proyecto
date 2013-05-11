@@ -8,17 +8,14 @@ public class crudCity {
 	//
 	// Fields
 	//
-
-  
-	//
-	// Constructors
-	//
-	public crudCity() { };
+	String name;
   
 	//
 	// Methods
 	//
-
+	public void create(){
+	
+	}
 
 	//
 	// Accessor methods

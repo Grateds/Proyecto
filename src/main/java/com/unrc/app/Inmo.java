@@ -26,7 +26,7 @@ public class Inmo {
         Owner o = new Owner(); 
         o.set("first_name", "Raquel");
         o.set("last_name", "Zulma");
-        o.set("id_city", "1");
+        o.set("city_id", "1");
         o.set("neighborhood", "Santa Rosa");
         o.set("street", "Sobremonte");
         o.set("n_street", "153");
@@ -36,7 +36,8 @@ public class Inmo {
         /* Segundo crear un inmueble */
         Building i = new Building();
         i.set("type", "land");
-        i.set("owner_id", o.getId());
+        i.set("owner_id", "1");
+        i.set("city_id", "1");
         i.set("neighborhood", "Santa Rosa");
         i.set("street", "Sobremonte");
         i.set("n_street", "153");
@@ -49,7 +50,7 @@ public class Inmo {
         RealEstate r = new RealEstate();
         
         r.set("name", "Vienes Raices Imperio"); 
-        r.set("id_city", "1");
+        r.set("city_id", "1");
         r.set("neighborhood", "Centro");
         r.set("street", "Baigorria");
         r.set("n_street", "1250");

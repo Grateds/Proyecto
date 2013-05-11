@@ -13,14 +13,14 @@ CREATE TABLE users(
     email VARCHAR(60),
     first_name VARCHAR(56),
     last_name VARCHAR(56),
-  CONSTRAINT pk_users PRIMARY KEY (id)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT users_pk PRIMARY KEY (id)
+);
 
 DROP TABLE IF EXISTS cities; -- Ciudades
 CREATE TABLE cities(
     id INT(20) NOT NULL AUTO_INCREMENT,
     name VARCHAR (20) NOT NULL,  
-  CONSTRAINT pk_cities PRIMARY KEY (id) 
+  CONSTRAINT cities_pk PRIMARY KEY (id) 
 );
 	
 DROP TABLE IF EXISTS real_estates; -- Inmobiliarias
@@ -34,7 +34,7 @@ CREATE TABLE real_estates(
 	phone INT(15) DEFAULT NULL,
 	email VARCHAR(60),
 	site_web VARCHAR(25),
-  CONSTRAINT pk_real_states PRIMARY KEY (id)
+  CONSTRAINT real_states_pk PRIMARY KEY (id)
 );
 
 DROP TABLE IF EXISTS owners; -- Dueños
@@ -47,8 +47,8 @@ CREATE TABLE owners(
     street VARCHAR(30) DEFAULT NULL,
     n_street INT (10) DEFAULT NULL,
     email VARCHAR(60),
-  CONSTRAINT pk_owners PRIMARY KEY (id)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT owners_pk PRIMARY KEY (id)
+);
 
 DROP TABLE IF EXISTS buildings; -- Inmuebles
 CREATE TABLE buildings(
@@ -62,20 +62,19 @@ CREATE TABLE buildings(
     description VARCHAR(200),
     price FLOAT(10), 
     operation ENUM('venta','alquiler'),
-  CONSTRAINT pk_buildings PRIMARY KEY (id)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT buildings_pk PRIMARY KEY (id)
+);
 
 DROP TABLE IF EXISTS building_real_estates; -- Relacion entre Inmuebles e Inmobiliaria
 CREATE TABLE building_real_estates(
 	id INT(11) NOT NULL AUTO_INCREMENT,
 	building_id INT(11),
 	real_estates_id INT(11),
-  CONSTRAINT pk_have PRIMARY KEY (id)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT have_pk PRIMARY KEY (id)
+);
 
 INSERT INTO cities (name)
 	VALUES  ('Rio Cuarto'),
 			('Achiras'),
 			('Alcira Gigena'),
 			('Ucacha');
-

@@ -27,10 +27,10 @@ public class crudOwner {
         o.set("first_name", first_name).set("last_name",last_name).set("city_id", city_id).set("neighborhood", neighborhood).set("street", street).set("n_street", n_street).set("email", email).saveIt();
     }//end create
         
-    public void delete(){   
-       	//  Owner o = Building.parent(Owner.class);
-       //   o.delete();
-    }//end delete
+    public static void delete(String id){   
+            Owner e = Owner.findFirst("id = ?", id); 
+            e.delete();
+        };//end delete
         
     public void update(){
     	  //Busqueda 

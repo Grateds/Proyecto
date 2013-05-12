@@ -28,8 +28,8 @@ public class crudOwner {
     }//end create
         
     public void delete(){   
-    //  	Owner o = Building.parent(Owner.class);
-      // 	o.delete();
+       	//  Owner o = Building.parent(Owner.class);
+       //   o.delete();
     }//end delete
         
     public void update(){

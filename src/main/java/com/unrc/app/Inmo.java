@@ -11,11 +11,10 @@ import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("unused")
 public class Inmo {
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ) {
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         
-         /* Usuario */
+        /* Usuario */
         User e = new User();
         e.set("email", "user@email.com");
         e.set("first_name", "John");
@@ -24,21 +23,11 @@ public class Inmo {
         
         crudOwner c = new crudOwner(); 
         /*Crear un dueño */
-        c.create("Debora","Elva","1","Santa Rosa","deborame@outlook.com");
+        c.create("Debora","Elva","1","Santa Rosa","Sobremonte","153","deborame@outlook.com");
         /*Elimina Dueño*/
-        c.delete();
+       // c.delete();
         /*Modifica un dueño */
         c.update();
-        
-        /*Owner o = new Owner(); 
-        o.set("first_name", "Raquel");
-        o.set("last_name", "Zulma");
-        o.set("city_id", "1");
-        o.set("neighborhood", "Santa Rosa");
-        o.set("street", "Sobremonte");
-        o.set("n_street", "153");
-        o.set("email", "raquel@Gmail.com");
-        o.saveIt();*/
     
         /* Segundo crear un inmueble */
         Building i = new Building();

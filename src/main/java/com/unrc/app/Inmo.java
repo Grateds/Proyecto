@@ -29,6 +29,16 @@ public class Inmo {
         c.delete();
         /*Modifica un dueño */
         c.update();
+        
+        /*Owner o = new Owner(); 
+        o.set("first_name", "Raquel");
+        o.set("last_name", "Zulma");
+        o.set("city_id", "1");
+        o.set("neighborhood", "Santa Rosa");
+        o.set("street", "Sobremonte");
+        o.set("n_street", "153");
+        o.set("email", "raquel@Gmail.com");
+        o.saveIt();*/
     
         /* Segundo crear un inmueble */
         Building i = new Building();

@@ -22,16 +22,13 @@ public class Inmo {
         e.set("last_name", "Doe");
         e.saveIt();
         
-        /* Primero crear un dueño */
-        Owner o = new Owner(); 
-        o.set("first_name", "Raquel");
-        o.set("last_name", "Zulma");
-        o.set("city_id", "1");
-        o.set("neighborhood", "Santa Rosa");
-        o.set("street", "Sobremonte");
-        o.set("n_street", "153");
-        o.set("email", "raquel@Gmail.com");
-        o.saveIt();
+        crudOwner c = new crudOwner(); 
+        /*Crear un dueño */
+        c.create("Debora","Elva","1","Santa Rosa","deborame@outlook.com");
+        /*Elimina Dueño*/
+        c.delete();
+        /*Modifica un dueño */
+        c.update();
     
         /* Segundo crear un inmueble */
         Building i = new Building();

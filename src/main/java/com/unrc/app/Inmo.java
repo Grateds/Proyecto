@@ -28,8 +28,8 @@ public class Inmo {
         /*Elimina Dueño*/
         //c.delete("1");
        
-        /*Modifica un dueño*/
-        //c.update();
+        /*Modifica un dueño*/   
+        //c.update("1");
     
     
         /* Segundo crear un inmueble */

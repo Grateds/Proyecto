@@ -33,7 +33,17 @@ public class crudOwner {
     }//end delete
         
     public void update(){
+    	  //Busqueda 
+            List<Owner> list = Owner.where("id = '10'");
+          
+            //Muestra de resultados
+            Owner.find("id = '10'", new ModelListener<Owner>() {         
+                public void onModel(Owner Dueño) {
+                 System.out.println("Found person: " + Dueño);
+                 }
+            });
             
+            //Actualización de registros seleccionados en la tabla          
     }//end update
 
 	//

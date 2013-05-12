@@ -10,7 +10,7 @@ import org.junit.Test;
 import com.unrc.app.models.Owner;
 
 public class OwnerSpec {
-	@Before
+    @Before
     public void before(){
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         Base.openTransaction();

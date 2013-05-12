@@ -24,10 +24,13 @@ public class Inmo {
         crudOwner c = new crudOwner(); 
         /*Crear un dueño */
         c.create("Debora","Elva","1","Santa Rosa","Sobremonte","153","deborame@outlook.com");
-        /*Elimina Dueño*/
-       // c.delete();
+        
+         /*Elimina Dueño*/
+         //c.delete("1");
+       
         /*Modifica un dueño */
-        c.update();
+        //c.update();
+    
     
         /* Segundo crear un inmueble */
         Building i = new Building();

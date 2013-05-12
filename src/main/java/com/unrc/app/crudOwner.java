@@ -45,7 +45,7 @@ public class crudOwner {
     	//Updating a single record
         List<Owner> list = Owner.find("id = id");
         Owner o = list.get(0);
-        o.set("first_name", "Tamara").saveIt();
+        o.set("first_name", "Elba").saveIt();
        
         //Actualización de registros seleccionados en la tabla
         //Owner.update("name = ?, last_name = ?", "name like ?", "Steve", "Johnson", "%J%");

@@ -25,10 +25,10 @@ public class Inmo {
         /*Crear un dueño */
         c.create("Debora","Elva","1","Santa Rosa","Sobremonte","153","deborame@outlook.com");
         
-         /*Elimina Dueño*/
-         //c.delete("1");
+        /*Elimina Dueño*/
+        //c.delete("1");
        
-        /*Modifica un dueño */
+        /*Modifica un dueño*/
         //c.update();
     
     

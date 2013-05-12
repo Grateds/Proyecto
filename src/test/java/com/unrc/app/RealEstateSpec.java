@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import com.unrc.app.models.RealEstate;
 
+@SuppressWarnings("unused")
 public class RealEstateSpec {
 	@Before
     public void before(){

@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import com.unrc.app.models.Building;
 
+@SuppressWarnings("unused")
 public class BuildingSpec {
 	@Before
     public void before(){

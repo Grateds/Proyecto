@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import com.unrc.app.models.Owner;
 
+@SuppressWarnings("unused")
 public class OwnerSpec {
     @Before
     public void before(){

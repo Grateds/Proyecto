@@ -27,17 +27,10 @@ public class Inmo {
         
         /*Elimina Dueño*/
         //c.delete("1");
-<<<<<<< Updated upstream
-       
-        /*Modifica un dueño*/   
-        //c.update("1");
-    
-    
-=======
+        
         /*Modifica un dueño */
         c.update("1");
        
->>>>>>> Stashed changes
         /* Segundo crear un inmueble */
         Building i = new Building();
         i.set("type", "land");

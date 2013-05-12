@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import com.unrc.app.models.City;
 
+@SuppressWarnings("unused")
 public class CitySpec {
 	@Before
     public void before(){

@@ -1,4 +1,5 @@
 package com.unrc.app;
+import com.unrc.app.models.Owner;
 
 /**
  * Class crudOwner

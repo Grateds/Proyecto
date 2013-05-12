@@ -42,7 +42,8 @@ public class crudOwner {
                  System.out.println("Found person: " + Dueño);
                  }
             });*/
-
+            
+	    //Updating a single record
             List<Owner> list = Owner.find("id = id");
             Owner o = list.get(0);
             o.set("first_name", "Tamara");

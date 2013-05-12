@@ -32,19 +32,27 @@ public class crudOwner {
             o.deleteCascade();
         };//end delete
         
-    public void update(){
-    	  //Busqueda 
-            List<Owner> list = Owner.where("id = '10'");
-          
-            //Muestra de resultados
-            Owner.find("id = '10'", new ModelListener<Owner>() {         
+    public static void update(String id){             
+            //Busqueda 
+            //List<Owner> list = Owner.where("id = 'id'");
+        
+          /*  //Muestra de resultados de busqueda
+            Owner.find("id = 'id'", new ModelListener<Owner>() {         
                 public void onModel(Owner Dueño) {
                  System.out.println("Found person: " + Dueño);
                  }
-            });
-            
-            //Actualización de registros seleccionados en la tabla          
-    }//end update
+            });*/
+
+            List<Owner> list = Owner.find("id = id");
+            Owner o = list.get(0);
+            o.set("first_name", "pepita");
+            o.saveIt();
+           
+            //Actualización de registros seleccionados en la tabla 
+            //Owner.update("name = ?, last_name = ?", "name like ?", "Steve", "Johnson", "%J%");   
+            //Owner o = Employee.findFirst("first_name = ?", "Debora");
+            //o.set("last_name", "Steinbeck").saveIt();           
+        };//end update
 
 	//
 	// Accessor methods

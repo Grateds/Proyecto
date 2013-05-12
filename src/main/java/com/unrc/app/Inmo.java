@@ -23,7 +23,7 @@ public class Inmo {
         
         crudOwner c = new crudOwner(); 
         /*Crear un dueño */
-        c.create("Debora","Elva","1","Santa Rosa","Sobremonte","153","deborame@outlook.com");
+        c.create("Debora","Meltrozo","1","Santa Rosa","Sobremonte","153","deborame@outlook.com");
         
         /*Elimina Dueño*/
         //c.delete("1");

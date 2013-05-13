@@ -19,7 +19,7 @@ CREATE TABLE users(
 DROP TABLE IF EXISTS cities; -- Ciudades
 CREATE TABLE cities(
     id INT(20) NOT NULL AUTO_INCREMENT,
-    name VARCHAR (20) NOT NULL,  
+    name VARCHAR (20) NOT NULL UNIQUE,  
   CONSTRAINT cities_pk PRIMARY KEY (id) 
 );
 	
@@ -72,9 +72,3 @@ CREATE TABLE building_real_estates(
 	real_estates_id INT(11),
   CONSTRAINT have_pk PRIMARY KEY (id)
 );
-
-INSERT INTO cities (name)
-	VALUES  ('Rio Cuarto'),
-			('Achiras'),
-			('Alcira Gigena'),
-			('Ucacha');

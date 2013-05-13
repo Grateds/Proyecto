@@ -17,39 +17,39 @@ public class crudOwner {
 	
 		City c = new City();
 		c.set("name", city);
-	    c.saveIt();
+	    	c.saveIt();
 		
 		Owner o = new Owner(); 
-        o.set("first_name", first_name).set("last_name",last_name).set("city_id", city).set("neighborhood", neighborhood).set("street", street).set("n_street", n_street).set("email", email);
-        c.add(o);
+        	o.set("first_name", first_name).set("last_name",last_name).set("city_id", city).set("neighborhood", neighborhood).set("street", street).set("n_street", n_street).set("email", email);
+        	c.add(o);
 	}//end create
         
-    public void delete(String id){   
-    	Owner o = Owner.findFirst("id = ?", id);
-        o.deleteCascade();
-    }//end delete
+    	public void delete(String id){   
+    		Owner o = Owner.findFirst("id = ?", id);
+        	o.deleteCascade();
+   	 }//end delete
         
-    public void update(String id){
-    	//Busqueda
-        //List<Owner> list = Owner.where("id = 'id'");
+   	 public void update(String id){
+    		//Busqueda
+        	//List<Owner> list = Owner.where("id = 'id'");
     
-     /* //Muestra de resultados de busqueda
+     		/* //Muestra de resultados de busqueda
 		Owner.find("id = 'id'", new ModelListener<Owner>() {
 			public void onModel(Owner Dueño) {
 				System.out.println("Found person: " + Dueño);
 			}
 		});*/
         
-    	//Updating a single record
-        List<Owner> list = Owner.find("id = id");
-        Owner o = list.get(0);
-        o.set("first_name", "Tamara").saveIt();
+    		//Updating a single record
+        	List<Owner> list = Owner.find("id = id");
+        	Owner o = list.get(0);
+        	o.set("first_name", "Tamara").saveIt();
        
-        //Actualización de registros seleccionados en la tabla
-        //Owner.update("name = ?, last_name = ?", "name like ?", "Steve", "Johnson", "%J%");
-        //Owner o = Employee.findFirst("first_name = ?", "Debora");
-        //o.set("last_name", "Steinbeck").saveIt(); 
-    }//end update
+       		//Actualización de registros seleccionados en la tabla
+        	//Owner.update("name = ?, last_name = ?", "name like ?", "Steve", "Johnson", "%J%");
+        	//Owner o = Employee.findFirst("first_name = ?", "Debora");
+        	//o.set("last_name", "Steinbeck").saveIt(); 
+    	}//end update
 
 	//
 	// Accessor methods

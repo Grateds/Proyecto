@@ -1,30 +1,28 @@
 package com.unrc.app;
 
 import com.unrc.app.models.Owner;
+import com.unrc.app.models.City;
+
 import java.util.List;
 
 /**
  * Class crudOwner
  */
 public class crudOwner {
-
-	//
-	// Fields
-	//
-
-  
-	//
-	// Constructors
-	//
-	public crudOwner() { };
-  
+	
 	//
 	// Methods
 	//
-	public void create(String first_name, String last_name,String city_id, String neighborhood, String street, String n_street, String email){
+	public void create(String first_name, String last_name,String city, String neighborhood, String street, String n_street, String email){
+	
+		City c = new City();
+		c.set("name", city);
+	    c.saveIt();
+		
 		Owner o = new Owner(); 
-        o.set("first_name", first_name).set("last_name",last_name).set("city_id", city_id).set("neighborhood", neighborhood).set("street", street).set("n_street", n_street).set("email", email).saveIt();
-    }//end create
+        o.set("first_name", first_name).set("last_name",last_name).set("city_id", city).set("neighborhood", neighborhood).set("street", street).set("n_street", n_street).set("email", email);
+        c.add(o);
+	}//end create
         
     public void delete(String id){   
     	Owner o = Owner.findFirst("id = ?", id);
@@ -45,7 +43,7 @@ public class crudOwner {
     	//Updating a single record
         List<Owner> list = Owner.find("id = id");
         Owner o = list.get(0);
-        o.set("first_name", "Elba").saveIt();
+        o.set("first_name", "Tamara").saveIt();
        
         //Actualización de registros seleccionados en la tabla
         //Owner.update("name = ?, last_name = ?", "name like ?", "Steve", "Johnson", "%J%");

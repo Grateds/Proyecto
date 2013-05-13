@@ -1,5 +1,6 @@
 package com.unrc.app;
 
+import com.unrc.app.models.City;
 import com.unrc.app.models.User;
 import com.unrc.app.models.Building;
 import com.unrc.app.models.Owner;
@@ -22,17 +23,17 @@ public class Inmo {
         e.saveIt();
         
         crudOwner c = new crudOwner(); 
-        /*Crear un dueño */
-        c.create("Debora","Meltrozo","1","Santa Rosa","Sobremonte","153","deborame@outlook.com");
+        /* Crear un dueño */
+        c.create("Debora","Meltrozo","Jujuy","Santa Rosa","Sobremonte","153","deborame@outlook.com");
         
         /*Elimina Dueño*/
         //c.delete("1");
         
         /*Modifica un dueño */
-        c.update("1");
+        //c.update("1");
        
         /* Segundo crear un inmueble */
-        Building i = new Building();
+       /* Building i = new Building();
         i.set("type", "land");
         i.set("owner_id", "1");
         i.set("city_id", "1");
@@ -43,9 +44,9 @@ public class Inmo {
         i.set("price", "150000");
         i.set("operation", "venta");   
         i.saveIt();
-        
+        */
         /* Crear una inmobiliaria */
-        RealEstate r = new RealEstate();
+        /*RealEstate r = new RealEstate();
         
         r.set("name", "Vienes Raices Imperio"); 
         r.set("city_id", "1");
@@ -56,7 +57,7 @@ public class Inmo {
         r.set("email", "vrimperio@outlook.com");
         r.set("site_web", "www.vrimperio.com");
         r.saveIt(); 
-
+*/
         System.out.println( "Hello World!" );
     }
 }

@@ -129,4 +129,8 @@ INSERT INTO cities (name)
  	('Trelew'), 	
  	('Santa Rosa'), 	
  	('Tandil'), 	
+<<<<<<< HEAD
  	('Libertad');
+=======
+ 	('Libertad');
+>>>>>>> 4c91002fe6b8c838f63dd01e4663fdd8bdaaf2c0

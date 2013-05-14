@@ -4,7 +4,7 @@
 
 -- DATABASE: inmoapp_development
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ inmoapp_test;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ inmoapp_development_test;
 
 DROP TABLE IF EXISTS users; -- Usuarios
 CREATE TABLE users(

@@ -17,6 +17,7 @@ public class crudOwner {
 	/** Pre: city.exist() = true **/
 	/** Pos: Created owner **/
 	public void create(String first_name, String last_name,String city, String neighborhood, String street, String n_street, String email){
+<<<<<<< HEAD
 		City c = City.findFirst("name = ?", city);
 		Owner o = new Owner();
         o.set("first_name", first_name);
@@ -27,6 +28,12 @@ public class crudOwner {
         o.set("n_street", n_street);
         o.set("email", email);
         o.saveIt();
+=======
+		City c = City.findFirst("name = ?", city);		
+		Owner o = new Owner();
+        	o.set("first_name", first_name).set("last_name",last_name).set("city_id", city).set("neighborhood", neighborhood).set("street", street).set("n_street", n_street).set("email", email);
+        	c.add(o);
+>>>>>>> d71f1dec7fc4b6664e29b6b8e0b7c169c4acc343
 	}//end create
         
     public void delete(String id){   

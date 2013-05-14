@@ -18,7 +18,11 @@ CREATE TABLE users(
 DROP TABLE IF EXISTS cities; -- Ciudades
 CREATE TABLE cities(
     id INT(20) NOT NULL AUTO_INCREMENT,
+<<<<<<< HEAD
     name VARCHAR (30) NOT NULL UNIQUE,  
+=======
+    name VARCHAR (20) NOT NULL UNIQUE,  
+>>>>>>> d71f1dec7fc4b6664e29b6b8e0b7c169c4acc343
   CONSTRAINT cities_pk PRIMARY KEY (id) 
 );
 	
@@ -71,6 +75,7 @@ CREATE TABLE building_real_estates(
 	real_estates_id INT(11),
   CONSTRAINT have_pk PRIMARY KEY (id)
 );
+<<<<<<< HEAD
 
 INSERT INTO cities (name)
 	VALUES  ('Buenos Aires'), 	
@@ -130,3 +135,5 @@ INSERT INTO cities (name)
  	('Santa Rosa'), 	
  	('Tandil'), 	
  	('Libertad');
+=======
+>>>>>>> d71f1dec7fc4b6664e29b6b8e0b7c169c4acc343

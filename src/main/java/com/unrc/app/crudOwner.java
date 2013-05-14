@@ -1,18 +1,12 @@
 package com.unrc.app;
-
 import com.unrc.app.models.Owner;
 import com.unrc.app.models.City;
-
 import java.util.List;
 
 /**
  * Class crudOwner
  */
 public class crudOwner {
-	
-	//
-	// Methods
-	//
 	
 	/** Pre: city.exist() = true **/
 	/** Pos: Created owner **/

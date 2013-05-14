@@ -13,15 +13,20 @@ public class crudOwner {
 	//
 	// Methods
 	//
-	public void create(String first_name, String last_name,String city, String neighborhood, String street, String n_street, String email){
 	
-		City c = new City();
-		c.set("name", city);
-	    c.saveIt();
-		
-		Owner o = new Owner(); 
-        o.set("first_name", first_name).set("last_name",last_name).set("city_id", city).set("neighborhood", neighborhood).set("street", street).set("n_street", n_street).set("email", email);
-        c.add(o);
+	/** Pre: city.exist() = true **/
+	/** Pos: Created owner **/
+	public void create(String first_name, String last_name,String city, String neighborhood, String street, String n_street, String email){
+		City c = City.findFirst("name = ?", city);
+		Owner o = new Owner();
+        o.set("first_name", first_name);
+        o.set("last_name",last_name);
+        o.set("city_id", c.getId());
+        o.set("neighborhood", neighborhood);
+        o.set("street", street);
+        o.set("n_street", n_street);
+        o.set("email", email);
+        o.saveIt();
 	}//end create
         
     public void delete(String id){   
@@ -29,7 +34,7 @@ public class crudOwner {
         o.deleteCascade();
     }//end delete
         
-    public void update(String id){
+    public void update(String id, String column, String value){
     	//Busqueda
         //List<Owner> list = Owner.where("id = 'id'");
     
@@ -43,7 +48,7 @@ public class crudOwner {
     	//Updating a single record
         List<Owner> list = Owner.find("id = id");
         Owner o = list.get(0);
-        o.set("first_name", "Tamara").saveIt();
+        o.set(column, value).saveIt();
        
         //Actualización de registros seleccionados en la tabla
         //Owner.update("name = ?, last_name = ?", "name like ?", "Steve", "Johnson", "%J%");

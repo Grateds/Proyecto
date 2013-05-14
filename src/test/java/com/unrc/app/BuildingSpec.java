@@ -13,7 +13,7 @@ import com.unrc.app.models.Building;
 public class BuildingSpec {
 	@Before
     public void before(){
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development_test", "root", "root");
         Base.openTransaction();
     }
 

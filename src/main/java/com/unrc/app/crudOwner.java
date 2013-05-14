@@ -19,49 +19,27 @@ public class crudOwner {
 	public void create(String first_name, String last_name,String city, String neighborhood, String street, String n_street, String email){
 		City c = City.findFirst("name = ?", city);
 		Owner o = new Owner();
-        o.set("first_name", first_name);
-        o.set("last_name",last_name);
-        o.set("city_id", c.getId());
-        o.set("neighborhood", neighborhood);
-        o.set("street", street);
-        o.set("n_street", n_street);
-        o.set("email", email);
-        o.saveIt();
+        	o.set("first_name", first_name);
+        	o.set("last_name",last_name);
+        	o.set("city_id", c.getId());
+        	o.set("neighborhood", neighborhood);
+        	o.set("street", street);
+        	o.set("n_street", n_street);
+        	o.set("email", email);
+        	o.saveIt();
 	}//end create
         
-    public void delete(String id){   
+    	public void delete(String id){   
     	Owner o = Owner.findFirst("id = ?", id);
         o.deleteCascade();
-    }//end delete
+    	}//end delete
         
     public void update(String id, String column, String value){
-    	//Busqueda
-        //List<Owner> list = Owner.where("id = 'id'");
-    
-     /* //Muestra de resultados de busqueda
-		Owner.find("id = 'id'", new ModelListener<Owner>() {
-			public void onModel(Owner Dueño) {
-				System.out.println("Found person: " + Dueño);
-			}
-		});*/
-        
     	//Updating a single record
         List<Owner> list = Owner.find("id = id");
         Owner o = list.get(0);
         o.set(column, value).saveIt();
        
-        //Actualización de registros seleccionados en la tabla
-        //Owner.update("name = ?, last_name = ?", "name like ?", "Steve", "Johnson", "%J%");
-        //Owner o = Employee.findFirst("first_name = ?", "Debora");
-        //o.set("last_name", "Steinbeck").saveIt(); 
     }//end update
-
-	//
-	// Accessor methods
-	//
-
-	//
-	// Other methods
-	//
 
 }

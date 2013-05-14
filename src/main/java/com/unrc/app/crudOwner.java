@@ -30,16 +30,14 @@ public class crudOwner {
 	}//end create
         
     	public void delete(String id){   
-    	Owner o = Owner.findFirst("id = ?", id);
-        o.deleteCascade();
+    		Owner o = Owner.findFirst("id = ?", id);
+        	o.deleteCascade();
     	}//end delete
         
-    public void update(String id, String column, String value){
+   	 public void update(String id, String column, String value){
     	//Updating a single record
-        List<Owner> list = Owner.find("id = id");
-        Owner o = list.get(0);
-        o.set(column, value).saveIt();
-       
-    }//end update
-
+        	List<Owner> list = Owner.find("id = id");
+        	Owner o = list.get(0);
+        	o.set(column, value).saveIt();       
+    	}//end update
 }

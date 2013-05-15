@@ -25,7 +25,6 @@ public class OwnerSpec {
 
     @Test
     public void shouldValidateMandatoryFields(){
-
         Owner owner = new Owner();
 
         //check errors

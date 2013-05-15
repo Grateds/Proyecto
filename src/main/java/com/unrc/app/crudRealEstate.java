@@ -6,7 +6,6 @@ public class crudRealEstate {
     
     public static void create(String name, Integer phone, String email, String city, String neighborhood, String street, Integer n_street, String site_web){
         RealEstate rs = new RealEstate();
-        Scanner in = new Scanner(System.in);
         rs.set("name", name);
         rs.set("phone",phone);
         rs.set("email",email);

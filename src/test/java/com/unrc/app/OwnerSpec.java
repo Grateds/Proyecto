@@ -46,19 +46,23 @@ public class OwnerSpec {
     
     @Test
     public void shouldSaveRecord(){
-    	Owner owner = new Owner();
+        Owner owner = new Owner();
     	City city = new City();
     	city.set("name", "space").saveIt();
+        
     	owner.set("first_name","Jose");
-        owner.set("last_name","Perez");
+        owner.set("last_name","Palmiro");
         owner.set("city_id",city.getId());
         owner.set("neighborhood", "riverside");
         owner.set("street", "Sobremonte");
         owner.set("n_street", "789");
-        owner.set("email","jperez@hotmail.com");
+        owner.set("email","jpalmiro@hotmail.com");
         owner.saveIt();
         
-       //Owner o = Owner.findFirst("first_name = ?", "prpr");       
-      //the(owner).shouldBeEqual(o);
+        Owner o = Owner.findFirst("first_name = ?", "Jose");
+        o.findFirst("last_name =  ? ", "Palmiro");
+        o.findFirst("email =  ? ", "jpalmiro@hotmail.com");
+        
+        the(o).shouldBeEqual(o);
     }
 }

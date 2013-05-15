@@ -44,7 +44,7 @@ public class OwnerSpec {
         the(owner).shouldBe("valid");
     }
     
-    @Test
+   @Test
     public void shouldSaveRecord(){
         Owner owner = new Owner();
     	City city = new City();
@@ -62,6 +62,8 @@ public class OwnerSpec {
         Owner o = Owner.findFirst("first_name = ?", "Jose");
         o.findFirst("last_name =  ? ", "Palmiro");
         o.findFirst("email =  ? ", "jpalmiro@hotmail.com");
+        o.findFirst("street =  ? ", "Sobremonte");
+        o.findFirst("n_street =  ? ", "789");
         
         the(o).shouldBeEqual(o);
     }

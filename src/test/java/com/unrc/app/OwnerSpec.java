@@ -36,9 +36,9 @@ public class OwnerSpec {
         the(owner.errors().get("email")).shouldBeEqual("Email");
 
         //all is good:
-        owner.set("first_name","prpr");
-        owner.set("last_name","prpr");
-        owner.set("email","prpr@email.com");
+        owner.set("first_name","Jose");
+        owner.set("last_name","Perez");
+        owner.set("email","jperez@hotmail.com");
         owner.saveIt();
         
         the(owner).shouldBe("valid");
@@ -49,13 +49,13 @@ public class OwnerSpec {
     	Owner owner = new Owner();
     	City city = new City();
     	city.set("name", "space").saveIt();
-    	owner.set("first_name","prpr");
-        owner.set("last_name","prpr");
+    	owner.set("first_name","Jose");
+        owner.set("last_name","Perez");
         owner.set("city_id",city.getId());
         owner.set("neighborhood", "riverside");
         owner.set("street", "canilla");
         owner.set("n_street", "789");
-        owner.set("email","prpr@email.com");
+        owner.set("email","jperez@hotmail.com");
         owner.saveIt();
         
        //Owner o = Owner.findFirst("first_name = ?", "prpr");       

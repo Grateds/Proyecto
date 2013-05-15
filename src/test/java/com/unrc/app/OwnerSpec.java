@@ -46,7 +46,7 @@ public class OwnerSpec {
     
     @Test
     public void shouldSaveRecord(){
-    	/*Owner owner = new Owner();
+    	Owner owner = new Owner();
     	City city = new City();
     	city.set("name", "space").saveIt();
     	owner.set("first_name","prpr");
@@ -58,8 +58,7 @@ public class OwnerSpec {
         owner.set("email","prpr@email.com");
         owner.saveIt();
         
-        Owner o = Owner.findFirst("first_name = ?", "prpr");
-        
-        the(owner).shouldBeEqual(o);*/
+       //Owner o = Owner.findFirst("first_name = ?", "prpr");       
+      //the(owner).shouldBeEqual(o);
     }
 }

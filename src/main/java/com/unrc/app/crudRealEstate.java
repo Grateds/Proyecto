@@ -1,7 +1,6 @@
 package com.unrc.app;
 
 import com.unrc.app.models.RealEstate;
-import java.util.Scanner;
 
 public class crudRealEstate {
     

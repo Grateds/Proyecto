@@ -53,7 +53,7 @@ public class OwnerSpec {
         owner.set("last_name","Perez");
         owner.set("city_id",city.getId());
         owner.set("neighborhood", "riverside");
-        owner.set("street", "canilla");
+        owner.set("street", "Sobremonte");
         owner.set("n_street", "789");
         owner.set("email","jperez@hotmail.com");
         owner.saveIt();

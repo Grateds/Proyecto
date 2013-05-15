@@ -28,10 +28,10 @@ public class crudOwner {
         	o.deleteCascade();
     	}//end delete
         
-   	 public void update(String id, String column, String value){
-    	//Updating a single record
+   	public void update(String id, String first_name, String new_name){
+    		//Updating a single record
         	List<Owner> list = Owner.find("id = id");
         	Owner o = list.get(0);
-        	o.set(column, value).saveIt();       
+            	o.set(first_name, new_name).saveIt();
     	}//end update
 }

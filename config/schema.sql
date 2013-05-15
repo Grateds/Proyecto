@@ -18,7 +18,7 @@ CREATE TABLE users(
 DROP TABLE IF EXISTS cities; -- Ciudades
 CREATE TABLE cities(
     id INT(20) NOT NULL AUTO_INCREMENT,
-    name VARCHAR (30) NOT NULL UNIQUE,  
+    name VARCHAR (35) NOT NULL UNIQUE,  
   CONSTRAINT cities_pk PRIMARY KEY (id) 
 );
 	
@@ -108,6 +108,7 @@ INSERT INTO cities (name)
  	('Moreno'), 	
  	('Concordia'), 	
  	('La Rioja'), 	
+	('San Nicolas de los Arroyos'), 
  	('Río Cuarto'), 		
  	('Comodoro Rivadavia'), 
  	('Isidro Casanova'), 

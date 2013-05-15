@@ -59,11 +59,6 @@ public class OwnerSpec {
         owner.saveIt();
         
         Owner o = Owner.findFirst("first_name = ?", "Jose");
-        o.findFirst("last_name =  ? ", "Palmiro");
-        o.findFirst("email =  ? ", "jpalmiro@hotmail.com");
-        o.findFirst("street =  ? ", "Sobremonte");
-        o.findFirst("n_street =  ? ", "789");
-        
-        the(o).shouldBeEqual(o);
+        the(owner).shouldBeEqual(o);
     }
 }

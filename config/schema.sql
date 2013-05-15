@@ -114,7 +114,6 @@ INSERT INTO cities (name)
  	('Isidro Casanova'), 
  	('San Rafael'), 	
  	('Ituzaingo'), 	
- 	('San Nicolas de los Arroyos'), 	
  	('Florencio Varela'), 	
  	('San Juan'), 	
 	('Lomas de Zamora'),

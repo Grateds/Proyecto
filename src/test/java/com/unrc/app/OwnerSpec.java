@@ -19,7 +19,7 @@ public class OwnerSpec {
     
     @After
     public void after(){
-        Base.rollbackTransaction();
+    	Base.rollbackTransaction();
         Base.close();
     }
     
@@ -45,6 +45,7 @@ public class OwnerSpec {
     public void shouldSaveRecord(){
         Owner owner = new Owner();
     	City city = new City();
+    	
     	city.set("name", "space").saveIt();
         
     	owner.set("first_name","Jose");
@@ -57,6 +58,6 @@ public class OwnerSpec {
         owner.saveIt();
         
         Owner o = Owner.findFirst("first_name = ?", "Jose");
-        the(owner).shouldBeEqual(o);
+        the(owner.get("id")).shouldBeEqual(o.get("id"));
     }
 }

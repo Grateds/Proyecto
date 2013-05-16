@@ -16,14 +16,14 @@ public class Inmo {
         e.create("user@email.com", "John", "Doe");   
         
         
-         /* Dueño */
+         /* Create Dueño */
         crudOwner o = new crudOwner();     
         o.create("Debora","Meltrozo","San Salvador de Jujuy","Santa Rosa","Sobremonte","153","deborame@outlook.com");
         
-        /*Delete Dueño*/
+        /* Delete Dueño*/
         //o.delete("1");
         
-        /*Update un dueño */
+        /* Update un dueño */
         //o.update("1");
        
        

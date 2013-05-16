@@ -9,7 +9,7 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ inmoapp_development;
 DROP TABLE IF EXISTS users; -- Usuarios
 CREATE TABLE users(
     id INT(11) NOT NULL AUTO_INCREMENT,
-    email VARCHAR(60),
+    email VARCHAR(60) UNIQUE,
     first_name VARCHAR(56),
     last_name VARCHAR(56),
   CONSTRAINT users_pk PRIMARY KEY (id)
@@ -31,8 +31,8 @@ CREATE TABLE real_estates(
 	street VARCHAR(30) DEFAULT NULL,
  	n_street INT (10) DEFAULT NULL,
 	phone INT(15) DEFAULT NULL,
-	email VARCHAR(60),
-	site_web VARCHAR(25),
+	email VARCHAR(60) UNIQUE,
+	site_web VARCHAR(25) UNIQUE,
   CONSTRAINT real_states_pk PRIMARY KEY (id)
 );
 
@@ -45,7 +45,7 @@ CREATE TABLE owners(
     neighborhood VARCHAR(30) DEFAULT NULL,
     street VARCHAR(30) DEFAULT NULL,
     n_street INT (10) DEFAULT NULL,
-    email VARCHAR(60),
+    email VARCHAR(60) UNIQUE,
   CONSTRAINT owners_pk PRIMARY KEY (id)
 );
 

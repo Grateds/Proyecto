@@ -16,20 +16,19 @@ public class OwnerSpec {
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development_test", "root", "root");
         Base.openTransaction();
     }
-
+    
     @After
     public void after(){
         Base.rollbackTransaction();
         Base.close();
     }
-
+    
     @Test
     public void shouldValidateMandatoryFields(){
         Owner owner = new Owner();
 
         //check errors
         the(owner).shouldNotBe("valid");
-
         the(owner.errors().get("first_name")).shouldBeEqual("Nombre");
         the(owner.errors().get("last_name")).shouldBeEqual("Apellido");
         the(owner.errors().get("email")).shouldBeEqual("Email");
@@ -38,7 +37,6 @@ public class OwnerSpec {
         owner.set("first_name","Jose");
         owner.set("last_name","Perez");
         owner.set("email","jperez@hotmail.com");
-        owner.saveIt();
         
         the(owner).shouldBe("valid");
     }

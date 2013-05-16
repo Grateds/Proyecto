@@ -13,17 +13,19 @@ public class Inmo {
         
         /* Usuario */
         crudUser e = new crudUser();
-        e.create("user@email.com", "John", "Doe");      
+        e.create("user@email.com", "John", "Doe");   
         
-        crudOwner o = new crudOwner(); 
-        /* Crear un dueño */
+        
+         /* Dueño */
+        crudOwner o = new crudOwner();     
         o.create("Debora","Meltrozo","San Salvador de Jujuy","Santa Rosa","Sobremonte","153","deborame@outlook.com");
         
-        /*Elimina Dueño*/
+        /*Delete Dueño*/
         //o.delete("1");
         
-        /*Modifica un dueño */
+        /*Update un dueño */
         //o.update("1");
+       
        
         /* Segundo crear un inmueble */
         crudBuilding b = new crudBuilding();

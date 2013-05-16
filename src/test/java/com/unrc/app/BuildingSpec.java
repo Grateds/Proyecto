@@ -20,7 +20,7 @@ public class BuildingSpec {
 
     @After
     public void after(){
-        Base.rollbackTransaction();
+    	Base.rollbackTransaction();
         Base.close();
     }
 
@@ -54,6 +54,35 @@ public class BuildingSpec {
         
         //all is good:
         the(building).shouldBe("valid");
+    }
+    
+    @Test
+    public void shouldSaveRecord(){
+        Owner owner = new Owner();
+    	City city = new City();
+    	
+    	city.set("name", "space").saveIt();
         
+    	owner.set("first_name","Jose");
+        owner.set("last_name","Palmiro");
+        owner.set("email","jpalmiro@hotmail.com");
+        owner.saveIt();
+        
+        Building building = new Building();
+        
+        building.set("type","land");
+        building.set("owner_id",owner.getId());
+        building.set("city_id",city.getId());
+        building.set("neighborhood","Santa Rosa");
+        building.set("street","Sobremonte");
+        building.set("n_street","1789");
+        building.set("description","Gran Edificio");
+        building.set("price","300.000");
+        building.set("operation","venta");
+        building.saveIt();
+        
+        Building b = Building.findFirst("owner_id = ?", owner.getId());
+        the(building.get("id")).shouldBeEqual(b.get("id"));
     }
 }
+

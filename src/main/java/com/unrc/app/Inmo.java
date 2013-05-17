@@ -16,6 +16,7 @@ public class Inmo {
 //        
 //        crudOwner o = new crudOwner();     
 //        o.create("Debora","Meltrozo","2","Santa Rosa","Sobremonte","153","deborame@outlook.com");
+//        o.update();
        
        
         /* Segundo crear un inmueble */

@@ -1,6 +1,6 @@
 package com.unrc.app;
 
-import static org.javalite.test.jspec.JSpec.the;
+import static org.javalite.test.jspec.JSpec.*;
 
 import org.javalite.activejdbc.Base;
 import org.junit.After;

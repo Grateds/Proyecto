@@ -11,27 +11,20 @@ public class crudUser {
 	/** Pos: Created user **/
 	public void create(String email, String first_name, String last_name){
 		User u = new User(); 		
-        u.set("email", email).set("first_name", first_name).set("last_name", last_name).saveIt();
+        	u.set("email", email).set("first_name", first_name).set("last_name", last_name).saveIt();
 	}//end create
 	
 	/** Pre: user.exist() = true **/
 	/** Pos: Deleted user **/
 	public void delete(String id){   
-    	User u = User.findFirst("id = ?", id);
-        u.delete();
-    }//end delete
+    		User u = User.findFirst("id = ?", id);
+        	u.delete();
+    	}//end delete
 
 	/** Pre: user.exist() = true **/
 	/** Pos: Updated user **/
 	public void update(){   
     	
-    }//end update
+    	}//end update
 
-	//
-	// Accessor methods
-	//
-
-	//
-	// Other methods
-	//
 }

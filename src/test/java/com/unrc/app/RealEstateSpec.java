@@ -1,6 +1,6 @@
 package com.unrc.app;
 
-import static org.javalite.test.jspec.JSpec.the;
+import static org.javalite.test.jspec.JSpec.*;
 
 import org.javalite.activejdbc.Base;
 import org.junit.After;
@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.unrc.app.models.RealEstate;
+import com.unrc.app.models.City;
 
 @SuppressWarnings("unused")
 public class RealEstateSpec {
@@ -25,15 +26,41 @@ public class RealEstateSpec {
 
     @Test
     public void shouldValidateMandatoryFields(){
-/*
-        RealEstate realEstate = new RealEstate();
+
+        RealEstate realestate = new RealEstate();
 
         //check errors
-        the(realEstate).shouldNotBe("valid");
-        the(realEstate.errors().get("name")).shouldBeEqual("value is missing");
-        the(realEstate.errors().get("phone")).shouldBeEqual("value is missing");
-        
+        the(realestate).shouldNotBe("valid");
+        the(realestate.errors().get("name")).shouldBeEqual("value is missing");
+        the(realestate.errors().get("phone")).shouldBeEqual("value is missing");
+        the(realestate.errors().get("email")).shouldBeEqual("value is missing");
+                
+        realestate.set("name","Inmobiliaria Los Ladrones");
+        realestate.set("phone","0358154186763");
+        realestate.set("email","inmoll@gmail.com");
+              
         //all is good:
-        the(realEstate).shouldBe("valid");*/
+        the(realestate).shouldBe("valid");
+    }
+
+    @Test
+    public void shouldSaveRecord(){
+        RealEstate realestate = new RealEstate();
+        City city = new City();
+        
+        city.set("name", "space").saveIt();
+        
+        realestate.set("name","Inmobiliaria Los Ladrones");
+        realestate.set("phone","0358154186763");
+        realestate.set("neighborhood", "Barrio Balaco");
+        realestate.set("street", "Sobremonte");
+        realestate.set("n_street", "789");
+        realestate.set("email","inmoll@hotmail.com");
+        realestate.set("site_web","www.inmoll.com.ar");
+        realestate.set("city_id",city.getId());
+        realestate.saveIt();
+        
+        RealEstate rs = RealEstate.findFirst("name = ?", "Inmobiliaria Los Ladrones");
+        the(realestate.get("id")).shouldBeEqual(rs.get("id"));
     }
 }

@@ -13,14 +13,14 @@ public class Inmo {
         
 //       crudUser e = new crudUser();
 //       e.create("user@email.com", "John", "Doe");   
-//       
-//       /*Crea Dueño - Modifica Dueño*/
+//        
+//       /*Create Owner - Update Owner*/
 //       crudOwner o = new crudOwner();     
 //       o.create("Debora","Meltrozo","2","Santa Rosa","Sobremonte","153","deborame@outlook.com");
 //       o.update("1","Elba","Nanon","","","Sobremonte","153","");   
                 
        
-        /* Segundo crear un inmueble */
+        /*Create Building - Update Building*/
 //      crudBuilding b = new crudBuilding();
 //      b.create("land","2","4","Banda Norte","Marcelo T. Alvear","132","Fea","300.000","venta");
 //      b.update("1", "", "1", "10", "", "Lavalle", "", "", "200000", "");

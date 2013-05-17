@@ -19,16 +19,16 @@ public class crudBuilding {
 		b.set("price", price);
 		b.set("operation", operation);
 		b.set("owner_id", owner_id);
-        b.set("city_id", city_id);
-        b.saveIt();
+        	b.set("city_id", city_id);
+        	b.saveIt();
 	}//end create
 	
 	/** Pre: building.exist() = true **/
 	/** Pos: Deleted building **/
 	public void delete(String id){   
-    	Building b = Building.findFirst("id = ?", id);
-	    b.deleteCascade();
-    }//end delete
+    		Building b = Building.findFirst("id = ?", id);
+	    	b.deleteCascade();
+    	}//end delete
 
 	/** Pre: building.exist() = true **/
 	/** Pos: Updated building **/

@@ -43,7 +43,7 @@ public class RealEstateSpec {
         the(realestate).shouldBe("valid");
     }
 
-    @Test
+  /*  @Test
     public void shouldSaveRecord(){
         RealEstate realestate = new RealEstate();
         City city = new City();
@@ -62,5 +62,5 @@ public class RealEstateSpec {
         
         RealEstate rs = RealEstate.findFirst("name = ?", "Inmobiliaria Los Ladrones");
         the(realestate.get("id")).shouldBeEqual(rs.get("id"));
-    }
+    }*/
 }

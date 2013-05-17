@@ -14,15 +14,13 @@ public class Inmo {
 //       crudUser e = new crudUser();
 //       e.create("user@email.com", "John", "Doe");   
        
-//       /*Create Owner - Update Owner*/
 //       crudOwner o = new crudOwner();     
 //       o.create("Debora","Meltrozo","2","Santa Rosa","Sobremonte","153","deborame@outlook.com");
 //       o.update("1","Elba","Nanon","","","Sobremonte","153","");                  
        
-//      /*Create Building - Update Building*/
-//      crudBuilding b = new crudBuilding();
-//      b.create("land","2","4","Banda Norte","Marcelo T. Alvear","132","Fea","300.000","venta");
-//      b.update("1", "", "1", "10", "", "Lavalle", "", "", "200000", "");
+      crudBuilding b = new crudBuilding();
+      b.create("land","2","4","Banda Norte","Marcelo T. Alvear","132","Fea","300.000","venta");
+      b.update("1", "farm", "1", "10", "Brasca", "Lavalle", "5000", "", "200000", "alquiler");
         
         System.out.println( "Hello World!" );
     }

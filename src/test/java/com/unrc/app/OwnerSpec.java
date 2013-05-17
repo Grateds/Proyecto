@@ -58,6 +58,6 @@ public class OwnerSpec {
         owner.saveIt();
         
         Owner o = Owner.findFirst("first_name = ?", "Jose");
-        the(owner.get("id")).shouldBeEqual(o.get("id"));
+        the(owner.getId()).shouldBeEqual(o.getId());
     }
 }

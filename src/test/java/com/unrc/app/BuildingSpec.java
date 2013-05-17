@@ -82,7 +82,7 @@ public class BuildingSpec {
         building.saveIt();
         
         Building b = Building.findFirst("owner_id = ?", owner.getId());
-        the(building.get("id")).shouldBeEqual(b.get("id"));
+        the(building.getId()).shouldBeEqual(b.getId());
     }
 }
 

@@ -44,6 +44,6 @@ public class CitySpec {
     	city.set("name", "space").saveIt();
     	
         City c = City.findFirst("name = ?", "space");
-        the(city.get("id")).shouldBeEqual(c.get("id"));
+        the(city.getId()).shouldBeEqual(c.getId());
     }
 }

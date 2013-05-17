@@ -23,8 +23,6 @@ public class crudUser {
 
 	/** Pre: user.exist() = true **/
 	/** Pos: Updated user **/
-	public void update(){   
-    	
+	public void update(){   	
     	}//end update
-
 }

@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.unrc.app.models.RealEstate;
+import com.unrc.app.models.City;
 
 @SuppressWarnings("unused")
 public class RealEstateSpec {

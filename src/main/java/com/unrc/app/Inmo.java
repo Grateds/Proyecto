@@ -18,9 +18,9 @@ public class Inmo {
 //       o.create("Debora","Meltrozo","2","Santa Rosa","Sobremonte","153","deborame@outlook.com");
 //       o.update("1","Elba","Nanon","","","Sobremonte","153","");                  
        
-      crudBuilding b = new crudBuilding();
-      b.create("land","2","4","Banda Norte","Marcelo T. Alvear","132","Fea","300.000","venta");
-      b.update("1", "farm", "1", "10", "Brasca", "Lavalle", "5000", "", "200000", "alquiler");
+        crudBuilding b = new crudBuilding();
+        b.create("land","2","4","Banda Norte","Marcelo T. Alvear","132","Fea","300.000","venta");
+        b.update("1", "farm", "1", "10", "Brasca", "Lavalle", "5000", "", "200000", "alquiler");
         
         System.out.println( "Hello World!" );
     }

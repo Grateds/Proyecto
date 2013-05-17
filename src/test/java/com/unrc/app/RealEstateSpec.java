@@ -10,7 +10,6 @@ import org.junit.Test;
 import com.unrc.app.models.RealEstate;
 import com.unrc.app.models.City;
 
-@SuppressWarnings("unused")
 public class RealEstateSpec {
 	@Before
     public void before(){
@@ -33,11 +32,9 @@ public class RealEstateSpec {
         the(realestate).shouldNotBe("valid");
         the(realestate.errors().get("name")).shouldBeEqual("value is missing");
         the(realestate.errors().get("phone")).shouldBeEqual("value is missing");
-        the(realestate.errors().get("email")).shouldBeEqual("value is missing");
                 
         realestate.set("name","Inmobiliaria Los Ladrones");
-        realestate.set("phone","0358154186763");
-        realestate.set("email","inmoll@gmail.com");
+        realestate.set("phone","0358154186");
               
         //all is good:
         the(realestate).shouldBe("valid");
@@ -51,7 +48,7 @@ public class RealEstateSpec {
         city.set("name", "space").saveIt();
         
         realestate.set("name","Inmobiliaria Los Ladrones");
-        realestate.set("phone","0358154186763");
+        realestate.set("phone","0358154186");
         realestate.set("neighborhood", "Barrio Balaco");
         realestate.set("street", "Sobremonte");
         realestate.set("n_street", "789");
@@ -61,6 +58,6 @@ public class RealEstateSpec {
         realestate.saveIt();
         
         RealEstate rs = RealEstate.findFirst("name = ?", "Inmobiliaria Los Ladrones");
-        the(realestate.get("id")).shouldBeEqual(rs.get("id"));
+        the(realestate.getId()).shouldBeEqual(rs.getId());
     }
 }

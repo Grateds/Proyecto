@@ -21,12 +21,14 @@ public class crudOwner {
                 o.saveIt();
 	}//end create
         
+        /** Pre: owner.exist() = true **/
+	/** Pos: Delete Owner **/
    	public void delete(String id){   
    		Owner o = Owner.findFirst("id = ?", id);
                 o.deleteCascade();
    	}//end delete
         
-   	/** Pre: owner.exist() = true= true **/
+   	/** Pre: owner.exist() = true **/
 	/** Pos: Updated Owner **/
    	public void update(String id, String first_name, String last_name, String city_id, String neighborhood, String street, String n_street, String email){             
 		if (first_name != "")

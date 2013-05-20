@@ -28,22 +28,5 @@ public class crudOwner {
         	o.deleteCascade();
    	}//end delete
         
-   	/** Pre: owner.exist() = true **/
-	/** Pos: Updated Owner **/
-   	public void update(String id, String first_name, String last_name, String city_id, String neighborhood, String street, String n_street, String email){             
-		if (first_name != "")
-			Owner.update("first_name = ?", "id like ?", first_name, "%"+id+"%");
-		if (last_name != "")
-			Owner.update("last_name = ?", "id like ?", last_name, "%"+id+"%");
-		if (city_id != "")
-			Owner.update("city_id = ?", "id like ?", city_id, "%"+id+"%");
-		if (neighborhood != "")
-			Owner.update("neighborhood = ?", "id like ?", neighborhood, "%"+id+"%");
-		if (street != "")
-			Owner.update("street = ?", "id like ?", street, "%"+id+"%");
-		if (n_street != "")
-			Owner.update("n_street = ?", "id like ?", n_street, "%"+id+"%");
-		if (email != "")
-			Owner.update("email = ?", "id like ?", email, "%"+id+"%");	
-	}//end update
+  
 }

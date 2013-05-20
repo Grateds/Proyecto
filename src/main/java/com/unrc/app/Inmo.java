@@ -16,7 +16,7 @@ public class Inmo {
        
 //       crudOwner o = new crudOwner();     
 //       o.create("Debora","Meltrozo","2","Santa Rosa","Sobremonte","153","deborame@outlook.com");
-//       o.update("1","Elba","Nanon","","","Sobremonte","153","");                  
+//       o.update(...);                  
        
         crudBuilding b = new crudBuilding();
         b.create("land","2","4","Banda Norte","Marcelo T. Alvear","132","Fea","300.000","venta");

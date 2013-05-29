@@ -96,7 +96,7 @@ public class Inmoweb {
     			 "<input type='reset' value='Reset'></form>";
     			
     		}
-    	});
+    	}); //end get adduser
     	
         Spark.post(new Route("/adduser/") {
     		@Override
@@ -110,7 +110,7 @@ public class Inmoweb {
                 return "Usuario registrado exitosamente.!";
 
     		}
-    	});
+    	}); //end post adduser
         
         Spark.get(new Route("/addowner/") {
     		@Override
@@ -121,18 +121,18 @@ public class Inmoweb {
     			return ""+
     			"<form method='POST' action='/addowner/'>"+
 
-    				"first_name: <input name='first_name'><P>"+
-    				"last_name:  <input name='last_name'><P>"+
-                                "city_id: <input name='city_id'><P>"+
-                                "neighborhood: <input name='neighborhood'><P>"+ 
-                                "street: <input name='street'><P>"+ 
-                                "n_street: <input name='n_street'><P>"+ 
-                                "email:   "+"<input name='email'><P>"+
+    				"First name: <input name='first_name'><P>"+
+    				"Last name:  <input name='last_name'><P>"+
+                                "City id: <input name='city_id'><P>"+
+                                "Neighborhood: <input name='neighborhood'><P>"+ 
+                                "Street: <input name='street'><P>"+ 
+                                "Nº Street: <input name='n_street'><P>"+ 
+                                "Email:   "+"<input name='email'><P>"+
                                 
     			 "<input type='submit' value='Add'>"+
     			 "<input type='reset' value='Reset'></form>";	
     		}
-    	});
+    	}); //end get addowner
         
         Spark.post(new Route("/addowner/") {
     		@Override
@@ -146,6 +146,6 @@ public class Inmoweb {
                 return "Propietario registrado exitosamente.!";
 
     		}
-    	});
+    	}); //end post addowner
     }
 }

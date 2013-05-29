@@ -24,7 +24,7 @@ public class Inmoweb {
                 "<body background = 'http://img190.imageshack.us/img190/7979/wwwplanillasesimitacion.jpg'>"+
                 "<center>    <h1>Inmobiliaria Web</h1>" +
                 "    <a href='users/2'>Users</a><br>"+
-                "    <a href='owners/3'>Owners</a><br>"+
+                "    <a href='owners/1'>Owners</a><br>"+
                 "    <a href='realestates/1'>RealEstates</a><br>"+
                 "    <a href='adduser/'>Add User</a></center>"+
                 "</body>" +
@@ -48,11 +48,11 @@ public class Inmoweb {
     		}
         });
     	
-         Spark.get(new Route("/owner/:id") {
+         Spark.get(new Route("/owners/:id") {
     		@Override
     		public Object handle(Request request, Response response) {
     			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
-    			Owner  owner =  Owner.findFirst("id = ?", request.params(":id"));
+    			Owner  owner = Owner.findFirst("id = ?", request.params(":id"));
     			Base.close();
         
     			if (owner != null ){

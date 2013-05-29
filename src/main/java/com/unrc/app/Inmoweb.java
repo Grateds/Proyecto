@@ -8,7 +8,7 @@ import com.unrc.app.models.*;
 public class Inmoweb {
     public static void main( String[] args ) {
         
-    	//http://0.0.0.0:4567/
+        //http://0.0.0.0:4567/
         Spark.get(new Route("/"){
             @Override
             public Object handle(Request request, Response response) {
@@ -24,9 +24,10 @@ public class Inmoweb {
                 "<body background = 'http://img190.imageshack.us/img190/7979/wwwplanillasesimitacion.jpg'>"+
                 "<center>    <h1>Inmobiliaria Web</h1>" +
                 "    <a href='users/2'>Users</a><br>"+
+                "    <a href='owners/3'>Owners</a><br>"+
                 "    <a href='realestates/1'>RealEstates</a><br>"+
-                "	<a href='adduser/'>Add User</a></center>"+
-                "  </body>" +
+                "    <a href='adduser/'>Add User</a></center>"+
+                "</body>" +
                 "</html>";
             }
         });
@@ -47,6 +48,22 @@ public class Inmoweb {
     		}
         });
     	
+         Spark.get(new Route("/owner/:id") {
+    		@Override
+    		public Object handle(Request request, Response response) {
+    			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+    			Owner  owner =  Owner.findFirst("id = ?", request.params(":id"));
+    			Base.close();
+        
+    			if (owner != null ){
+    				return "Name: "+owner.get("first_name");
+    			}else{
+    				response.status(404);
+    				return "Owner not found";
+    			}
+    		}
+    	}); //end Owner
+
     	Spark.get(new Route("/realestates/:id") {
     		@Override
     		public Object handle(Request request, Response response) {

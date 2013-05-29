@@ -52,7 +52,7 @@ public class Inmoweb {
     		@Override
     		public Object handle(Request request, Response response) {
     			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
-    			Owner  owner = Owner.findFirst("id = ?", request.params(":id"));
+    			Owner owner = Owner.findFirst("id = ?", request.params(":id"));
     			Base.close();
         
     			if (owner != null ){

@@ -46,7 +46,7 @@ public class Inmoweb {
     				return "User not found";
     			}
     		}
-        });
+        }); //end User
     	
          Spark.get(new Route("/owners/:id") {
     		@Override
@@ -78,7 +78,7 @@ public class Inmoweb {
     				return "Real Estate not found";
     			}
     		}
-    	});
+    	}); //end Real Estate
     	
     	Spark.get(new Route("/adduser/") {
     		@Override
@@ -95,7 +95,7 @@ public class Inmoweb {
     			 "<input type='reset' value='Reset'></form>";
     			
     		}
-    	});
+    	}); 
     	
     	Spark.post(new Route("/adduser/") {
     		@Override

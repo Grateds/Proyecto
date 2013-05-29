@@ -121,13 +121,13 @@ public class Inmoweb {
     			return ""+
     			"<form method='POST' action='/addowner/'>"+
 
-    				"First name: <input name='first_name'><P>"+
-    				"Last name:  <input name='last_name'><P>"+
+    				"First Name: <input name='first_name'><P>"+
+    				"Last Name:  <input name='last_name'><P>"+
                                 "City id: <input name='city_id'><P>"+
                                 "Neighborhood: <input name='neighborhood'><P>"+ 
                                 "Street: <input name='street'><P>"+ 
-                                "Nº Street: <input name='n_street'><P>"+ 
-                                "Email:   "+"<input name='email'><P>"+
+                                "Number Street: <input name='n_street'><P>"+ 
+                                "Email:   "+"<input name='email'VALUE='someone@example.com'><P>"+ 
                                 
     			 "<input type='submit' value='Add'>"+
     			 "<input type='reset' value='Reset'></form>";	

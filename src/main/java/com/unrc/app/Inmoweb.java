@@ -26,7 +26,8 @@ public class Inmoweb {
                 "    <a href='users/2'>Users</a><br>"+
                 "    <a href='owners/1'>Owners</a><br>"+
                 "    <a href='realestates/1'>RealEstates</a><br>"+
-                "    <a href='adduser/'>Add User</a></center>"+
+                "    <a href='adduser/'>Add User</a></br>"+
+                "    <a href='addowner/'>Add Owner</a></center>"+        
                 "</body>" +
                 "</html>";
             }
@@ -52,7 +53,7 @@ public class Inmoweb {
     		@Override
     		public Object handle(Request request, Response response) {
     			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
-    			Owner owner = Owner.findFirst("id = ?", request.params(":id"));
+    			Owner  owner = Owner.findFirst("id = ?", request.params(":id"));
     			Base.close();
         
     			if (owner != null ){
@@ -95,9 +96,9 @@ public class Inmoweb {
     			 "<input type='reset' value='Reset'></form>";
     			
     		}
-    	}); 
+    	});
     	
-    	Spark.post(new Route("/adduser/") {
+        Spark.post(new Route("/adduser/") {
     		@Override
     		public Object handle(Request request, Response response) {
                 
@@ -106,10 +107,45 @@ public class Inmoweb {
     			u.create(request.queryParams("email"), request.queryParams("fname"), request.queryParams("lname"));
     			Base.close();
     		
-                return "Usuario registrado exitosamente";
+                return "Usuario registrado exitosamente.!";
 
     		}
     	});
+        
+        Spark.get(new Route("/addowner/") {
+    		@Override
+    		public Object handle(Request request, Response response) {	
+                    
+                response.type("text/html");
+    			
+    			return ""+
+    			"<form method='POST' action='/addowner/'>"+
 
+    				"first_name: <input name='first_name'><P>"+
+    				"last_name:  <input name='last_name'><P>"+
+                                "city_id: <input name='city_id'><P>"+
+                                "neighborhood: <input name='neighborhood'><P>"+ 
+                                "street: <input name='street'><P>"+ 
+                                "n_street: <input name='n_street'><P>"+ 
+                                "email:   "+"<input name='email'><P>"+
+                                
+    			 "<input type='submit' value='Add'>"+
+    			 "<input type='reset' value='Reset'></form>";	
+    		}
+    	});
+        
+        Spark.post(new Route("/addowner/") {
+    		@Override
+    		public Object handle(Request request, Response response) {
+                
+    			crudOwner o = new crudOwner();
+    			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+    			o.create(request.queryParams("first_name"), request.queryParams("last_name"), request.queryParams("city_id"),request.queryParams("neighborhood"),request.queryParams("street"),request.queryParams("n_street"),request.queryParams("email"));			
+                        Base.close();
+    		
+                return "Propietario registrado exitosamente.!";
+
+    		}
+    	});
     }
 }

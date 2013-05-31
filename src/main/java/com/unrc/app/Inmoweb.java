@@ -1,5 +1,7 @@
 package com.unrc.app;
 
+import java.util.List;
+
 import org.javalite.activejdbc.Base;
 
 import spark.*;
@@ -8,7 +10,7 @@ import com.unrc.app.models.*;
 public class Inmoweb {
     public static void main( String[] args ) {
         
-        //http://0.0.0.0:4567/
+        //http://0.0*.0.0:4567/
         Spark.get(new Route("/"){
             @Override
             public Object handle(Request request, Response response) {
@@ -24,7 +26,8 @@ public class Inmoweb {
                 "<body background = 'http://img190.imageshack.us/img190/7979/wwwplanillasesimitacion.jpg'>"+
                 "<center>    <h1>Inmobiliaria Web</h1>" +
                 "    <a href='users/2'>Users</a><br>"+
-                "    <a href='owners/1'>Owners</a><br>"+
+                "    <a href='owner/1'>Owner</a><br>"+
+                "    <a href='owners/'>ListOwners</a><br>"+
                 "    <a href='realestates/1'>RealEstates</a><br>"+
                 "    <a href='adduser/'>Add User</a></br>"+
                 "    <a href='addowner/'>Add Owner</a></center>"+        
@@ -49,7 +52,7 @@ public class Inmoweb {
     		}
         }); //end User
     	
-         Spark.get(new Route("/owners/:id") {
+         Spark.get(new Route("/owner/:id") {
     		@Override
     		public Object handle(Request request, Response response) {
     			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
@@ -64,7 +67,30 @@ public class Inmoweb {
     			}
     		}
     	}); //end Owner
-
+         
+         Spark.get(new Route("/owners/") {
+     		@Override
+     		public Object handle(Request request, Response response) {
+     			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+     			List<Owner> owners = Owner.findAll();
+     			
+     			Owner o = owners.get(0);
+     			Base.close();
+     			
+     			return (o);
+     			//System.out.println(o.size());
+         /*
+     			if (o.isEmpty()){
+     				//System.out.println(o.get(1));
+     				
+     				return "lista vacia";
+     			}else{
+     				response.status(404);
+     				return "Owner not found";
+     			}
+     		*/}
+     	});
+         
     	Spark.get(new Route("/realestates/:id") {
     		@Override
     		public Object handle(Request request, Response response) {

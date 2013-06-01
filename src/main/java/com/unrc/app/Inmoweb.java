@@ -6,6 +6,17 @@ import spark.*;
 import com.unrc.app.models.*;
 
 public class Inmoweb {
+    public static String optionCity(){
+        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+        List<City> cities = City.findAll();
+        String ret = "<option value='' disabled selected style='display:none;'>Selecciona ciudad</option><br>";
+        for(int i=0; i < cities.size(); i++){
+            City c = cities.get(i);
+            ret = ret+"<option value="+c.get("id")+">"+c.get("name")+"</option><br>";
+        }   
+     	Base.close();  			
+     	return ret;
+    }
     public static void main( String[] args ) {
         
         Spark.get(new Route("/"){
@@ -160,21 +171,16 @@ public class Inmoweb {
     			"<DOCTYPE html>" +
     		    "<html>" +
     		    "	<head>" +
+                    "           <meta charset=\"utf-8\">"+
     		    "		<title>Agregar Usuario</title>"+
     		    "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
     		    "   </head>" +
     		    "	<body background = 'http://static.giantbomb.com/uploads/original/3/35099/2183980-fez8.jpg'>"+
-    		    "   	<center><h1>Formulario</h1>" +     			
+    		    "   	<center><h1>Agregar usuario</h1>" +     			
     			"		<form method='POST' action='/addowner/'>"+
     			"			<p><input name='first_name' placeholder='Nombre'></p>"+
     			"			<p><input name='last_name' placeholder='Apellido'></p>"+
-                "			<input name='city_id' placeholder='Ciudad'>" +
-                "			<SELECT NAME='selCombo' SIZE=1 onChange='javascript:alert('prueba');'>"+ 
-                "				<OPTION VALUE='link pagina 1'>Seleccionar</OPTION>"+
-                "				<OPTION VALUE='link pagina 2'>Ciudad 1</OPTION>"+
-                "				<OPTION VALUE='link pagina 3'>Ciudad 2</OPTION>"+
-                "				<OPTION VALUE='link pagina 4'>Ciudad 3</OPTION> "+
-                "				<OPTION VALUE='link pagina 4'>..</OPTION> "+
+                "			<SELECT NAME='city_id' SIZE=1 onChange='javascript:alert('prueba');'>"+ optionCity()+
                 "			</SELECT>"+
                 "			<p><input name='neighborhood' placeholder='Barrio'></p>"+ 
                 "			<p><input name='street' placeholder='Calle'>"+ 

@@ -71,24 +71,18 @@ public class Inmoweb {
          Spark.get(new Route("/owners/") {
      		@Override
      		public Object handle(Request request, Response response) {
-     			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+                    response.type("text/html");
+                    Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
      			List<Owner> owners = Owner.findAll();
      			
-     			Owner o = owners.get(0);
-     			Base.close();
-     			
-     			return (o);
-     			//System.out.println(o.size());
-         /*
-     			if (o.isEmpty()){
-     				//System.out.println(o.get(1));
-     				
-     				return "lista vacia";
-     			}else{
-     				response.status(404);
-     				return "Owner not found";
-     			}
-     		*/}
+                        String ret = "";
+     			for(int i=0; i < owners.size(); i++){
+                            Owner o = owners.get(i);
+                            ret = ret+"<b>First name:</b> "+o.get("first_name")+", <b>Last name:</b> "+o.get("last_name")+", <b>Email:</b> "+o.get("email")+"<br><br>";
+                        }   
+     			Base.close();  			
+     			return ret;
+                }
      	});
          
     	Spark.get(new Route("/realestates/:id") {

@@ -259,7 +259,7 @@ public class Inmoweb {
     		    "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
     		    "   </head>" +
     		    "	<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
-    		    "   	<center><h1>Agregar dueño</h1>" +     			
+    		    "   	<center><h1>Formulario</h1>" +     			
     			"		<form method='POST' action='/addowner/'>"+
     			"			<p><input name='first_name' placeholder='Nombre'></p>"+
     			"			<p><input name='last_name' placeholder='Apellido'></p>"+

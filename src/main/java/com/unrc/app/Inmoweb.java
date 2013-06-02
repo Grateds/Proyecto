@@ -279,13 +279,24 @@ public class Inmoweb {
         Spark.post(new Route("/addowner/") {
     		@Override
     		public Object handle(Request request, Response response) {
-                
+                        response.type("text/html");
     			crudOwner o = new crudOwner();
     			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
     			o.create(request.queryParams("first_name"), request.queryParams("last_name"), request.queryParams("city_id"),request.queryParams("neighborhood"),request.queryParams("street"),request.queryParams("n_street"),request.queryParams("email"));			
-                Base.close();
+                        Base.close();
     		
-                return "Propietario registrado exitosamente.!";
+                return 
+                "<DOCTYPE html>" +
+            	"<html>" +
+            	"	<head>" +
+            	"		<title>Agregar Dueño</title>"+
+                "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
+                "       </head>" +
+                "	<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
+                "		<h1>Due&ntilde;o registrado exitosamente</h1>" +
+                "		<a href='/'>Inicio</a>" +
+                "       </body>" +
+                "</html>";
             }
     	});
         

@@ -32,21 +32,21 @@ public class Inmoweb {
                 "		<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1'>" +
                 "		<title>Inmobiliaro Web</title>"+
                 "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
-                "   </head>" +
+                "       </head>" +
                 "	<body background = 'http://static.giantbomb.com/uploads/original/3/35099/2183980-fez8.jpg'>"+
                 "		<center>    <h1>Inmobiliario Web</h1>" +
                 "   		<a href='user/2'>User(Building..)</a><br>"+
                 "   		</a><br>"+
                 "    		<a href='owner/1'>Owner(Building..)</a><br>"+
                 "   		</a><br>"+
-                "           <a href='users/'>ListUsers(Building..)</a><br>"+
+                "               <a href='users/'>ListUsers(Building..)</a><br>"+
                 "   		</a><br>"+
                 "    		<a href='owners/'>ListOwners(Building..)</a><br>"+
                 "   		</a><br>"+       
                 "    		<a href='realestates/1'>RealEstates(Building..)</a><br>"+
                 "   		</a><br>"+
                 "    		<a href='adduser/'>Agregar Usuario</a><br>"+
-                "           </a><br>"+
+                "               </a><br>"+
                 "    		<a href='addowner/'>Agregar Due&ntilde;o</a><br>" +
                 "		</center>"+        
                 "	</body>" +
@@ -232,3 +232,5 @@ public class Inmoweb {
     	}); 
     }
 }
+
+

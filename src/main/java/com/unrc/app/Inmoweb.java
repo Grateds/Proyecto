@@ -62,11 +62,13 @@ public class Inmoweb {
                 "							<li><a href='/users/'>Listar Usuarios</a></li>"+
                 "							<li><a href='/owners/'>Listar Dueños</a></li>"+
                 "							<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-                "							<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
+                "							<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+  
                 "							<li class='divider'></li>"+
                 "							<li class='nav-header'>Other thing</li>"+
-                "							<li><a href='./separeated-link.html'>Thing 1</a></li>"+
-                "							<li><a href='./1-more-separated.html'>Thing 2</a></li>"+
+                "    		                                        <li><a href='adduser/'>Agregar Usuario</a></li>"+
+                "    		                                        <li><a href='addowner/'>Agregar Dueño</a></li>"+
+                "							<li class='divider'></li>"+
+                "							<li class='nav-header'>Other thing</li>"+
                 "						</ul>"+
                 "					</li>"+
                 "				</ul>"+

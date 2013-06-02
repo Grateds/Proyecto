@@ -39,14 +39,14 @@ public class Inmoweb {
                 "   		</a><br>"+
                 "    		<a href='owner/1'>Owner(Building..)</a><br>"+
                 "   		</a><br>"+
-                "               <a href='users/'>ListUsers(Building..)</a><br>"+
+                "           <a href='users/'>ListUsers(Building..)</a><br>"+
                 "   		</a><br>"+
                 "    		<a href='owners/'>ListOwners(Building..)</a><br>"+
                 "   		</a><br>"+       
                 "    		<a href='realestates/1'>RealEstates(Building..)</a><br>"+
                 "   		</a><br>"+
                 "    		<a href='adduser/'>Agregar Usuario</a><br>"+
-                "               </a><br>"+
+                "           </a><br>"+
                 "    		<a href='addowner/'>Agregar Due&ntilde;o</a><br>" +
                 "		</center>"+        
                 "	</body>" +

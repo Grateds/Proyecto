@@ -9,11 +9,12 @@ public class Inmoweb {
     public static String optionCity(){
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         List<City> cities = City.findAll();
-        String ret = "<option value='' disabled selected style='display:none;'>Selecciona ciudad</option><br>";
+        String ret = "<SELECT NAME='city_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='' disabled selected style='display:none;'>Selecciona ciudad</option><br>";
         for(int i=0; i < cities.size(); i++){
             City c = cities.get(i);
             ret = ret+"<option value="+c.get("id")+">"+c.get("name")+"</option><br>";
-        }   
+        }
+        ret= ret + "</SELECT>";
      	Base.close();  			
      	return ret;
     }
@@ -176,12 +177,11 @@ public class Inmoweb {
     		    "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
     		    "   </head>" +
     		    "	<body background = 'http://static.giantbomb.com/uploads/original/3/35099/2183980-fez8.jpg'>"+
-    		    "   	<center><h1>Agregar usuario</h1>" +     			
+    		    "   	<center><h1>Agregar dueño</h1>" +     			
     			"		<form method='POST' action='/addowner/'>"+
     			"			<p><input name='first_name' placeholder='Nombre'></p>"+
     			"			<p><input name='last_name' placeholder='Apellido'></p>"+
-                "			<SELECT NAME='city_id' SIZE=1 onChange='javascript:alert('prueba');'>"+ optionCity()+
-                "			</SELECT>"+
+                			optionCity()+
                 "			<p><input name='neighborhood' placeholder='Barrio'></p>"+ 
                 "			<p><input name='street' placeholder='Calle'>"+ 
                 "			<p><input name='n_street' placeholder='Numero'></p>"+ 

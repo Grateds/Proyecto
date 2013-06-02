@@ -15,7 +15,7 @@ public class Inmoweb {
             ret = ret+"<option value="+c.get("id")+">"+c.get("name")+"</option><br>";
         }
         ret= ret + "</SELECT>";
-     	Base.close();  			
+         Base.close();  			
      	return ret;
     }
     public static void main( String[] args ) {
@@ -35,8 +35,9 @@ public class Inmoweb {
                 "   </head>" +
                 "	<body background = 'http://static.giantbomb.com/uploads/original/3/35099/2183980-fez8.jpg'>"+
                 "		<center>    <h1>Inmobiliario Web</h1>" +
-                "   		<a href='users/2'>Users(Building..)</a><br>"+
+                "   		<a href='user/2'>User(Building..)</a><br>"+
                 "    		<a href='owner/1'>Owner(Building..)</a><br>"+
+                "               <a href='users/'>ListUsers(Building..)</a><br>"+
                 "    		<a href='owners/'>ListOwners(Building..)</a><br>"+
                 "    		<a href='realestates/1'>RealEstates(Building..)</a><br>"+
                 "    		<a href='adduser/'>Agregar Usuario</a><br>"+
@@ -47,7 +48,7 @@ public class Inmoweb {
             }
         });
         
-    	Spark.get(new Route("/users/:id") {
+    	Spark.get(new Route("/user/:id") {
     		@Override
     		public Object handle(Request request, Response response) {
     			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
@@ -61,8 +62,8 @@ public class Inmoweb {
     				return "User not found";
     			}
     		}
-        }); //end User
-    	
+        }); //end user
+ 
         Spark.get(new Route("/owner/:id") {
         	@Override
     		public Object handle(Request request, Response response) {
@@ -78,8 +79,25 @@ public class Inmoweb {
     			}
     		}
     	}); 
-         
-        Spark.get(new Route("/owners/") {
+        
+        Spark.get(new Route("/users/") { 
+        	@Override
+     		public Object handle(Request request, Response response) {
+        		response.type("text/html");
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+                List<User> users = User.findAll();
+     			
+                String ret = "";
+     			for(int i=0; i < users.size(); i++){
+     				User o = users.get(i);
+                    ret = ret+"<b>First name:</b> "+o.get("first_name")+", <b>Last name:</b> "+o.get("last_name")+"<br><br>";
+                }   
+     			Base.close();  			
+     			return ret;
+            }
+     	}); // end users (ListUsers)
+        
+        Spark.get(new Route("/owners/") { 
         	@Override
      		public Object handle(Request request, Response response) {
         		response.type("text/html");
@@ -94,7 +112,7 @@ public class Inmoweb {
      			Base.close();  			
      			return ret;
             }
-     	});
+     	}); // end owners (ListOwners)
          
     	Spark.get(new Route("/realestates/:id") {
     		@Override

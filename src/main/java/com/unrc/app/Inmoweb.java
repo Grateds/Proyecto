@@ -98,8 +98,15 @@ public class Inmoweb {
      				User o = users.get(i);
                     ret = ret+"<b>First name:</b> "+o.get("first_name")+", <b>Last name:</b> "+o.get("last_name")+"<br><br>";
                 }   
-     			Base.close();  			
-     			return ret;
+     			Base.close(); 
+                        return
+     			"<DOCTYPE html>" +
+                        "<html>" +	        
+                        "   </head>" +
+                        "	<body background = 'http://static.giantbomb.com/uploads/original/3/35099/2183980-fez8.jpg'>"+
+                                ret+
+                        "	</body>" +
+                        "</html>";  
             }
      	}); // end users (ListUsers)
         
@@ -116,7 +123,14 @@ public class Inmoweb {
                     ret = ret+"<b>First name:</b> "+o.get("first_name")+", <b>Last name:</b> "+o.get("last_name")+", <b>Email:</b> "+o.get("email")+"<br><br>";
                 }   
      			Base.close();  			
-     			return ret;
+                        return 
+                        "<DOCTYPE html>" +
+                        "<html>" +	        
+                        "   </head>" +
+                        "	<body background = 'http://static.giantbomb.com/uploads/original/3/35099/2183980-fez8.jpg'>"+
+                                ret+
+                        "	</body>" +
+                        "</html>";                 
             }
      	}); // end owners (ListOwners)
          
@@ -232,4 +246,3 @@ public class Inmoweb {
     	}); 
     }
 }
-

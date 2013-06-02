@@ -81,7 +81,7 @@ public class Inmoweb {
                 "		<p>El sitio donde puede encontrar:</p>" +
                 "		<p>Merca</p>" +
                 "		<p>Paco</p>" +
-                "		<p>Milonga</p>" +
+                "		<p>Extasis</p>" +
                 "		<p>Marihuana</p>"+
                 "		<p><a href='./sign-up.html' class='btn btn-primary btn-large'>Registrarse &raquo;</a></p>"+
                 "	</div>"+

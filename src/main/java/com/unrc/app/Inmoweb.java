@@ -51,68 +51,76 @@ public class Inmoweb {
     }
     
     public static void main( String[] args ) {
-        
+        final String EncabezadoHTML1 =
+        		"<!DOCTYPE html>"+
+                "<html lang='en'>"+
+                "	<head>"+
+                "		<meta charset='utf-8'>"+
+                "		<title>Inmobiliario Web</title>"+
+                "		<!-- Le styles -->"+
+                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
+                "		<style type='text/css'>"+
+                "			body {"+
+                "				padding-top: 60px;"+
+                "				padding-bottom: 40px;"+
+                "			}"+
+                "		</style>"+
+                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
+                "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
+                "	</head>"+
+  				"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
+   				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
+   				"		<div class='navbar-inner'>"+
+   				"   		<div class='container'>"+
+   				"   			<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
+   				"   			</button>"+
+   				"				<a class='brand' href='/'>Inmobiliaria</a>"+
+   				"				<div class='nav-collapse collapse'>"+
+   				"					<ul class='nav'>";
+   				final String EncabezadoHTML2 = 
+   		   		"						<li><a href='/'>Inicio</a></li>"+
+   		   		"						<li><a href='/about/'>Acerca</a></li>"+
+   		   		"						<li><a href='/contact/'>Contacto</a></li>";
+   				final String EncabezadoHTML3 = 
+                "						<li class='dropdown'>"+
+                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
+                "							<ul class='dropdown-menu'>"+
+                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
+                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
+                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
+                "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
+                "								<li><a href='/addowner/'>Registrar Dueño</a></li>"+
+                "								<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
+                "								<li><a href='#'>Registrar Inmobiliaria</a></li>"+
+                "								<li class='divider'></li>"+
+                "								<li class='nav-header'>Administración</li>"+
+                "								<li><a href='#'>Borrar Usuario</a></li>"+
+                "								<li><a href='#'>Borrar Dueño</a></li>"+
+                "								<li><a href='#'>Borrar Inmueble</a></li>"+
+                "								<li><a href='#'>Borrar Inmobiliaria</a></li>"+
+                "								<li><a href='#'>Actualizar Usuario</a></li>"+
+                "								<li><a href='#'>Actualizar Dueño</a></li>"+
+                "								<li><a href='#'>Actualizar Inmueble</a></li>"+
+                "								<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
+                "							</ul>"+
+                "						</li>"+
+                "					</ul>"+
+                "				</div>"+
+                "			</div>"+
+                "		</div>"+
+                "	</div>";
+        		
         Spark.get(new Route("/"){
             @Override
             public Object handle(Request request, Response response) {
                 response.type("text/html");
                 
                 return 
-                		"<!DOCTYPE html>"+
-                        "<html lang='en'>"+
-                        "	<head>"+
-                        "		<meta charset='utf-8'>"+
-                        "		<title>Inmobiliario Web</title>"+
-                        "		<!-- Le styles -->"+
-                        "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
-                        "		<style type='text/css'>"+
-                        "			body {"+
-                        "				padding-top: 60px;"+
-                        "				padding-bottom: 40px;"+
-                        "			}"+
-                        "		</style>"+
-                        "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
-                        "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
-                        "	</head>"+
-          				"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
-           				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
-           				"		<div class='navbar-inner'>"+
-           				"   		<div class='container'>"+
-           				"   			<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
-           				"   			</button>"+
-           				"				<a class='brand' href='/'>Inmobiliaria</a>"+
-           				"				<div class='nav-collapse collapse'>"+
-           				"					<ul class='nav'>"+
-           				"						<li class='active'><a href='/'>Inicio</a></li>"+
-           				"						<li><a href='/about/'>Acerca</a></li>"+
-           				"						<li><a href='/contact/'>Contacto</a></li>"+
-                        "						<li class='dropdown'>"+
-                        "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
-                        "							<ul class='dropdown-menu'>"+
-                        "								<li><a href='/users/'>Listar Usuarios</a></li>"+
-                        "								<li><a href='/owners/'>Listar Dueños</a></li>"+
-                        "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-                        "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
-                        "								<li><a href='/addowner/'>Registrar Dueño</a></li>"+
-                        "								<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
-                        "								<li><a href='#'>Registrar Inmobiliaria</a></li>"+
-                        "								<li class='divider'></li>"+
-                        "								<li class='nav-header'>Administración</li>"+
-                        "								<li><a href='#'>Borrar Usuario</a></li>"+
-                        "								<li><a href='#'>Borrar Dueño</a></li>"+
-                        "								<li><a href='#'>Borrar Inmueble</a></li>"+
-                        "								<li><a href='#'>Borrar Inmobiliaria</a></li>"+
-                        "								<li><a href='#'>Actualizar Usuario</a></li>"+
-                        "								<li><a href='#'>Actualizar Dueño</a></li>"+
-                        "								<li><a href='#'>Actualizar Inmueble</a></li>"+
-                        "								<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
-                        "							</ul>"+
-                        "						</li>"+
-                        "					</ul>"+
-                        "				</div>"+
-                        "			</div>"+
-                        "		</div>"+
-                        "	</div>"+
+                		EncabezadoHTML1+
+                		"						<li class='active'><a href='/'>Inicio</a></li>"+
+                		"						<li><a href='/about/'>Acerca</a></li>"+
+                		"						<li><a href='/contact/'>Contacto</a></li>"+
+   						EncabezadoHTML3+	
                         "	<div class='container'>"+
                         "	<!-- Main hero unit for a primary marketing message or call to action -->"+
                         "		<div class='hero-unit'>"+
@@ -179,61 +187,9 @@ public class Inmoweb {
      			ret = ret +"</tbody></table>";
      			Base.close(); 
                 return
-                		"<!DOCTYPE html>"+
-    	                "<html lang='en'>"+
-    	                "	<head>"+
-    	                "		<meta charset='utf-8'>"+
-    	                "		<title>Usuarios &middot; Inmobiliario Web</title>"+
-    	                "		<!-- Le styles -->"+
-    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
-    	                "		<style type='text/css'>"+
-    	                "			body {"+
-    	                "				padding-top: 60px;"+
-    	                "				padding-bottom: 40px;"+
-    	                "			}"+
-    	                "		</style>"+
-    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
-    	                "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
-    	                "	</head>"+
-    	  				"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
-    	   				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
-    	   				"		<div class='navbar-inner'>"+
-    	   				"   		<div class='container'>"+
-    	   				"   			<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
-    	   				"   			</button>"+
-    	   				"				<a class='brand' href='/'>Inmobiliaria</a>"+
-    	   				"				<div class='nav-collapse collapse'>"+
-    	   				"					<ul class='nav'>"+
-    	   				"						<li><a href='/'>Inicio</a></li>"+
-    	   				"						<li><a href='/about/'>Acerca</a></li>"+
-    	   				"						<li><a href='/contact/'>Contacto</a></li>"+
-    	                "						<li class='dropdown'>"+
-    	                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
-    	                "							<ul class='dropdown-menu'>"+
-    	                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
-    	                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
-    	                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-    	                "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
-    	                "								<li><a href='/addowner/'>Registrar Dueño</a></li>"+
-    	                "								<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Registrar Inmobiliaria</a></li>"+
-    	                "								<li class='divider'></li>"+
-    	                "								<li class='nav-header'>Administración</li>"+
-    	                "								<li><a href='#'>Borrar Usuario</a></li>"+
-    	                "								<li><a href='#'>Borrar Dueño</a></li>"+
-    	                "								<li><a href='#'>Borrar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Borrar Inmobiliaria</a></li>"+
-    	                "								<li><a href='#'>Actualizar Usuario</a></li>"+
-    	                "								<li><a href='#'>Actualizar Dueño</a></li>"+
-    	                "								<li><a href='#'>Actualizar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
-    	                "							</ul>"+
-    	                "						</li>"+
-    	                "					</ul>"+
-    	                "				</div>"+
-    	                "			</div>"+
-    	                "		</div>"+
-    	                "	</div>"+
+                		EncabezadoHTML1+
+                		EncabezadoHTML2+
+                		EncabezadoHTML3+
     	                "	<div class='container'>"+
     	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
     	                "		<div class='hero-unit'>"+
@@ -293,61 +249,9 @@ public class Inmoweb {
      			ret = ret +"</tbody></table>";
      			Base.close();  			
                 return 
-                		"<!DOCTYPE html>"+
-    	                "<html lang='en'>"+
-    	                "	<head>"+
-    	                "		<meta charset='utf-8'>"+
-    	                "		<title>Dueños &middot; Inmobiliario Web</title>"+
-    	                "		<!-- Le styles -->"+
-    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
-    	                "		<style type='text/css'>"+
-    	                "			body {"+
-    	                "				padding-top: 60px;"+
-    	                "				padding-bottom: 40px;"+
-    	                "			}"+
-    	                "		</style>"+
-    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
-    	                "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
-    	                "	</head>"+
-    	  				"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
-    	   				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
-    	   				"		<div class='navbar-inner'>"+
-    	   				"   		<div class='container'>"+
-    	   				"   			<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
-    	   				"   			</button>"+
-    	   				"				<a class='brand' href='/'>Inmobiliaria</a>"+
-    	   				"				<div class='nav-collapse collapse'>"+
-    	   				"					<ul class='nav'>"+
-    	   				"						<li><a href='/'>Inicio</a></li>"+
-    	   				"						<li><a href='/about/'>Acerca</a></li>"+
-    	   				"						<li><a href='/contact/'>Contacto</a></li>"+
-    	                "						<li class='dropdown'>"+
-    	                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
-    	                "							<ul class='dropdown-menu'>"+
-    	                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
-    	                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
-    	                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-    	                "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
-    	                "								<li><a href='/addowner/'>Registrar Dueño</a></li>"+
-    	                "								<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Registrar Inmobiliaria</a></li>"+
-    	                "								<li class='divider'></li>"+
-    	                "								<li class='nav-header'>Administración</li>"+
-    	                "								<li><a href='#'>Borrar Usuario</a></li>"+
-    	                "								<li><a href='#'>Borrar Dueño</a></li>"+
-    	                "								<li><a href='#'>Borrar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Borrar Inmobiliaria</a></li>"+
-    	                "								<li><a href='#'>Actualizar Usuario</a></li>"+
-    	                "								<li><a href='#'>Actualizar Dueño</a></li>"+
-    	                "								<li><a href='#'>Actualizar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
-    	                "							</ul>"+
-    	                "						</li>"+
-    	                "					</ul>"+
-    	                "				</div>"+
-    	                "			</div>"+
-    	                "		</div>"+
-    	                "	</div>"+
+                		EncabezadoHTML1+
+                		EncabezadoHTML2+
+                		EncabezadoHTML3+
     	                "	<div class='container'>"+
     	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
     	                "		<div class='hero-unit'>"+
@@ -413,61 +317,9 @@ public class Inmoweb {
      			ret = ret +"</tbody></table>";
      			Base.close();  			
                 return 
-                		"<!DOCTYPE html>"+
-    	                "<html lang='en'>"+
-    	                "	<head>"+
-    	                "		<meta charset='utf-8'>"+
-    	                "		<title>Inmuebles &middot; Inmobiliario Web</title>"+
-    	                "		<!-- Le styles -->"+
-    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
-    	                "		<style type='text/css'>"+
-    	                "			body {"+
-    	                "				padding-top: 60px;"+
-    	                "				padding-bottom: 40px;"+
-    	                "			}"+
-    	                "		</style>"+
-    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
-    	                "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
-    	                "	</head>"+
-    	  				"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
-    	   				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
-    	   				"		<div class='navbar-inner'>"+
-    	   				"   		<div class='container'>"+
-    	   				"   			<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
-    	   				"   			</button>"+
-    	   				"				<a class='brand' href='/'>Inmobiliaria</a>"+
-    	   				"				<div class='nav-collapse collapse'>"+
-    	   				"					<ul class='nav'>"+
-    	   				"						<li><a href='/'>Inicio</a></li>"+
-    	   				"						<li><a href='/about/'>Acerca</a></li>"+
-    	   				"						<li><a href='/contact/'>Contacto</a></li>"+
-    	                "						<li class='dropdown'>"+
-    	                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
-    	                "							<ul class='dropdown-menu'>"+
-    	                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
-    	                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
-    	                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-    	                "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
-    	                "								<li><a href='/addowner/'>Registrar Dueño</a></li>"+
-    	                "								<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Registrar Inmobiliaria</a></li>"+
-    	                "								<li class='divider'></li>"+
-    	                "								<li class='nav-header'>Administración</li>"+
-    	                "								<li><a href='#'>Borrar Usuario</a></li>"+
-    	                "								<li><a href='#'>Borrar Dueño</a></li>"+
-    	                "								<li><a href='#'>Borrar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Borrar Inmobiliaria</a></li>"+
-    	                "								<li><a href='#'>Actualizar Usuario</a></li>"+
-    	                "								<li><a href='#'>Actualizar Dueño</a></li>"+
-    	                "								<li><a href='#'>Actualizar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
-    	                "							</ul>"+
-    	                "						</li>"+
-    	                "					</ul>"+
-    	                "				</div>"+
-    	                "			</div>"+
-    	                "		</div>"+
-    	                "	</div>"+
+                		EncabezadoHTML1+
+                		EncabezadoHTML2+
+                		EncabezadoHTML3+
     	                "	<div class='container'>"+
     	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
     	                "		<div class='hero-unit'>"+
@@ -529,61 +381,9 @@ public class Inmoweb {
      			ret = ret +"</tbody></table>";
      			Base.close();  			
                 return 
-                		"<!DOCTYPE html>"+
-    	                "<html lang='en'>"+
-    	                "	<head>"+
-    	                "		<meta charset='utf-8'>"+
-    	                "		<title>Inmobiliarias &middot; Inmobiliario Web</title>"+
-    	                "		<!-- Le styles -->"+
-    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
-    	                "		<style type='text/css'>"+
-    	                "			body {"+
-    	                "				padding-top: 60px;"+
-    	                "				padding-bottom: 40px;"+
-    	                "			}"+
-    	                "		</style>"+
-    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
-    	                "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
-    	                "	</head>"+
-    	  				"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
-    	   				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
-    	   				"		<div class='navbar-inner'>"+
-    	   				"   		<div class='container'>"+
-    	   				"   			<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
-    	   				"   			</button>"+
-    	   				"				<a class='brand' href='/'>Inmobiliaria</a>"+
-    	   				"				<div class='nav-collapse collapse'>"+
-    	   				"					<ul class='nav'>"+
-    	   				"						<li><a href='/'>Inicio</a></li>"+
-    	   				"						<li><a href='/about/'>Acerca</a></li>"+
-    	   				"						<li><a href='/contact/'>Contacto</a></li>"+
-    	                "						<li class='dropdown'>"+
-    	                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
-    	                "							<ul class='dropdown-menu'>"+
-    	                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
-    	                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
-    	                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-    	                "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
-    	                "								<li><a href='/addowner/'>Registrar Dueño</a></li>"+
-    	                "								<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Registrar Inmobiliaria</a></li>"+
-    	                "								<li class='divider'></li>"+
-    	                "								<li class='nav-header'>Administración</li>"+
-    	                "								<li><a href='#'>Borrar Usuario</a></li>"+
-    	                "								<li><a href='#'>Borrar Dueño</a></li>"+
-    	                "								<li><a href='#'>Borrar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Borrar Inmobiliaria</a></li>"+
-    	                "								<li><a href='#'>Actualizar Usuario</a></li>"+
-    	                "								<li><a href='#'>Actualizar Dueño</a></li>"+
-    	                "								<li><a href='#'>Actualizar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
-    	                "							</ul>"+
-    	                "						</li>"+
-    	                "					</ul>"+
-    	                "				</div>"+
-    	                "			</div>"+
-    	                "		</div>"+
-    	                "	</div>"+
+                		EncabezadoHTML1+
+                		EncabezadoHTML2+
+                		EncabezadoHTML3+
     	                "	<div class='container'>"+
     	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
     	                "		<div class='hero-unit'>"+
@@ -612,61 +412,9 @@ public class Inmoweb {
     			Base.close();
     		
     			return 
-    					"<!DOCTYPE html>"+
-		                "<html lang='en'>"+
-		                "	<head>"+
-		                "		<meta charset='utf-8'>"+
-		                "		<title>Confirmación &middot; Inmobiliario Web</title>"+
-		                "		<!-- Le styles -->"+
-		                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
-		                "		<style type='text/css'>"+
-		                "			body {"+
-		                "				padding-top: 60px;"+
-		                "				padding-bottom: 40px;"+
-		                "			}"+
-		                "		</style>"+
-		                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
-		                "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
-		                "	</head>"+
-		  				"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
-		   				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
-		   				"		<div class='navbar-inner'>"+
-		   				"   		<div class='container'>"+
-		   				"   		<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
-		   				"   		</button>"+
-		   				"			<a class='brand' href='/'>Inmobiliaria</a>"+
-		   				"			<div class='nav-collapse collapse'>"+
-		   				"				<ul class='nav'>"+
-		   				"					<li><a href='/'>Inicio</a></li>"+
-		   				"					<li><a href='/about/'>Acerca</a></li>"+
-		   				"					<li><a href='/contact/'>Contacto</a></li>"+
-		                "					<li class='dropdown'>"+
-		                "						<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
-		                "						<ul class='dropdown-menu'>"+
-		                "							<li><a href='/users/'>Listar Usuarios</a></li>"+
-		                "							<li><a href='/owners/'>Listar Dueños</a></li>"+
-		                "							<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-		                "							<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
-		                "							<li><a href='/addowner/'>Registrar Dueño</a></li>"+
-		                "							<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
-		                "							<li><a href='#'>Registrar Inmobiliaria</a></li>"+
-		                "							<li class='divider'></li>"+
-		                "							<li class='nav-header'>Administración</li>"+
-    	                "							<li><a href='#'>Borrar Usuario</a></li>"+
-    	                "							<li><a href='#'>Borrar Dueño</a></li>"+
-    	                "							<li><a href='#'>Borrar Inmueble</a></li>"+
-    	                "							<li><a href='#'>Borrar Inmobiliaria</a></li>"+
-    	                "							<li><a href='#'>Actualizar Usuario</a></li>"+
-    	                "							<li><a href='#'>Actualizar Dueño</a></li>"+
-    	                "							<li><a href='#'>Actualizar Inmueble</a></li>"+
-    	                "							<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
-		                "						</ul>"+
-		                "					</li>"+
-		                "				</ul>"+
-		                "			</div>"+
-		                "		</div>"+
-		                "	</div>"+
-		                "</div>"+
+    					EncabezadoHTML1+
+                		EncabezadoHTML2+
+                		EncabezadoHTML3+
 		                "<div class='container'>"+
 		                "	<!-- Main hero unit for a primary marketing message or call to action -->"+
 		                "	<div class='hero-unit'>"+
@@ -737,63 +485,10 @@ public class Inmoweb {
     		public Object handle(Request request, Response response) {	
                 response.type("text/html");
                 
-                
     			return 
-    					"<!DOCTYPE html>"+
-    	                "<html lang='en'>"+
-    	                "	<head>"+
-    	                "		<meta charset='utf-8'>"+
-    	                "		<title>Registrar Inmueble &middot; Inmobiliario Web</title>"+
-    	                "		<!-- Le styles -->"+
-    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
-    	                "		<style type='text/css'>"+
-    	                "			body {"+
-    	                "				padding-top: 60px;"+
-    	                "				padding-bottom: 40px;"+
-    	                "			}"+
-    	                "		</style>"+
-    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
-    	                "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
-    	                "	</head>"+
-    	  				"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
-    	   				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
-    	   				"		<div class='navbar-inner'>"+
-    	   				"   		<div class='container'>"+
-    	   				"   			<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
-    	   				"   			</button>"+
-    	   				"				<a class='brand' href='/'>Inmobiliaria</a>"+
-    	   				"				<div class='nav-collapse collapse'>"+
-    	   				"					<ul class='nav'>"+
-    	   				"						<li><a href='/'>Inicio</a></li>"+
-    	   				"						<li><a href='/about/'>Acerca</a></li>"+
-    	   				"						<li><a href='/contact/'>Contacto</a></li>"+
-    	                "						<li class='dropdown'>"+
-    	                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
-    	                "							<ul class='dropdown-menu'>"+
-    	                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
-    	                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
-    	                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-    	                "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
-    	                "								<li><a href='/addowner/'>Registrar Dueño</a></li>"+
-    	                "								<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Registrar Inmobiliaria</a></li>"+
-    	                "								<li class='divider'></li>"+
-    	                "								<li class='nav-header'>Administración</li>"+
-    	                "								<li><a href='#'>Borrar Usuario</a></li>"+
-    	                "								<li><a href='#'>Borrar Dueño</a></li>"+
-    	                "								<li><a href='#'>Borrar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Borrar Inmobiliaria</a></li>"+
-    	                "								<li><a href='#'>Actualizar Usuario</a></li>"+
-    	                "								<li><a href='#'>Actualizar Dueño</a></li>"+
-    	                "								<li><a href='#'>Actualizar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
-    	                "							</ul>"+
-    	                "						</li>"+
-    	                "					</ul>"+
-    	                "				</div>"+
-    	                "			</div>"+
-    	                "		</div>"+
-    	                "	</div>"+
+    					EncabezadoHTML1+
+                		EncabezadoHTML2+
+                		EncabezadoHTML3+
     	                "	<div class='container'>"+
     	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
     	                "		<div class='hero-unit'>"+
@@ -831,7 +526,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Descripción:</label>"+
     	                "						<div class='controls'>"+
-    	                "							<textarea style='width: 394px; height: 52px;' name= 'description'></textarea>"+
+    	                "							<textarea style='width: 394px; height: 115px;;' name= 'description'></textarea>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
@@ -885,61 +580,9 @@ public class Inmoweb {
     			Base.close();
     		
     			return 
-    					"<!DOCTYPE html>"+
-		                "<html lang='en'>"+
-		                "	<head>"+
-		                "		<meta charset='utf-8'>"+
-		                "		<title>Confirmación &middot; Inmobiliario Web</title>"+
-		                "		<!-- Le styles -->"+
-		                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
-		                "		<style type='text/css'>"+
-		                "			body {"+
-		                "				padding-top: 60px;"+
-		                "				padding-bottom: 40px;"+
-		                "			}"+
-		                "		</style>"+
-		                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
-		                "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
-		                "	</head>"+
-		  				"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
-		   				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
-		   				"		<div class='navbar-inner'>"+
-		   				"   		<div class='container'>"+
-		   				"   		<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
-		   				"   		</button>"+
-		   				"			<a class='brand' href='/'>Inmobiliaria</a>"+
-		   				"			<div class='nav-collapse collapse'>"+
-		   				"				<ul class='nav'>"+
-		   				"					<li><a href='/'>Inicio</a></li>"+
-		   				"					<li><a href='/about/'>Acerca</a></li>"+
-		   				"					<li><a href='/contact/'>Contacto</a></li>"+
-		                "					<li class='dropdown'>"+
-		                "						<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
-		                "						<ul class='dropdown-menu'>"+
-		                "							<li><a href='/users/'>Listar Usuarios</a></li>"+
-		                "							<li><a href='/owners/'>Listar Dueños</a></li>"+
-		                "							<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-		                "							<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
-		                "							<li><a href='/addowner/'>Registrar Dueño</a></li>"+
-		                "							<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
-		                "							<li><a href='#'>Registrar Inmobiliaria</a></li>"+
-		                "							<li class='divider'></li>"+
-		                "							<li class='nav-header'>Administración</li>"+
-    	                "							<li><a href='#'>Borrar Usuario</a></li>"+
-    	                "							<li><a href='#'>Borrar Dueño</a></li>"+
-    	                "							<li><a href='#'>Borrar Inmueble</a></li>"+
-    	                "							<li><a href='#'>Borrar Inmobiliaria</a></li>"+
-    	                "							<li><a href='#'>Actualizar Usuario</a></li>"+
-    	                "							<li><a href='#'>Actualizar Dueño</a></li>"+
-    	                "							<li><a href='#'>Actualizar Inmueble</a></li>"+
-    	                "							<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
-		                "						</ul>"+
-		                "					</li>"+
-		                "				</ul>"+
-		                "			</div>"+
-		                "		</div>"+
-		                "	</div>"+
-		                "</div>"+
+    					EncabezadoHTML1+
+                		EncabezadoHTML2+
+                		EncabezadoHTML3+
 		                "<div class='container'>"+
 		                "	<!-- Main hero unit for a primary marketing message or call to action -->"+
 		                "	<div class='hero-unit'>"+
@@ -967,61 +610,11 @@ public class Inmoweb {
                 response.type("text/html");
     			
     			return 
-    					"<!DOCTYPE html>"+
-    	                "<html lang='en'>"+
-    	                "	<head>"+
-    	                "		<meta charset='utf-8'>"+
-    	                "		<title>Acerca &middot; Inmobiliario Web</title>"+
-    	                "		<!-- Le styles -->"+
-    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
-    	                "		<style type='text/css'>"+
-    	                "			body {"+
-    	                "				padding-top: 60px;"+
-    	                "				padding-bottom: 40px;"+
-    	                "			}"+
-    	                "		</style>"+
-    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
-    	                "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
-    	                "	</head>"+
-    	  				"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
-    	   				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
-    	   				"		<div class='navbar-inner'>"+
-    	   				"   		<div class='container'>"+
-    	   				"   			<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
-    	   				"   			</button>"+
-    	   				"				<a class='brand' href='/'>Inmobiliaria</a>"+
-    	   				"				<div class='nav-collapse collapse'>"+
-    	   				"					<ul class='nav'>"+
-    	   				"						<li><a href='/'>Inicio</a></li>"+
-    	   				"						<li class='active'><a href='/about/'>Acerca</a></li>"+
-    	   				"						<li><a href='/contact/'>Contacto</a></li>"+
-    	                "						<li class='dropdown'>"+
-    	                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
-    	                "							<ul class='dropdown-menu'>"+
-    	                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
-    	                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
-    	                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-    	                "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
-    	                "								<li><a href='/addowner/'>Registrar Dueño</a></li>"+
-    	                "								<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Registrar Inmobiliaria</a></li>"+
-    	                "								<li class='divider'></li>"+
-    	                "								<li class='nav-header'>Administración</li>"+
-    	                "								<li><a href='#'>Borrar Usuario</a></li>"+
-    	                "								<li><a href='#'>Borrar Dueño</a></li>"+
-    	                "								<li><a href='#'>Borrar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Borrar Inmobiliaria</a></li>"+
-    	                "								<li><a href='#'>Actualizar Usuario</a></li>"+
-    	                "								<li><a href='#'>Actualizar Dueño</a></li>"+
-    	                "								<li><a href='#'>Actualizar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
-    	                "							</ul>"+
-    	                "						</li>"+
-    	                "					</ul>"+
-    	                "				</div>"+
-    	                "			</div>"+
-    	                "		</div>"+
-    	                "	</div>"+
+    					EncabezadoHTML1+
+    					"						<li><a href='/'>Inicio</a></li>"+
+    					"						<li class='active'><a href='/about/'>Acerca</a></li>"+
+    					"						<li><a href='/contact/'>Contacto</a></li>"+
+   		   				EncabezadoHTML3+
     	                "	<div class='container'>"+
     	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
     	                "		<div class='hero-unit'>"+
@@ -1049,62 +642,11 @@ public class Inmoweb {
     		public Object handle(Request request, Response response) {	
                 response.type("text/html");
     			
-    			return 
-    					"<!DOCTYPE html>"+
-    	                "<html lang='en'>"+
-    	                "	<head>"+
-    	                "		<meta charset='utf-8'>"+
-    	                "		<title>Contacto &middot; Inmobiliario Web</title>"+
-    	                "		<!-- Le styles -->"+
-    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
-    	                "		<style type='text/css'>"+
-    	                "			body {"+
-    	                "				padding-top: 60px;"+
-    	                "				padding-bottom: 40px;"+
-    	                "			}"+
-    	                "		</style>"+
-    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
-    	                "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
-    	                "	</head>"+
-    	  				"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
-    	   				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
-    	   				"		<div class='navbar-inner'>"+
-    	   				"   		<div class='container'>"+
-    	   				"   			<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
-    	   				"   			</button>"+
-    	   				"				<a class='brand' href='/'>Inmobiliaria</a>"+
-    	   				"				<div class='nav-collapse collapse'>"+
-    	   				"					<ul class='nav'>"+
-    	   				"						<li><a href='/'>Inicio</a></li>"+
+    			return EncabezadoHTML1+
+    					"						<li><a href='/'>Inicio</a></li>"+
     	   				"						<li><a href='/about/'>Acerca</a></li>"+
     	   				"						<li class='active'><a href='/contact/'>Contacto</a></li>"+
-    	                "						<li class='dropdown'>"+
-    	                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
-    	                "							<ul class='dropdown-menu'>"+
-    	                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
-    	                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
-    	                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-    	                "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
-    	                "								<li><a href='/addowner/'>Registrar Dueño</a></li>"+
-    	                "								<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Registrar Inmobiliaria</a></li>"+
-    	                "								<li class='divider'></li>"+
-    	                "								<li class='nav-header'>Administración</li>"+
-    	                "								<li><a href='#'>Borrar Usuario</a></li>"+
-    	                "								<li><a href='#'>Borrar Dueño</a></li>"+
-    	                "								<li><a href='#'>Borrar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Borrar Inmobiliaria</a></li>"+
-    	                "								<li><a href='#'>Actualizar Usuario</a></li>"+
-    	                "								<li><a href='#'>Actualizar Dueño</a></li>"+
-    	                "								<li><a href='#'>Actualizar Inmueble</a></li>"+
-    	                "								<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
-    	                "							</ul>"+
-    	                "						</li>"+
-    	                "					</ul>"+
-    	                "				</div>"+
-    	                "			</div>"+
-    	                "		</div>"+
-    	                "	</div>"+
+    					EncabezadoHTML3+
     	                "	<div class='container'>"+
     	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
     	                "		<div class='hero-unit'>"+

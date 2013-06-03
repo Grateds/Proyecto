@@ -438,7 +438,7 @@ public class Inmoweb {
     	   		"			<div class='nav-collapse collapse'>"+
     	   		"				<ul class='nav'>"+
     	   		"					<li><a href='/'>Inicio</a></li>"+
-    	   		"					<li class='active'><a href='./about.html'>Acerca</a></li>"+
+    	   		"					<li class='active'><a href='/about/'>Acerca</a></li>"+
     	   		"					<li><a href='/contact/'>Contacto</a></li>"+
     	        "					<li class='dropdown'>"+
     	        "						<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+

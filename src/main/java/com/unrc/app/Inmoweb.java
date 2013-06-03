@@ -177,70 +177,74 @@ public class Inmoweb {
      			ret = ret +"</tbody></table>";
      			Base.close(); 
                 return
-            			"<!DOCTYPE html>"+
-            	        "<html lang='en'>"+
-            	        "	<head>"+
-            	        "		<meta charset='utf-8'>"+
-            	        "		<title>Usuarios &middot; Inmobiliario Web</title>"+
-            	        "		<!-- Le styles -->"+
-            	        "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
-            	        "		<style type='text/css'>"+
-            	        "			body {"+
-            	        "				padding-top: 60px;"+
-            	        "				padding-bottom: 40px;"+
-            	        "			}"+
-            	        "		</style>"+
-            	        "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
-            	        "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
-            	        "	</head>"+
-            	  		"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
-            	   		"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
-            	   		"		<div class='navbar-inner'>"+
-            	   		"   		<div class='container'>"+
-            	   		"   		<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
-            	   		"   		</button>"+
-            	   		"			<a class='brand' href='/'>Inmobiliaria</a>"+
-            	   		"			<div class='nav-collapse collapse'>"+
-            	   		"				<ul class='nav'>"+
-            	   		"					<li><a href='/'>Inicio</a></li>"+
-            	   		"					<li><a href='/about/'>Acerca</a></li>"+
-            	   		"					<li><a href='/contact/'>Contacto</a></li>"+
-            	        "					<li class='dropdown'>"+
-            	        "						<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
-            	        "						<ul class='dropdown-menu'>"+
-            	        "							<li><a href='/users/'>Listar Usuarios</a></li>"+
-            	        "							<li><a href='/owners/'>Listar Dueños</a></li>"+
-            	        "							<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-            	        "							<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
-            	        "							<li class='divider'></li>"+
-            	        "							<li class='nav-header'>Administración</li>"+
-    	                "							<li><a href='#'>Borrar Usuario</a></li>"+
-    	                "							<li><a href='#'>Borrar Dueño</a></li>"+
-    	                "							<li><a href='#'>Borrar Inmueble</a></li>"+
-    	                "							<li><a href='#'>Borrar Inmobiliaria</a></li>"+
-    	                "							<li><a href='#'>Actualizar Usuario</a></li>"+
-    	                "							<li><a href='#'>Actualizar Dueño</a></li>"+
-    	                "							<li><a href='#'>Actualizar Inmueble</a></li>"+
-    	                "							<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
-            	        "						</ul>"+
-            	        "					</li>"+
-            	        "				</ul>"+
-            	        "			</div>"+
-            	        "		</div>"+
-            	        "	</div>"+
-            	        "	<div class='container'>"+
-            	        "		<!-- Main hero unit for a primary marketing message or call to action -->"+
-            	        "		<div class='hero-unit'>" +
-            	        				ret+
-            	        "		</div>"+
-            	        "		<footer>"+
-            	        "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-            	        "		</footer>"+
-            	        "	</div> <!-- /container -->"+
-            	    	"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
-            	    	"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
-            	    	"</body>"+
-            	  		"</html>";            }
+                		"<!DOCTYPE html>"+
+    	                "<html lang='en'>"+
+    	                "	<head>"+
+    	                "		<meta charset='utf-8'>"+
+    	                "		<title>Usuarios &middot; Inmobiliario Web</title>"+
+    	                "		<!-- Le styles -->"+
+    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
+    	                "		<style type='text/css'>"+
+    	                "			body {"+
+    	                "				padding-top: 60px;"+
+    	                "				padding-bottom: 40px;"+
+    	                "			}"+
+    	                "		</style>"+
+    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
+    	                "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
+    	                "	</head>"+
+    	  				"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
+    	   				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
+    	   				"		<div class='navbar-inner'>"+
+    	   				"   		<div class='container'>"+
+    	   				"   			<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
+    	   				"   			</button>"+
+    	   				"				<a class='brand' href='/'>Inmobiliaria</a>"+
+    	   				"				<div class='nav-collapse collapse'>"+
+    	   				"					<ul class='nav'>"+
+    	   				"						<li><a href='/'>Inicio</a></li>"+
+    	   				"						<li><a href='/about/'>Acerca</a></li>"+
+    	   				"						<li><a href='/contact/'>Contacto</a></li>"+
+    	                "						<li class='dropdown'>"+
+    	                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
+    	                "							<ul class='dropdown-menu'>"+
+    	                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
+    	                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
+    	                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
+    	                "								<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
+    	                "								<li class='divider'></li>"+
+    	                "								<li class='nav-header'>Administración</li>"+
+    	                "								<li><a href='#'>Borrar Usuario</a></li>"+
+    	                "								<li><a href='#'>Borrar Dueño</a></li>"+
+    	                "								<li><a href='#'>Borrar Inmueble</a></li>"+
+    	                "								<li><a href='#'>Borrar Inmobiliaria</a></li>"+
+    	                "								<li><a href='#'>Actualizar Usuario</a></li>"+
+    	                "								<li><a href='#'>Actualizar Dueño</a></li>"+
+    	                "								<li><a href='#'>Actualizar Inmueble</a></li>"+
+    	                "								<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
+    	                "							</ul>"+
+    	                "						</li>"+
+    	                "					</ul>"+
+    	                "				</div>"+
+    	                "			</div>"+
+    	                "		</div>"+
+    	                "	</div>"+
+    	                "	<div class='container'>"+
+    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                "		<div class='hero-unit'>"+
+    	                "			<div>"+
+    	                				ret+
+    	                "			</div>"+
+    	                "		</div>"+
+    	                "		<footer>"+
+    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                "		</footer>"+
+    	                "	</div> <!-- /container -->"+
+    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
+    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+    	    			"</body>"+
+    	  				"</html>";    
+                }
      	}); // end users (ListUsers)
         
         Spark.get(new Route("/owners/") { 
@@ -285,69 +289,72 @@ public class Inmoweb {
      			Base.close();  			
                 return 
                 		"<!DOCTYPE html>"+
-            	        "<html lang='en'>"+
-            	        "	<head>"+
-            	        "		<meta charset='utf-8'>"+
-            	        "		<title>Dueños &middot; Inmobiliario Web</title>"+
-            	        "		<!-- Le styles -->"+
-            	        "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
-            	        "		<style type='text/css'>"+
-            	        "			body {"+
-            	        "				padding-top: 60px;"+
-            	        "				padding-bottom: 40px;"+
-            	        "			}"+
-            	        "		</style>"+
-            	        "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
-            	        "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
-            	        "	</head>"+
-            	  		"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
-            	   		"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
-            	   		"		<div class='navbar-inner'>"+
-            	   		"   		<div class='container'>"+
-            	   		"   		<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
-            	   		"   		</button>"+
-            	   		"			<a class='brand' href='/'>Inmobiliaria</a>"+
-            	   		"			<div class='nav-collapse collapse'>"+
-            	   		"				<ul class='nav'>"+
-            	   		"					<li><a href='/'>Inicio</a></li>"+
-            	   		"					<li><a href='/about/'>Acerca</a></li>"+
-            	   		"					<li><a href='/contact/'>Contacto</a></li>"+
-            	        "					<li class='dropdown'>"+
-            	        "						<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
-            	        "						<ul class='dropdown-menu'>"+
-            	        "							<li><a href='/users/'>Listar Usuarios</a></li>"+
-            	        "							<li><a href='/owners/'>Listar Dueños</a></li>"+
-            	        "							<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-            	        "							<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
-            	        "							<li class='divider'></li>"+
-            	        "							<li class='nav-header'>Administración</li>"+
-    	                "							<li><a href='#'>Borrar Usuario</a></li>"+
-    	                "							<li><a href='#'>Borrar Dueño</a></li>"+
-    	                "							<li><a href='#'>Borrar Inmueble</a></li>"+
-    	                "							<li><a href='#'>Borrar Inmobiliaria</a></li>"+
-    	                "							<li><a href='#'>Actualizar Usuario</a></li>"+
-    	                "							<li><a href='#'>Actualizar Dueño</a></li>"+
-    	                "							<li><a href='#'>Actualizar Inmueble</a></li>"+
-    	                "							<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
-            	        "						</ul>"+
-            	        "					</li>"+
-            	        "				</ul>"+
-            	        "			</div>"+
-            	        "		</div>"+
-            	        "	</div>"+
-            	        "	<div class='container'>"+
-            	        "		<!-- Main hero unit for a primary marketing message or call to action -->"+
-            	        "		<div class='hero-unit'>" +
-            	        				ret+
-            	        "		</div>"+
-            	        "		<footer>"+
-            	        "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-            	        "		</footer>"+
-            	        "	</div> <!-- /container -->"+
-            	    	"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
-            	    	"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
-            	    	"</body>"+
-            	  		"</html>";
+    	                "<html lang='en'>"+
+    	                "	<head>"+
+    	                "		<meta charset='utf-8'>"+
+    	                "		<title>Dueños &middot; Inmobiliario Web</title>"+
+    	                "		<!-- Le styles -->"+
+    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
+    	                "		<style type='text/css'>"+
+    	                "			body {"+
+    	                "				padding-top: 60px;"+
+    	                "				padding-bottom: 40px;"+
+    	                "			}"+
+    	                "		</style>"+
+    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
+    	                "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
+    	                "	</head>"+
+    	  				"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
+    	   				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
+    	   				"		<div class='navbar-inner'>"+
+    	   				"   		<div class='container'>"+
+    	   				"   			<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
+    	   				"   			</button>"+
+    	   				"				<a class='brand' href='/'>Inmobiliaria</a>"+
+    	   				"				<div class='nav-collapse collapse'>"+
+    	   				"					<ul class='nav'>"+
+    	   				"						<li><a href='/'>Inicio</a></li>"+
+    	   				"						<li><a href='/about/'>Acerca</a></li>"+
+    	   				"						<li><a href='/contact/'>Contacto</a></li>"+
+    	                "						<li class='dropdown'>"+
+    	                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
+    	                "							<ul class='dropdown-menu'>"+
+    	                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
+    	                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
+    	                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
+    	                "								<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
+    	                "								<li class='divider'></li>"+
+    	                "								<li class='nav-header'>Administración</li>"+
+    	                "								<li><a href='#'>Borrar Usuario</a></li>"+
+    	                "								<li><a href='#'>Borrar Dueño</a></li>"+
+    	                "								<li><a href='#'>Borrar Inmueble</a></li>"+
+    	                "								<li><a href='#'>Borrar Inmobiliaria</a></li>"+
+    	                "								<li><a href='#'>Actualizar Usuario</a></li>"+
+    	                "								<li><a href='#'>Actualizar Dueño</a></li>"+
+    	                "								<li><a href='#'>Actualizar Inmueble</a></li>"+
+    	                "								<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
+    	                "							</ul>"+
+    	                "						</li>"+
+    	                "					</ul>"+
+    	                "				</div>"+
+    	                "			</div>"+
+    	                "		</div>"+
+    	                "	</div>"+
+    	                "	<div class='container'>"+
+    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                "		<div class='hero-unit'>"+
+    	                "			<div>"+
+    	                				ret+
+    	                "			</div>"+
+    	                "		</div>"+
+    	                "		<footer>"+
+    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                "		</footer>"+
+    	                "	</div> <!-- /container -->"+
+    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
+    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+    	    			"</body>"+
+    	  				"</html>";  
         	}
      	}); // end owners (ListOwners)
          
@@ -500,74 +507,77 @@ public class Inmoweb {
                 response.type("text/html");
     			
     			return 
-    			"<!DOCTYPE html>"+
-    	        "<html lang='en'>"+
-    	        "	<head>"+
-    	        "		<meta charset='utf-8'>"+
-    	        "		<title>Acerca &middot; Inmobiliario Web</title>"+
-    	        "		<!-- Le styles -->"+
-    	        "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
-    	        "		<style type='text/css'>"+
-    	        "			body {"+
-    	        "				padding-top: 60px;"+
-    	        "				padding-bottom: 40px;"+
-    	        "			}"+
-    	        "		</style>"+
-    	        "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
-    	        "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
-    	        "	</head>"+
-    	  		"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
-    	   		"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
-    	   		"		<div class='navbar-inner'>"+
-    	   		"   		<div class='container'>"+
-    	   		"   		<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
-    	   		"   		</button>"+
-    	   		"			<a class='brand' href='/'>Inmobiliaria</a>"+
-    	   		"			<div class='nav-collapse collapse'>"+
-    	   		"				<ul class='nav'>"+
-    	   		"					<li><a href='/'>Inicio</a></li>"+
-    	   		"					<li class='active'><a href='/about/'>Acerca</a></li>"+
-    	   		"					<li><a href='/contact/'>Contacto</a></li>"+
-    	        "					<li class='dropdown'>"+
-    	        "						<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
-    	        "						<ul class='dropdown-menu'>"+
-    	        "							<li><a href='/users/'>Listar Usuarios</a></li>"+
-    	        "							<li><a href='/owners/'>Listar Dueños</a></li>"+
-    	        "							<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-    	        "							<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
-    	        "							<li class='divider'></li>"+
-    	        "							<li class='nav-header'>Administración</li>"+
-                "							<li><a href='#'>Borrar Usuario</a></li>"+
-                "							<li><a href='#'>Borrar Dueño</a></li>"+
-                "							<li><a href='#'>Borrar Inmueble</a></li>"+
-                "							<li><a href='#'>Borrar Inmobiliaria</a></li>"+
-                "							<li><a href='#'>Actualizar Usuario</a></li>"+
-                "							<li><a href='#'>Actualizar Dueño</a></li>"+
-                "							<li><a href='#'>Actualizar Inmueble</a></li>"+
-                "							<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
-    	        "						</ul>"+
-    	        "					</li>"+
-    	        "				</ul>"+
-    	        "			</div>"+
-    	        "		</div>"+
-    	        "	</div>"+
-    	        "	<div class='container'>"+
-    	        "		<!-- Main hero unit for a primary marketing message or call to action -->"+
-    	        "		<div class='hero-unit'>" +
-    	        "			<center>"+
-    	        "				<h1>En construcción..</h1>" +
-    	        "				<img src='http://tiendasuzuki.com/hombre.png'>" +
-    	        "				<p>Lamentamos las molestas ocasionadas.</p>" +
-    	        "			</center>"+
-    	        "		</div>"+
-    	        "		<footer>"+
-    	        "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-    	        "		</footer>"+
-    	        "	</div> <!-- /container -->"+
-    	    	"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
-    	    	"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
-    	    	"</body>"+
-    	  		"</html>";
+    					"<!DOCTYPE html>"+
+    	                "<html lang='en'>"+
+    	                "	<head>"+
+    	                "		<meta charset='utf-8'>"+
+    	                "		<title>Acerca &middot; Inmobiliario Web</title>"+
+    	                "		<!-- Le styles -->"+
+    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
+    	                "		<style type='text/css'>"+
+    	                "			body {"+
+    	                "				padding-top: 60px;"+
+    	                "				padding-bottom: 40px;"+
+    	                "			}"+
+    	                "		</style>"+
+    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
+    	                "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
+    	                "	</head>"+
+    	  				"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
+    	   				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
+    	   				"		<div class='navbar-inner'>"+
+    	   				"   		<div class='container'>"+
+    	   				"   			<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
+    	   				"   			</button>"+
+    	   				"				<a class='brand' href='/'>Inmobiliaria</a>"+
+    	   				"				<div class='nav-collapse collapse'>"+
+    	   				"					<ul class='nav'>"+
+    	   				"						<li><a href='/'>Inicio</a></li>"+
+    	   				"						<li class='active'><a href='/about/'>Acerca</a></li>"+
+    	   				"						<li><a href='/contact/'>Contacto</a></li>"+
+    	                "						<li class='dropdown'>"+
+    	                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
+    	                "							<ul class='dropdown-menu'>"+
+    	                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
+    	                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
+    	                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
+    	                "								<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
+    	                "								<li class='divider'></li>"+
+    	                "								<li class='nav-header'>Administración</li>"+
+    	                "								<li><a href='#'>Borrar Usuario</a></li>"+
+    	                "								<li><a href='#'>Borrar Dueño</a></li>"+
+    	                "								<li><a href='#'>Borrar Inmueble</a></li>"+
+    	                "								<li><a href='#'>Borrar Inmobiliaria</a></li>"+
+    	                "								<li><a href='#'>Actualizar Usuario</a></li>"+
+    	                "								<li><a href='#'>Actualizar Dueño</a></li>"+
+    	                "								<li><a href='#'>Actualizar Inmueble</a></li>"+
+    	                "								<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
+    	                "							</ul>"+
+    	                "						</li>"+
+    	                "					</ul>"+
+    	                "				</div>"+
+    	                "			</div>"+
+    	                "		</div>"+
+    	                "	</div>"+
+    	                "	<div class='container'>"+
+    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                "		<div class='hero-unit'>"+
+    	                "			<div>"+
+    	                "				<center>"+
+    	    	        "					<h1>En construcción..</h1>" +
+    	    	        "					<img src='http://tiendasuzuki.com/hombre.png'>" +
+    	    	        "					<p>Lamentamos las molestas ocasionadas.</p>" +
+    	    	        "				</center>"+
+    	                "			</div>"+
+    	                "		</div>"+
+    	                "		<footer>"+
+    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                "		</footer>"+
+    	                "	</div> <!-- /container -->"+
+    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
+    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+    	    			"</body>"+
+    	  				"</html>";
     		}
     	}); 
         Spark.get(new Route("/contact/") {
@@ -596,77 +606,77 @@ public class Inmoweb {
     	   				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
     	   				"		<div class='navbar-inner'>"+
     	   				"   		<div class='container'>"+
-    	   				"   		<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
-    	   				"   		</button>"+
-    	   				"			<a class='brand' href='/'>Inmobiliaria</a>"+
-    	   				"			<div class='nav-collapse collapse'>"+
-    	   				"				<ul class='nav'>"+
-    	   				"					<li><a href='/'>Inicio</a></li>"+
-    	   				"					<li><a href='/about/'>Acerca</a></li>"+
-    	   				"					<li class='active'><a href='/contact/'>Contacto</a></li>"+
-    	                "					<li class='dropdown'>"+
-    	                "						<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
-    	                "						<ul class='dropdown-menu'>"+
-    	                "							<li><a href='/users/'>Listar Usuarios</a></li>"+
-    	                "							<li><a href='/owners/'>Listar Dueños</a></li>"+
-    	                "							<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-    	                "							<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
-    	                "							<li class='divider'></li>"+
-    	                "							<li class='nav-header'>Administración</li>"+
-    	                "							<li><a href='#'>Borrar Usuario</a></li>"+
-    	                "							<li><a href='#'>Borrar Dueño</a></li>"+
-    	                "							<li><a href='#'>Borrar Inmueble</a></li>"+
-    	                "							<li><a href='#'>Borrar Inmobiliaria</a></li>"+
-    	                "							<li><a href='#'>Actualizar Usuario</a></li>"+
-    	                "							<li><a href='#'>Actualizar Dueño</a></li>"+
-    	                "							<li><a href='#'>Actualizar Inmueble</a></li>"+
-    	                "							<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
-    	                "						</ul>"+
-    	                "					</li>"+
-    	                "				</ul>"+
+    	   				"   			<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
+    	   				"   			</button>"+
+    	   				"				<a class='brand' href='/'>Inmobiliaria</a>"+
+    	   				"				<div class='nav-collapse collapse'>"+
+    	   				"					<ul class='nav'>"+
+    	   				"						<li><a href='/'>Inicio</a></li>"+
+    	   				"						<li><a href='/about/'>Acerca</a></li>"+
+    	   				"						<li class='active'><a href='/contact/'>Contacto</a></li>"+
+    	                "						<li class='dropdown'>"+
+    	                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
+    	                "							<ul class='dropdown-menu'>"+
+    	                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
+    	                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
+    	                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
+    	                "								<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
+    	                "								<li class='divider'></li>"+
+    	                "								<li class='nav-header'>Administración</li>"+
+    	                "								<li><a href='#'>Borrar Usuario</a></li>"+
+    	                "								<li><a href='#'>Borrar Dueño</a></li>"+
+    	                "								<li><a href='#'>Borrar Inmueble</a></li>"+
+    	                "								<li><a href='#'>Borrar Inmobiliaria</a></li>"+
+    	                "								<li><a href='#'>Actualizar Usuario</a></li>"+
+    	                "								<li><a href='#'>Actualizar Dueño</a></li>"+
+    	                "								<li><a href='#'>Actualizar Inmueble</a></li>"+
+    	                "								<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
+    	                "							</ul>"+
+    	                "						</li>"+
+    	                "					</ul>"+
+    	                "				</div>"+
     	                "			</div>"+
     	                "		</div>"+
     	                "	</div>"+
-    	                "</div>"+
-    	                "<div class='container'>"+
-    	                "	<!-- Main hero unit for a primary marketing message or call to action -->"+
-    	                "	<div class='hero-unit'>"+
-    	                "		<div class='container'>"+
-    	                "			<h2>Contactanos</h2>"+
-    	                "			<label>Estamos aquí para ayudar con cualquier pregunta o comentario. </label>"+
+    	                "	<div class='container'>"+
+    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                "		<div class='hero-unit'>"+
+    	                "			<div class='container'>"+
+    	                "				<h2>Contactanos</h2>"+
+    	                "				<label>Estamos aquí para ayudar con cualquier pregunta o comentario. </label>"+
+    	                "			</div>"+
+    	                "			<hr></hr>"+
+    	                "			<div class='container'>"+
+    	                "				<form class='navbar-form pull-left'>"+
+    	                "					<dl class= 'form'>"+
+    	                "						<label><b>Nombre</b></label>"+
+    	                "						<input type='text' class='input-block-level' name='name'>"+     
+    	                "					</dl>"+
+    	                "					<dl class= 'form'>"+
+                        "						<label><b>E-mail</b></label>"+   
+                        "						<input type='text' class='input-block-level' name='email'>"+     
+                        "					</dl>"+
+                        "					<dl class= 'form'>"+
+                        "						<label><b>Asunto</b></label>"+
+                        "						<input type='text' class='input-block-level' name='subject'>"+     
+                        "					</dl>"+
+                        "					<dl class= 'form'>"+
+                        "						<label><b>Mensaje</b></label>"+
+                        "						<textarea style='width: 394px; height: 52px;' name='body'></textarea><br>"+    					
+                        "					</dl>" +
+                        "					<dl class= 'form'>" +
+                        "						<button class='btn btn-large btn-primary' type='submit'>Enviar</button>"+ 
+                        "					</dl>"+
+                       	"				</form>"+
+                        "			</div>"+
     	                "		</div>"+
-    	                "		<hr></hr>"+
-    	                "		<div class='container'>"+
-    	                "			<form class='navbar-form pull-left'>"+
-    	                "				<dl class= 'form'>"+
-    	                "					<label><b>Nombre</b></label>"+
-    	                "					<input type='text' class='input-block-level' name='name'>"+     
-    	                "				</dl>"+
-    	                "				<dl class= 'form'>"+
-                        "					<label><b>E-mail</b></label>"+   
-                        "					<input type='text' class='input-block-level' name='email'>"+     
-                        "				</dl>"+
-                        "				<dl class= 'form'>"+
-                        "					<label><b>Asunto</b></label>"+
-                        "					<input type='text' class='input-block-level' name='subject'>"+     
-                        "				</dl>"+
-                        "				<dl class= 'form'>"+
-                        "					<label><b>Mensaje</b></label>"+
-                        "					<textarea style='width: 394px; height: 52px;' name='body'></textarea><br>"+    					
-                        "				</dl>" +
-                        "				<dl class= 'form'>" +
-                        "					<button class='btn btn-large btn-primary' type='submit'>Enviar</button>"+ 
-                        "				</dl>"+
-                       	"			</form>"+
-                        "		</div>"+
-    	                "	</div>"+
-    	                "<footer>"+
-    	                "<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-    	                "</footer>"+
-    	                "</div> <!-- /container -->"+
-    	    			"<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
-    	    			"<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
-    	    			"	</body>"+
+    	                "		<footer>"+
+    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                "		</footer>"+
+    	                "	</div> <!-- /container -->"+
+    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
+    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+    	    			"</body>"+
     	  				"</html>";
     		}
     	}); 

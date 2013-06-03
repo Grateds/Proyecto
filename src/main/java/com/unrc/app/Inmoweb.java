@@ -49,68 +49,68 @@ public class Inmoweb {
    				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
    				"		<div class='navbar-inner'>"+
    				"   		<div class='container'>"+
-   				"   		<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
-   				"   		</button>"+
-   				"			<a class='brand' href='/'>Inmobiliaria</a>"+
-   				"			<div class='nav-collapse collapse'>"+
-   				"				<ul class='nav'>"+
-   				"					<li class='active'><a href='/'>Inicio</a></li>"+
-   				"					<li><a href='/about/'>Acerca</a></li>"+
-   				"					<li><a href='/contact/'>Contacto</a></li>"+
-                "					<li class='dropdown'>"+
-                "						<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
-                "						<ul class='dropdown-menu'>"+
-                "							<li><a href='/users/'>Listar Usuarios</a></li>"+
-                "							<li><a href='/owners/'>Listar Dueños</a></li>"+
-                "							<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-                "							<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
-                "							<li class='divider'></li>"+
-                "							<li class='nav-header'>Administración</li>"+
-                "							<li><a href='#'>Borrar Usuario</a></li>"+
-                "							<li><a href='#'>Borrar Dueño</a></li>"+
-                "							<li><a href='#'>Borrar Inmueble</a></li>"+
-                "							<li><a href='#'>Borrar Inmobiliaria</a></li>"+
-                "							<li><a href='#'>Actualizar Usuario</a></li>"+
-                "							<li><a href='#'>Actualizar Dueño</a></li>"+
-                "							<li><a href='#'>Actualizar Inmueble</a></li>"+
-                "							<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
-                "						</ul>"+
-                "					</li>"+
-                "				</ul>"+
+   				"   			<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
+   				"   			</button>"+
+   				"				<a class='brand' href='/'>Inmobiliaria</a>"+
+   				"				<div class='nav-collapse collapse'>"+
+   				"					<ul class='nav'>"+
+   				"						<li class='active'><a href='/'>Inicio</a></li>"+
+   				"						<li><a href='/about/'>Acerca</a></li>"+
+   				"						<li><a href='/contact/'>Contacto</a></li>"+
+                "						<li class='dropdown'>"+
+                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
+                "							<ul class='dropdown-menu'>"+
+                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
+                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
+                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
+                "								<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
+                "								<li class='divider'></li>"+
+                "								<li class='nav-header'>Administración</li>"+
+                "								<li><a href='#'>Borrar Usuario</a></li>"+
+                "								<li><a href='#'>Borrar Dueño</a></li>"+
+                "								<li><a href='#'>Borrar Inmueble</a></li>"+
+                "								<li><a href='#'>Borrar Inmobiliaria</a></li>"+
+                "								<li><a href='#'>Actualizar Usuario</a></li>"+
+                "								<li><a href='#'>Actualizar Dueño</a></li>"+
+                "								<li><a href='#'>Actualizar Inmueble</a></li>"+
+                "								<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
+                "							</ul>"+
+                "						</li>"+
+                "					</ul>"+
+                "				</div>"+
                 "			</div>"+
                 "		</div>"+
                 "	</div>"+
-                "</div>"+
-                "<div class='container'>"+
+                "	<div class='container'>"+
                 "	<!-- Main hero unit for a primary marketing message or call to action -->"+
-                "<div class='hero-unit'>"+
-                "	<div class='row'>"+
-                "		<div class='span6'>"+
-                "			<h1>Bienvenido!</h1>"+
-                "			<p>This is a template for a simple marketing or informational website.</p>"+
+                "		<div class='hero-unit'>"+
+                "			<div class='row'>"+
+                "				<div class='span6'>"+
+                "					<h1>Bienvenido!</h1>"+
+                "					<p>This is a template for a simple marketing or informational website.</p>"+
+                "				</div>"+
+                "				<div class='span4'>"+
+                "					<form class='form' method='POST' action='/adduser/'>"+
+                "						<h3>Regístrarse</h3>"+
+                "						<label>* Datos obligatorios</label>"+
+                "						<hr></hr>"+
+                "						<label>Nombre:*</label><input type='text' class='input-block-level' name='fname' placeholder='Nombre'>"+  
+                "						<label>Apellido:*</label><input type='text' class='input-block-level' name='lname'placeholder='Apellido'>"+
+                "						<label>E-mail:*</label><input type='text' class='input-block-level' name='email' placeholder='someone@example.com'>"+      
+                "						<dl class= 'form'>"+
+                "							<button class='btn btn-large btn-primary' type='submit'>Registrarme</button>"+
+                "						</dl>"+           
+                "					</form>"+
+                "				</div>"+
+                "			</div>"+
                 "		</div>"+
-                "		<div class='span4'>"+
-                "			<form class='navbar-form' method='POST' action='/adduser/'>"+
-                "				<h3>Regístrarse</h3>"+
-                "				<label>* Datos obligatorios</label>"+
-                "				<hr></hr>"+
-                "				<label>Nombre:*</label><input type='text' class='input-block-level' name='fname' placeholder='Nombre'>"+  
-                "				<label>Apellido:*</label><input type='text' class='input-block-level' name='lname'placeholder='Apellido'>"+
-                "				<label>E-mail:*</label><input type='text' class='input-block-level' name='email' placeholder='someone@example.com'>"+      
-                "				<dl class= 'form'>"+
-                "					<button class='btn btn-large btn-primary' type='submit'>Registrarme</button>"+
-                "				</dl>"+           
-                "			</form>"+
-                "		</div>"+
-                "	</div>"+
-                "</div>"+
-                "	<footer>"+
-                "		<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-                "	</footer>"+
-                "</div> <!-- /container -->"+
-    			"<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
-    			"<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
-    			"	</body>"+
+                "		<footer>"+
+                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+                "		</footer>"+
+                "	</div> <!-- /container -->"+
+    			"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
+    			"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+    			"</body>"+
   				"</html>";
             }
         });

@@ -86,7 +86,7 @@ public class Inmoweb {
                 "		<div class='hero-unit'>"+
                 "			<div class='row'>"+
                 "				<div class='span6'>"+
-                "					<h1>Bienvenido!</h1>"+
+                "					<h1>¡Bienvenido!</h1>"+
                 "					<p>This is a template for a simple marketing or informational website.</p>"+
                 "				</div>"+
                 "				<div class='span4'>"+

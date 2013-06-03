@@ -63,7 +63,7 @@ public class Inmoweb {
                 "								<li><a href='/users/'>Listar Usuarios</a></li>"+
                 "								<li><a href='/owners/'>Listar Dueños</a></li>"+
                 "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-                "								<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
+                "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
                 "								<li class='divider'></li>"+
                 "								<li class='nav-header'>Administración</li>"+
                 "								<li><a href='#'>Borrar Usuario</a></li>"+
@@ -211,7 +211,7 @@ public class Inmoweb {
     	                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
     	                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
     	                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-    	                "								<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
+    	                "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
     	                "								<li class='divider'></li>"+
     	                "								<li class='nav-header'>Administración</li>"+
     	                "								<li><a href='#'>Borrar Usuario</a></li>"+
@@ -322,7 +322,7 @@ public class Inmoweb {
     	                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
     	                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
     	                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-    	                "								<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
+    	                "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
     	                "								<li class='divider'></li>"+
     	                "								<li class='nav-header'>Administración</li>"+
     	                "								<li><a href='#'>Borrar Usuario</a></li>"+
@@ -439,7 +439,7 @@ public class Inmoweb {
     	                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
     	                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
     	                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-    	                "								<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
+    	                "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
     	                "								<li class='divider'></li>"+
     	                "								<li class='nav-header'>Administración</li>"+
     	                "								<li><a href='#'>Borrar Usuario</a></li>"+
@@ -474,6 +474,119 @@ public class Inmoweb {
     	  				"</html>";  
         	}
      	}); // end buildings (ListBuilding)
+        
+        Spark.get(new Route("/realestates/") { 
+        	@Override
+     		public Object handle(Request request, Response response) {
+        		response.type("text/html");
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+                List<RealEstate> realestates = RealEstate.findAll();
+     			
+                String ret = 
+                		"<table class='table table-hover'>" +
+                		"	<thead>" +
+                		"		<tr>" +
+                		"			<th>#</th>" +
+                		"			<th>Nombre</th>" +
+                		"			<th>Ciudad</th>" +
+                		"			<th>Barrio</th>" +
+                		"			<th>Calle</th>" +
+                		"			<th>Numero</th>" +
+                		"			<th>Telefono</th>" +
+                		"			<th>E-mail</th>" +
+                		"			<th>Sitio Web</th>"+
+                		"		</tr>" +
+                		"	</thead>" +
+                		"	<tbody>";
+                int j;
+
+                City c = new City();
+                for(int i=0; i < realestates.size(); i++){
+     				RealEstate r = realestates.get(i);
+     				j = i+1;
+     				c = City.findFirst("id = ?", r.get("city_id"));
+     				ret = ret+"<tr><td>"+j+"</td>"+
+							  "<td>"+r.get("name")+"</td>" +
+							  "<td>"+c.get("name")+"</td>"+
+							  "<td>"+r.get("neighborhood")+"</td>"+
+							  "<td>"+r.get("street")+"</td>"+
+							  "<td>"+r.get("n_street")+"</td>"+
+							  "<td>"+r.get("phone")+"</td>"+
+							  "<td>"+r.get("email")+"</td>" +
+							  "<td>"+r.get("site_web")+"</td>";
+     			}   
+     			ret = ret +"</tbody></table>";
+     			Base.close();  			
+                return 
+                		"<!DOCTYPE html>"+
+    	                "<html lang='en'>"+
+    	                "	<head>"+
+    	                "		<meta charset='utf-8'>"+
+    	                "		<title>Inmobiliarias &middot; Inmobiliario Web</title>"+
+    	                "		<!-- Le styles -->"+
+    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
+    	                "		<style type='text/css'>"+
+    	                "			body {"+
+    	                "				padding-top: 60px;"+
+    	                "				padding-bottom: 40px;"+
+    	                "			}"+
+    	                "		</style>"+
+    	                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
+    	                "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
+    	                "	</head>"+
+    	  				"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
+    	   				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
+    	   				"		<div class='navbar-inner'>"+
+    	   				"   		<div class='container'>"+
+    	   				"   			<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
+    	   				"   			</button>"+
+    	   				"				<a class='brand' href='/'>Inmobiliaria</a>"+
+    	   				"				<div class='nav-collapse collapse'>"+
+    	   				"					<ul class='nav'>"+
+    	   				"						<li><a href='/'>Inicio</a></li>"+
+    	   				"						<li><a href='/about/'>Acerca</a></li>"+
+    	   				"						<li><a href='/contact/'>Contacto</a></li>"+
+    	                "						<li class='dropdown'>"+
+    	                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
+    	                "							<ul class='dropdown-menu'>"+
+    	                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
+    	                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
+    	                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
+    	                "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
+    	                "								<li class='divider'></li>"+
+    	                "								<li class='nav-header'>Administración</li>"+
+    	                "								<li><a href='#'>Borrar Usuario</a></li>"+
+    	                "								<li><a href='#'>Borrar Dueño</a></li>"+
+    	                "								<li><a href='#'>Borrar Inmueble</a></li>"+
+    	                "								<li><a href='#'>Borrar Inmobiliaria</a></li>"+
+    	                "								<li><a href='#'>Actualizar Usuario</a></li>"+
+    	                "								<li><a href='#'>Actualizar Dueño</a></li>"+
+    	                "								<li><a href='#'>Actualizar Inmueble</a></li>"+
+    	                "								<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
+    	                "							</ul>"+
+    	                "						</li>"+
+    	                "					</ul>"+
+    	                "				</div>"+
+    	                "			</div>"+
+    	                "		</div>"+
+    	                "	</div>"+
+    	                "	<div class='container'>"+
+    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                "		<div class='hero-unit'>"+
+    	                "			<div>"+
+    	                				ret+
+    	                "			</div>"+
+    	                "		</div>"+
+    	                "		<footer>"+
+    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                "		</footer>"+
+    	                "	</div> <!-- /container -->"+
+    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
+    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+    	    			"</body>"+
+    	  				"</html>";  
+        	}
+     	}); // end realEstates (ListRealEstates)
         
     	Spark.get(new Route("/realestates/:id") {
     		@Override
@@ -535,7 +648,7 @@ public class Inmoweb {
 		                "							<li><a href='/users/'>Listar Usuarios</a></li>"+
 		                "							<li><a href='/owners/'>Listar Dueños</a></li>"+
 		                "							<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-		                "							<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
+		                "							<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
 		                "							<li class='divider'></li>"+
 		                "							<li class='nav-header'>Administración</li>"+
     	                "							<li><a href='#'>Borrar Usuario</a></li>"+
@@ -658,7 +771,7 @@ public class Inmoweb {
     	                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
     	                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
     	                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-    	                "								<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
+    	                "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
     	                "								<li class='divider'></li>"+
     	                "								<li class='nav-header'>Administración</li>"+
     	                "								<li><a href='#'>Borrar Usuario</a></li>"+
@@ -697,6 +810,7 @@ public class Inmoweb {
     	  				"</html>";
     		}
     	}); 
+        
         Spark.get(new Route("/contact/") {
     		@Override
     		public Object handle(Request request, Response response) {	
@@ -737,7 +851,7 @@ public class Inmoweb {
     	                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
     	                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
     	                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-    	                "								<li><a href='/realstates/'>Listar Inmobiliarias</a></li>"+
+    	                "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
     	                "								<li class='divider'></li>"+
     	                "								<li class='nav-header'>Administración</li>"+
     	                "								<li><a href='#'>Borrar Usuario</a></li>"+

@@ -49,6 +49,12 @@ public class Inmoweb {
          Base.close();  			
      	return ret;
     }
+    public static String searchEngine(){
+        return  "<form method='POST' action='/search/'>"+
+                    optionType()+
+                    optionOperation()+
+                "<input type='submit' value='Buscar'></form>";
+    }
     
     public static void main( String[] args ) {
         final String EncabezadoHTML1 =
@@ -91,7 +97,7 @@ public class Inmoweb {
                 "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
                 "								<li><a href='/addowner/'>Registrar Dueño</a></li>"+
                 "								<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
-                "								<li><a href='#'>Registrar Inmobiliaria</a></li>"+
+                "								<li><a href='/addrealestate/'>Registrar Inmobiliaria</a></li>"+
                 "								<li class='divider'></li>"+
                 "								<li class='nav-header'>Administración</li>"+
                 "								<li><a href='#'>Borrar Usuario</a></li>"+
@@ -767,6 +773,28 @@ public class Inmoweb {
                 re.create(request.queryParams("name"), request.queryParams("phone"), request.queryParams("email"), request.queryParams("city_id"), request.queryParams("neighborhood"), request.queryParams("street"), request.queryParams("n_street"), request.queryParams("site_web"));
                 Base.close();
                 return "Inmobiliaria ingresada!";
+            }
+        });
+        Spark.get(new Route("/search/"){
+            @Override
+            public Object handle(Request request, Response response){
+                response.type("text/html");
+                return searchEngine();
+            }
+        });
+        Spark.post(new Route("/search/"){
+            @Override
+            public Object handle(Request request, Response response){
+                response.type("text/html");
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+                List<Building> buildings = Building.findBySQL("select * from buildings where type='"+request.queryParams("type")+"' AND operation='"+request.queryParams("operation")+"'");
+                String ret = "<br>";
+                for(int i = 0; i< buildings.size();i++){
+                    Building b = buildings.get(i);
+                    ret = ret+" "+b.get("street")+" "+b.get("n_street")+"<br><br>";
+                }
+    		Base.close();
+                return ret;
             }
         });
     }

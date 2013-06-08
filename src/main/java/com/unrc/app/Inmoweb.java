@@ -113,8 +113,6 @@ public class Inmoweb {
                 "								<li><a href='/addowner/'>Registrar Dueño</a></li>"+
                 "								<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
                 "								<li><a href='/addrealestate/'>Registrar Inmobiliaria</a></li>"+
-                "								<li class='divider'></li>"+
-                "								<li class='nav-header'>Administración</li>"+
                 "							</ul>"+
                 "						</li>"+
                 "					</ul>"+

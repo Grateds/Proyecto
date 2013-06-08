@@ -113,6 +113,9 @@ public class Inmoweb {
                 "								<li><a href='/addowner/'>Registrar Dueño</a></li>"+
                 "								<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
                 "								<li><a href='/addrealestate/'>Registrar Inmobiliaria</a></li>"+
+                "								<li class='divider'></li>"+
+                "								<li class='nav-header'>Administración</li>"+
+                "								<li><a href='/search/'>Buscar</a></li>"+
                 "							</ul>"+
                 "						</li>"+
                 "					</ul>"+
@@ -453,32 +456,80 @@ public class Inmoweb {
     		@Override
     		public Object handle(Request request, Response response) {	
                 response.type("text/html");
-    			
+                
     			return 
-    					"<DOCTYPE html>" +
-    	    		    "<html>" +
-    	    		    "	<head>" +
-    	                    "           <meta charset=\"utf-8\">"+
-    	    		    "		<title>Agregar Usuario</title>"+
-    	    		    "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
-    	    		    "   </head>" +
-    	    		    "	<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
-    	    		    "   	<center><h1>Agregar dueño</h1>" +     			
-    	    			"		<form method='POST' action='/addowner/'>"+
-    	    			"			<p><input name='first_name' placeholder='Nombre'></p>"+
-    	    			"			<p><input name='last_name' placeholder='Apellido'></p>"+
-    	                			optionCity()+
-    	                "			<p><input name='neighborhood' placeholder='Barrio'></p>"+ 
-    	                "			<p><input name='street' placeholder='Calle'>"+ 
-    	                "			<p><input name='n_street' placeholder='Numero'></p>"+ 
-    	                "			<p><input name='email' placeholder='someone@example.com'></p>"+ 
-    	                "			<input type='submit' value='Add'>"+
-    	    			"			<input type='reset' value='Reset'>" +
-    	    			"		</form></center>"+
-    	    			"	</body>" +
-    	                "</html>";
+    				EncabezadoHTML1+
+                		EncabezadoHTML2+
+                		EncabezadoHTML3+
+    	                "	<div class='container'>"+
+    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                "		<div class='hero-unit'>"+
+    	                "			<div class='container'>"+
+    	                "				<h2>Registrar Dueño</h2>"+
+    	                "				<label>* Datos obligatorios </label>"+
+    	                "			</div>"+
+    	                "			<hr></hr>"+
+    	                "			<div>"+
+    	                "				<form class='form-horizontal' method='POST' action='/addowner/'>"+       
+                        "                                    </div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Nombre:*</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='first_name'>"+
+    	                "						</div>"+  
+                        "                                     </div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Apellido:*</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='last_name'>"+
+    	                "						</div>"+  
+                        "					</div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Ciudad:*</label>"+
+    	                "						<div class='controls'>"+
+    	                							optionCity()+
+    	                "						</div>"+                 
+    	                "					</div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Barrio:*</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='neighborhood'>"+
+    	                "						</div>"+   
+    	                "					</div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Calle:*</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='street'>"+
+    	                "						</div>"+  
+    	                "					</div>"+ 
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Numero:*</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='n_street'>"+
+    	                "						</div>"+   	                	  	               	     
+    	                "					</div>"+
+                        "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Email:*</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='email'>"+
+    	                "						</div>"+   	                	  	               	     
+    	                "					</div>"+
+    	                "					<div class='form-actions'>"+
+    	                "						<button class='btn btn-large btn-primary' type='submit'>Registrar</button>"+
+    	                "					</div>"+
+    	                "				</form>"+
+    	                "			</div>"+
+    	                "		</div>"+		
+    	                "		<footer>"+
+    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                "		</footer>"+
+    	                "	</div> <!-- /container -->"+
+    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
+    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+    	    			"</body>"+
+    	  				"</html>";
     		}
-    	}); 
+    	}); // end addowner
         
         Spark.post(new Route("/addowner/") {
     		@Override
@@ -487,7 +538,7 @@ public class Inmoweb {
     			crudOwner o = new crudOwner();
     			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
     			o.create(request.queryParams("first_name"), request.queryParams("last_name"), request.queryParams("city_id"),request.queryParams("neighborhood"),request.queryParams("street"),request.queryParams("n_street"),request.queryParams("email"));			
-                Base.close();
+                        Base.close();
     		
                 return "Propietario registrado exitosamente.!";
             }
@@ -499,7 +550,7 @@ public class Inmoweb {
                 response.type("text/html");
                 
     			return 
-    					EncabezadoHTML1+
+    				EncabezadoHTML1+
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
     	                "	<div class='container'>"+
@@ -593,7 +644,7 @@ public class Inmoweb {
     			Base.close();
     		
     			return 
-    					EncabezadoHTML1+
+    				EncabezadoHTML1+
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
 		                "<div class='container'>"+

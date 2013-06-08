@@ -11,8 +11,8 @@ public class Inmo {
     public static void main( String[] args ) {
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         
-//       crudUser e = new crudUser();
-//       e.create("user@email.com", "John", "Doe");   
+       crudUser e = new crudUser();
+       e.create("user@email.com", "John", "Doe");   
        
 //       crudOwner o = new crudOwner();     
 //       o.create("Debora","Meltrozo","2","Santa Rosa","Sobremonte","153","deborame@outlook.com");

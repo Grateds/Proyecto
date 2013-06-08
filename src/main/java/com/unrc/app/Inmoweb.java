@@ -79,6 +79,7 @@ public class Inmoweb {
                 "		<title>Inmobiliario Web</title>"+
                 "		<!-- Le styles -->"+
                 "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
+                "		<link rel='stylesheet' href='http://twitter.github.io/bootstrap/assets/css/docs.css'></link>"+
                 "		<style type='text/css'>"+
                 "			body {"+
                 "				padding-top: 60px;"+

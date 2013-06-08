@@ -534,14 +534,35 @@ public class Inmoweb {
         Spark.post(new Route("/addowner/") {
     		@Override
     		public Object handle(Request request, Response response) {
-                
+    			response.type("text/html");
     			crudOwner o = new crudOwner();
     			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
-    			o.create(request.queryParams("first_name"), request.queryParams("last_name"), request.queryParams("city_id"),request.queryParams("neighborhood"),request.queryParams("street"),request.queryParams("n_street"),request.queryParams("email"));			
-                        Base.close();
+    			o.create(request.queryParams("first_name"),request.queryParams("last_name"),request.queryParams("city_id"), request.queryParams("neighborhood"), request.queryParams("street"), request.queryParams("n_street"), request.queryParams("email"));
+    			Base.close();
     		
-                return "Propietario registrado exitosamente.!";
-            }
+    			return 
+    				EncabezadoHTML1+
+                		EncabezadoHTML2+
+                		EncabezadoHTML3+
+		                "<div class='container'>"+
+		                "	<!-- Main hero unit for a primary marketing message or call to action -->"+
+		                "	<div class='hero-unit'>"+
+		                "		<center>"+
+    	                "			<h3>Dueño registrado exitosamente.</h3>" +
+    	                "			<a href='/'>" +
+    	                "				<button class='btn btn-success btn-primary'>Volver</button>" +
+    	                "			</a>"+
+    	                "		</center>"+ 
+		                "	</div>"+
+		                "	<footer>"+
+		                "		<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+		                "	</footer>"+
+		                "</div> <!-- /container -->"+
+		    			"<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
+		    			"<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+		    			"	</body>"+
+		  				"</html>"; 
+    		}
     	});
         
         Spark.get(new Route("/addbuilding/") {

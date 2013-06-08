@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: com.unrc.app.TestSuite
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.94 sec <<< FAILURE!
+shouldValidateMandatoryFields(com.unrc.app.UserSpec)  Time elapsed: 0.437 sec  <<< ERROR!
+org.javalite.test.jspec.TestException: Method: isValid should return true, but returned false
+	at org.javalite.test.jspec.Expectation.invokeBoolean(Expectation.java:321)
+	at org.javalite.test.jspec.Expectation.shouldBe(Expectation.java:112)
+	at com.unrc.app.UserSpec.shouldValidateMandatoryFields(UserSpec.java:40)
+

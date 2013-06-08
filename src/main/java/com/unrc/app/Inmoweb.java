@@ -115,14 +115,6 @@ public class Inmoweb {
                 "								<li><a href='/addrealestate/'>Registrar Inmobiliaria</a></li>"+
                 "								<li class='divider'></li>"+
                 "								<li class='nav-header'>Administración</li>"+
-                "								<li><a href='#'>Borrar Usuario</a></li>"+
-                "								<li><a href='#'>Borrar Dueño</a></li>"+
-                "								<li><a href='#'>Borrar Inmueble</a></li>"+
-                "								<li><a href='#'>Borrar Inmobiliaria</a></li>"+
-                "								<li><a href='#'>Actualizar Usuario</a></li>"+
-                "								<li><a href='#'>Actualizar Dueño</a></li>"+
-                "								<li><a href='#'>Actualizar Inmueble</a></li>"+
-                "								<li><a href='#'>Actualizar Inmobiliaria</a></li>"+
                 "							</ul>"+
                 "						</li>"+
                 "					</ul>"+

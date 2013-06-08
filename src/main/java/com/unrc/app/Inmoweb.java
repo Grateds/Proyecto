@@ -21,6 +21,20 @@ public class Inmoweb {
      	return ret;
     }
     
+    public static String optionCityUpdate(String id){
+        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+        City city = City.findFirst("id = ?", id);
+        List<City> cities = City.findAll();
+        String ret = "<select class='span3' NAME='city_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='"+id+"' style='display:none;'>"+city.get("name")+"</option><br>";
+        for(int i=0; i < cities.size(); i++){
+            City c = cities.get(i);
+            ret = ret+"<option value="+c.get("id")+">"+c.get("name")+"</option><br>";
+        }
+        ret= ret + "</select>";
+         Base.close();  			
+     	return ret;
+    }
+    
     public static String optionOperation(){
     	String ret = "<select class='span3' NAME='operation' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='' disabled selected style='display:none;'>Seleccionar operación</option><br>";
 		ret = ret+"<option value='venta'>Venta</option><br>" +
@@ -250,7 +264,9 @@ public class Inmoweb {
 							  "<td>"+o.get("neighborhood")+"</td>"+
 							  "<td>"+o.get("street")+"</td>"+
 							  "<td>"+o.get("n_street")+"</td>"+
-							  "<td>"+o.get("email")+"</td>";
+							  "<td>"+o.get("email")+"</td>"+
+							  "<td><a href='/updateowner/"+o.get("id")+"'><img src='http://www.topstudiodev.com/envato/contactformgenerator/img/update.png'></a></td>"+
+							  "<td><a href='/deleteowner/"+o.get("id")+"'><img src='http://www.projectlinkr.com/plcontent/delete.png'></a></td>";					
      			}   
      			ret = ret +"</tbody></table>";
      			Base.close();  			
@@ -795,6 +811,57 @@ public class Inmoweb {
                 }
     		Base.close();
                 return ret;
+            }
+        });
+        Spark.get(new Route("/deleteowner/:id"){
+            @Override
+            public Object handle(Request request, Response response){
+            	response.redirect("/owners/");
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+                crudOwner owner = new crudOwner();
+                owner.delete(request.params(":id"));
+                Base.close();
+                return "";
+            }
+        });
+        
+        Spark.get(new Route("/updateowner/:id"){
+            @Override
+            public Object handle(Request request, Response response){
+            	//response.redirect("/owners/");
+            	response.type("text/html");
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+    			Owner owner = Owner.findFirst("id = ?", request.params(":id"));
+                //crudOwner owner = new crudOwner();
+                Base.close();
+
+                return ""+
+                "<center><h1>Update dueño</h1>" +     			
+    			"		<form method='POST' action='/updateowner/"+request.params(":id")+"'>"+
+    			"			<p><input name='first_name'  value='"+owner.get("first_name")+"'></p>"+
+    			"			<p><input name='last_name' value='"+owner.get("last_name")+"'></p>"+
+                			optionCityUpdate(""+owner.get("city_id")+"")+
+                "			<p><input name='neighborhood' value='"+owner.get("neighborhood")+"'></p>"+ 
+                "			<p><input name='street'  value='"+owner.get("street")+"'>"+ 
+                "			<p><input name='n_street' value='"+owner.get("n_street")+"'></p>"+ 
+                "			<p><input name='email'  value='"+owner.get("email")+"'></p>"+ 
+                "			<input type='submit' value='Modificar'>"+
+    			"		</form></center>";
+                
+            }
+        });
+        
+        Spark.post(new Route("/updateowner/:id"){
+            @Override
+            public Object handle(Request request, Response response){
+            	response.redirect("/owners/");
+            	crudOwner o = new crudOwner();
+    			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+    			o.update(request.params(":id"),request.queryParams("first_name"), request.queryParams("last_name"), request.queryParams("city_id"),request.queryParams("neighborhood"),request.queryParams("street"),request.queryParams("n_street"),request.queryParams("email"));			
+                Base.close();
+    		
+                return "";
+                
             }
         });
     }

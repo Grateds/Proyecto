@@ -737,5 +737,37 @@ public class Inmoweb {
     			}
     		}
     	});
+        Spark.get(new Route("/addrealestate/"){
+            @Override
+            public Object handle(Request request, Response response){
+                response.type("text/html");
+                return ""+
+                "<center><h1>Agregar Inmobiliaria</h1>"+
+                "<form method='POST' action='/addrealestate/'>"+
+                    "<p><input name='name' placeholder='Nombre'></p>"+
+                    optionCity()+
+                    "<p><input name='street' placeholder='Calle'></p>"+
+                    "<p><input name='n_street' placeholder='Numero'></p>"+
+                    "<p><input name='neighborhood' placeholder='Barrio'></p>"+
+                    "<p><input name='phone' placeholder='Telefono'></p>"+
+                    "<p><input name='email' placeholder='Email'></p>"+
+                    "<p><input name='site_web' placeholder='Sitio Web'></p>"+
+                    "<input type='submit' value='Add'>"+
+    	    		"<input type='reset' value='Reset'>" +
+                "</form></center>";
+               
+           }
+        });
+        Spark.post(new Route("/addrealestate/"){
+            @Override
+            public Object handle(Request request, Response response){
+                response.type("text/html");
+                crudRealEstate re = new crudRealEstate();
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+                re.create(request.queryParams("name"), request.queryParams("phone"), request.queryParams("email"), request.queryParams("city_id"), request.queryParams("neighborhood"), request.queryParams("street"), request.queryParams("n_street"), request.queryParams("site_web"));
+                Base.close();
+                return "Inmobiliaria ingresada!";
+            }
+        });
     }
 }

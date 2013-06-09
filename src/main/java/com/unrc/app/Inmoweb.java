@@ -2,7 +2,7 @@ package com.unrc.app;
 
 import java.util.List;
 import org.javalite.activejdbc.Base;
-
+import static spark.Spark.externalStaticFileLocation;
 import spark.*;
 import com.unrc.app.models.*;
 
@@ -71,6 +71,9 @@ public class Inmoweb {
     }
     
     public static void main( String[] args ) {
+
+        externalStaticFileLocation("src/main/java/com/unrc/app/public");
+
         final String EncabezadoHTML1 =
         		"<!DOCTYPE html>"+
                 "<html lang='en'>"+
@@ -78,15 +81,15 @@ public class Inmoweb {
                 "		<meta charset='utf-8'>"+
                 "		<title>Inmobiliario Web</title>"+
                 "		<!-- Le styles -->"+
-                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>"+
-                "		<link rel='stylesheet' href='http://twitter.github.io/bootstrap/assets/css/docs.css'></link>"+
+                "		<link href='../bootstrap/css/bootstrap.css' rel='stylesheet'>"+
+                "		<link rel='stylesheet' href='../bootstrap/css/docs.css'></link>"+
                 "		<style type='text/css'>"+
                 "			body {"+
                 "				padding-top: 60px;"+
                 "				padding-bottom: 40px;"+
                 "			}"+
                 "		</style>"+
-                "		<link href='http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'>"+
+                "		<link href='../bootstrap/css/bootstrap-responsive.css' rel='stylesheet'>"+
                 "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
                 "	</head>"+
   				"<body background = 'http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
@@ -163,8 +166,8 @@ public class Inmoweb {
                         "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
                         "		</footer>"+
                         "	</div> <!-- /container -->"+
-            			"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
-            			"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+            			"	<script src='../bootstrap/js/jquery.js'></script>"+
+            			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
             			"</body>"+
           				"</html>";
                 
@@ -215,8 +218,8 @@ public class Inmoweb {
     	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
     	                "		</footer>"+
     	                "	</div> <!-- /container -->"+
-    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
-    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
+    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
     	    			"</body>"+
     	  				"</html>";    
                 }
@@ -279,8 +282,8 @@ public class Inmoweb {
     	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
     	                "		</footer>"+
     	                "	</div> <!-- /container -->"+
-    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
-    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
+    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
     	    			"</body>"+
     	  				"</html>";  
         	}
@@ -347,8 +350,8 @@ public class Inmoweb {
     	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
     	                "		</footer>"+
     	                "	</div> <!-- /container -->"+
-    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
-    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
+    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
     	    			"</body>"+
     	  				"</html>";  
         	}
@@ -411,8 +414,8 @@ public class Inmoweb {
     	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
     	                "		</footer>"+
     	                "	</div> <!-- /container -->"+
-    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
-    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
+    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
     	    			"</body>"+
     	  				"</html>";  
         	}
@@ -445,8 +448,8 @@ public class Inmoweb {
 		                "		<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
 		                "	</footer>"+
 		                "</div> <!-- /container -->"+
-		    			"<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
-		    			"<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+		    			"<script src='../bootstrap/js/jquery.js'></script>"+
+		    			"<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
 		    			"	</body>"+
 		  				"</html>"; 
     		}
@@ -523,8 +526,8 @@ public class Inmoweb {
     	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
     	                "		</footer>"+
     	                "	</div> <!-- /container -->"+
-    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
-    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
+    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
     	    			"</body>"+
     	  				"</html>";
     		}
@@ -557,8 +560,8 @@ public class Inmoweb {
 		                "		<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
 		                "	</footer>"+
 		                "</div> <!-- /container -->"+
-		    			"<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
-		    			"<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+		    			"<script src='../bootstrap/js/jquery.js'></script>"+
+		    			"<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
 		    			"	</body>"+
 		  				"</html>"; 
     		}
@@ -647,8 +650,8 @@ public class Inmoweb {
     	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
     	                "		</footer>"+
     	                "	</div> <!-- /container -->"+
-    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
-    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
+    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
     	    			"</body>"+
     	  				"</html>";
     		}
@@ -681,8 +684,8 @@ public class Inmoweb {
 		                "		<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
 		                "	</footer>"+
 		                "</div> <!-- /container -->"+
-		    			"<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
-		    			"<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+		    			"<script src='../bootstrap/js/jquery.js'></script>"+
+		    			"<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
 		    			"	</body>"+
 		  				"</html>"; 
     		}
@@ -714,8 +717,8 @@ public class Inmoweb {
     	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
     	                "		</footer>"+
     	                "	</div> <!-- /container -->"+
-    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
-    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
+    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
     	    			"</body>"+
     	  				"</html>";
     		}
@@ -767,8 +770,8 @@ public class Inmoweb {
     	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
     	                "		</footer>"+
     	                "	</div> <!-- /container -->"+
-    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/jquery.js'></script>"+
-    	    			"	<script src='http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js'></script>"+
+    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
+    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
     	    			"</body>"+
     	  				"</html>";
     		}

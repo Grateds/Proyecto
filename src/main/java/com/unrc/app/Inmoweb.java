@@ -66,7 +66,7 @@ public class Inmoweb {
     public static String searchEngine(){
         return  "<form method='POST' action='/search/'>"+
                     optionType()+
-                    optionOperation()+
+                    optionOperation()+"  "+
                 "<input type='submit' value='Buscar'></form>";
     }
     
@@ -90,9 +90,9 @@ public class Inmoweb {
                 "			}"+			
                 "		</style>"+
                 "		<link href='../bootstrap/css/bootstrap-responsive.css' rel='stylesheet'>"+
-                "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
+                "		<link rel='shortcut icon' href='../bootstrap/img/inmoapp.png'>"+
                 "	</head>"+
-  				"<body background ='http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
+  				"<body background ='../bootstrap/img/background.jpg'>"+
    				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
    				"		<div class='navbar-inner'>"+
    				"   		<div class='container'>"+
@@ -145,7 +145,7 @@ public class Inmoweb {
                         "				<div class='span6'>"+
                         "					<center><h1>¡Bienvenido!</h1>"+
                         "					<p>This is a template for a simple marketing or informational website.</p>"+
-                        "					<img src='https://upload.wikimedia.org/wikipedia/commons/c/ce/Office_building_icon.png'></center>"+
+                        "					<img src='../bootstrap/img/index.png'></center>"+
                         "				</div>"+
                         "				<div class='span4'>"+
                         "					<form class='form' method='POST' action='/adduser/'>"+
@@ -265,8 +265,8 @@ public class Inmoweb {
 							  "<td>"+o.get("street")+"</td>"+
 							  "<td>"+o.get("n_street")+"</td>"+
 							  "<td>"+o.get("email")+"</td>"+
-							  "<td><a href='/updateowner/"+o.get("id")+"'><img src='http://www.topstudiodev.com/envato/contactformgenerator/img/update.png'></a></td>"+
-							  "<td><a href='/deleteowner/"+o.get("id")+"'><img src='http://www.projectlinkr.com/plcontent/delete.png'></a></td>";					
+							  "<td><a href='/updateowner/"+o.get("id")+"'><img src='../bootstrap/img/update.png'></a></td>"+
+							  "<td><a href='/deleteowner/"+o.get("id")+"'><img src='../bootstrap/img/delete.png'></a></td>";					
      			}   
      			ret = ret +"</tbody></table>";
      			Base.close();  			
@@ -404,7 +404,9 @@ public class Inmoweb {
 							  "<td>"+r.get("n_street")+"</td>"+
 							  "<td>"+r.get("phone")+"</td>"+
 							  "<td>"+r.get("email")+"</td>" +
-							  "<td>"+r.get("site_web")+"</td>";
+							  "<td>"+r.get("site_web")+"</td>"+
+                              "<td><a href='/updaterealestate/"+r.get("id")+"'><img src='../bootstrap/img/update.png'></a></td>"+
+                              "<td><a href='/deleterealestate/"+r.get("id")+"'><img src='../bootstrap/img/delete.png'></a></td>";
      			}   
      			ret = ret +"</tbody></table>";
      			Base.close();  			
@@ -720,7 +722,7 @@ public class Inmoweb {
     	                "			<div>"+
     	                "				<center>"+
     	    	        "					<h1>En construcción..</h1>" +
-    	    	        "					<img src='http://tiendasuzuki.com/hombre.png'>" +		
+    	    	        "					<img src='../bootstrap/img/about.png'>" +		
     	    	        "					<p>Lamentamos las molestas ocasionadas.</p>" +
     	    	        "				</center>"+
     	                "			</div>"+
@@ -868,11 +870,78 @@ public class Inmoweb {
                 return "Inmobiliaria ingresada!";
             }
         });
+        Spark.get(new Route("/deleterealestate/:id"){
+            @Override
+            public Object handle(Request request, Response response){
+                response.redirect("/realestates/");
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+                crudRealEstate rs = new crudRealEstate();
+                rs.delete(request.params(":id"));
+                Base.close();
+                return "";
+            }
+        });
+        Spark.get(new Route("/updaterealestate/:id"){
+            @Override
+            public Object handle(Request request, Response response){
+                response.type("text/html");
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+                RealEstate rs = RealEstate.findFirst("id = ?", request.params(":id"));
+                Base.close();
+                return ""+
+                "<center><h1>Agregar Inmobiliaria</h1>"+
+                "<form method='POST' action='/updaterealestate/"+request.params(":id")+"'>"+
+                    "<p><input name='name' value='"+rs.get("name")+"'></p>"+
+                    optionCityUpdate(""+rs.get("city_id")+"")+
+                    "<p><input name='street' value='"+rs.get("street")+"'></p>"+
+                    "<p><input name='n_street' value='"+rs.get("n_street")+"'></p>"+
+                    "<p><input name='neighborhood' value='"+rs.get("neighborhood")+"'></p>"+
+                    "<p><input name='phone' value='"+rs.get("phone")+"'></p>"+
+                    "<p><input name='email' value='"+rs.get("email")+"'></p>"+
+                    "<p><input name='site_web' value='"+rs.get("site_web")+"'></p>"+
+                    "<input type='submit' value='Modificar'>"+
+                "</form></center>";
+                
+            }
+        });
+        Spark.post(new Route("/updaterealestate/:id"){
+            @Override
+            public Object handle(Request request, Response response){
+                response.redirect("/realestates/");
+                crudRealEstate rs = new crudRealEstate();
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+                rs.update(request.params(":id"),request.queryParams("name"),request.queryParams("phone"),request.queryParams("email"),request.queryParams("city_id"),request.queryParams("neighborhood"),request.queryParams("street"),request.queryParams("n_street"),request.queryParams("site_web"));
+                Base.close();
+                return "";
+                
+            }
+        });
         Spark.get(new Route("/search/"){
             @Override
             public Object handle(Request request, Response response){
                 response.type("text/html");
-                return searchEngine();
+                return
+                EncabezadoHTML1+
+                EncabezadoHTML2+
+                EncabezadoHTML3+
+                "<div class='container'>"+
+                    "<!-- Main hero unit for a primary marketing message or call to action -->"+
+                    "<div class='form-actions'>" +
+                        "<div class='page-header'>" +
+                            "<center><h1>Busqueda</h1></center>" +
+                        "</div>"+
+                        "<div>"+
+                            searchEngine()+
+                        "</div>"+
+                    "</div>"+
+                    "<footer>"+
+                        "<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+                    "</footer>"+
+                "</div> <!-- /container -->"+
+                "<script src='../bootstrap/js/jquery.js'></script>"+
+                "<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+                "</body>"+
+                "</html>";
             }
         });
         Spark.post(new Route("/search/"){

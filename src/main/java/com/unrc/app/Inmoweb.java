@@ -471,13 +471,13 @@ public class Inmoweb {
     	                "			<hr></hr>"+
     	                "			<div>"+
     	                "				<form class='form-horizontal' method='POST' action='/addowner/'>"+       
-                        "                                    </div>"+
+                        "                                       </div>"+
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Nombre:*</label>"+
     	                "						<div class='controls'>"+
     	                "							<input type='text' name='first_name'>"+
     	                "						</div>"+  
-                        "                                     </div>"+
+                        "                                       </div>"+
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Apellido:*</label>"+
     	                "						<div class='controls'>"+

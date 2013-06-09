@@ -31,7 +31,7 @@ public class Inmoweb {
             ret = ret+"<option value="+c.get("id")+">"+c.get("name")+"</option><br>";
         }
         ret= ret + "</select>";
-         Base.close();  			
+        Base.close();  			
      	return ret;
     }
     
@@ -42,8 +42,24 @@ public class Inmoweb {
     	return ret+"</select>";
     }
     
+    public static String optionOperationUpdate(String operation){
+    	String ret = "<select class='span3' NAME='operation' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='"+operation+"' style='display:none;'>"+operation+"</option><br>";
+    	ret = ret+"<option value='venta'>Venta</option><br>" +
+				  "<option value='alquiler'>Alquiler</option><br>";
+    	return ret+"</select>";
+    }
+    
     public static String optionType(){
     	String ret = "<select class='span3' NAME='type' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='' disabled selected style='display:none;'>Seleccionar tipo</option><br>";
+		ret = ret+"<option value='land'>Land</option><br>" +
+				  "<option value='farm'>Farm</option><br>" +
+	        	  "<option value='house'>House</option><br>" +
+				  "<option value='garage'>Garage</option><br>";
+    	return ret+"</select>";
+    }
+    
+    public static String optionTypeUpdate(String type){
+    	String ret = "<select class='span3' NAME='type' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='"+type+"' style='display:none;'>"+type+"</option><br>";
 		ret = ret+"<option value='land'>Land</option><br>" +
 				  "<option value='farm'>Farm</option><br>" +
 	        	  "<option value='house'>House</option><br>" +
@@ -63,6 +79,21 @@ public class Inmoweb {
          Base.close();  			
      	return ret;
     }
+    
+    public static String optionOwnerUpdate(String id){
+        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+        Owner owner = Owner.findFirst("id = ?", id);
+        List<Owner> owners = Owner.findAll();
+        String ret = "<select class='span3' NAME='owner_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='"+id+"' style='display:none;'>"+owner.get("first_name")+" - "+owner.get("last_name")+" - "+owner.get("email")+"</option><br>";
+        for(int i=0; i < owners.size(); i++){
+            Owner o = owners.get(i);
+            ret = ret+"<option value="+o.get("id")+">"+o.get("first_name")+" - "+o.get("last_name")+" - "+o.get("email")+"</option><br>";
+        }
+        ret= ret + "</select>";
+         Base.close();  			
+     	return ret;
+    }
+    
     public static String searchEngine(){
         return  "<form method='POST' action='/search/'>"+
                     optionType()+
@@ -200,7 +231,9 @@ public class Inmoweb {
      				ret = ret+"<tr><td>"+j+"</td>"+
      							  "<td>"+u.get("first_name")+"</td>" +
      							  "<td>"+u.get("last_name")+"</td>" +
-     							  "<td>"+u.get("email")+"</td>";
+     							  "<td>"+u.get("email")+"</td>"+
+                                  "<td><a href='/updateuser/"+u.get("id")+"'><img src='../bootstrap/img/update.png'></a></td>"+
+                                  "<td><a href='/deleteuser/"+u.get("id")+"'><img src='../bootstrap/img/delete.png'></a></td>";
      			}
      			ret = ret +"</tbody></table>";
      			Base.close(); 
@@ -338,7 +371,9 @@ public class Inmoweb {
 							  "<td>"+b.get("n_street")+"</td>"+
 							  "<td>"+b.get("description")+"</td>"+
 							  "<td>"+b.get("price")+"</td>" +
-							  "<td>"+b.get("operation")+"</td>";
+							  "<td>"+b.get("operation")+"</td>"+
+							  "<td><a href='/updatebuilding/"+b.get("id")+"'><img src='../bootstrap/img/update.png'></a></td>"+
+                              "<td><a href='/deletebuilding/"+b.get("id")+"'><img src='../bootstrap/img/delete.png'></a></td>";
      			}   
      			ret = ret +"</tbody></table>";
      			Base.close();  			
@@ -588,7 +623,7 @@ public class Inmoweb {
                 response.type("text/html");
                 
     			return 
-    				EncabezadoHTML1+
+    					EncabezadoHTML1+
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
     	                "	<div class='container'>"+
@@ -682,7 +717,7 @@ public class Inmoweb {
     			Base.close();
     		
     			return 
-    				EncabezadoHTML1+
+    					EncabezadoHTML1+
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
 		                "<div class='container'>"+
@@ -839,6 +874,7 @@ public class Inmoweb {
     			}
     		}
     	});
+        
         Spark.get(new Route("/addrealestate/"){
             @Override
             public Object handle(Request request, Response response){
@@ -860,6 +896,7 @@ public class Inmoweb {
                
            }
         });
+        
         Spark.post(new Route("/addrealestate/"){
             @Override
             public Object handle(Request request, Response response){
@@ -871,6 +908,7 @@ public class Inmoweb {
                 return "Inmobiliaria ingresada!";
             }
         });
+        
         Spark.get(new Route("/deleterealestate/:id"){
             @Override
             public Object handle(Request request, Response response){
@@ -882,6 +920,7 @@ public class Inmoweb {
                 return "";
             }
         });
+        
         Spark.get(new Route("/updaterealestate/:id"){
             @Override
             public Object handle(Request request, Response response){
@@ -905,6 +944,7 @@ public class Inmoweb {
                 
             }
         });
+        
         Spark.post(new Route("/updaterealestate/:id"){
             @Override
             public Object handle(Request request, Response response){
@@ -917,6 +957,7 @@ public class Inmoweb {
                 
             }
         });
+        
         Spark.get(new Route("/search/"){
             @Override
             public Object handle(Request request, Response response){
@@ -945,6 +986,7 @@ public class Inmoweb {
                 "</html>";
             }
         });
+        
         Spark.post(new Route("/search/"){
             @Override
             public Object handle(Request request, Response response){
@@ -956,10 +998,211 @@ public class Inmoweb {
                     Building b = buildings.get(i);
                     ret = ret+" "+b.get("street")+" "+b.get("n_street")+"<br><br>";
                 }
-    		Base.close();
+                Base.close();
                 return ret;
             }
         });
+        
+        Spark.get(new Route("/deleteuser/:id"){
+            @Override
+            public Object handle(Request request, Response response){
+            	response.redirect("/users/");
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+                crudUser user = new crudUser();
+                user.delete(request.params(":id"));
+                Base.close();
+                return "";
+            }
+        });
+        
+        Spark.get(new Route("/updateuser/:id"){
+            @Override
+            public Object handle(Request request, Response response){
+            	response.type("text/html");
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+    			User user = User.findFirst("id = ?", request.params(":id"));
+                Base.close();
+
+                return 
+                		EncabezadoHTML1+
+                		EncabezadoHTML2+
+                		EncabezadoHTML3+
+    	                "	<div class='container'>"+
+    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                "		<div class='hero-unit'>"+
+    	                "			<div class='container'>"+
+    	                "				<h2>Modificar Datos</h2>"+
+    	                "				<label>* Datos obligatorios </label>"+
+    	                "			</div>"+
+    	                "			<hr></hr>"+
+    	                "			<div>"+
+    	                "				<form class='form-horizontal' method='POST' action='/updateuser/"+request.params(":id")+"'>"+               
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Nombre:*</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='first_name' value='"+user.get("first_name")+"'>"+
+    	                "						</div>"+
+    	                "					</div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Apellido:*</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='last_name' value='"+user.get("last_name")+"'>"+
+    	                "						</div>"+
+    	                "					</div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Email:*</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='email' value='"+user.get("email")+"'>"+
+    	                "						</div>"+
+    	                "					</div>"+     	               
+    	                "					<div class='form-actions'>"+
+    	                "						<button class='btn btn-large btn-primary' type='submit'>Guardar</button>"+
+    	                "					</div>"+
+    	                "				</form>"+
+    	                "			</div>"+
+    	                "		</div>"+		
+    	                "		<footer>"+
+    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                "		</footer>"+
+    	                "	</div> <!-- /container -->"+
+    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
+    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+    	    			"</body>"+
+    	  				"</html>";               
+            }
+        });
+        
+        Spark.post(new Route("/updateuser/:id"){
+            @Override
+            public Object handle(Request request, Response response){
+            	response.redirect("/users/");
+            	crudUser user = new crudUser();
+    			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+    			user.update(request.params(":id"),request.queryParams("first_name"), request.queryParams("last_name"), request.queryParams("email"));			
+                Base.close();
+    		
+                return "";    
+            }
+        });
+        
+        Spark.get(new Route("/deletebuilding/:id"){
+            @Override
+            public Object handle(Request request, Response response){
+            	response.redirect("/buildings/");
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+                crudBuilding building = new crudBuilding();
+                building.delete(request.params(":id"));
+                Base.close();
+                return "";
+            }
+        });
+        
+        Spark.get(new Route("/updatebuilding/:id"){
+            @Override
+            public Object handle(Request request, Response response){
+            	response.type("text/html");
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+    			Building building = Building.findFirst("id = ?", request.params(":id"));
+                Base.close();
+
+                return 
+                		EncabezadoHTML1+
+                		EncabezadoHTML2+
+                		EncabezadoHTML3+
+                		"	<div class='container'>"+
+    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                "		<div class='hero-unit'>"+
+    	                "			<div class='container'>"+
+    	                "				<h2>Modificar Datos</h2>"+
+    	                "				<label>* Datos obligatorios </label>"+
+    	                "			</div>"+
+    	                "			<hr></hr>"+
+    	                "			<div>"+
+    	                "				<form class='form-horizontal' method='POST' action='/updatebuilding/"+request.params(":id")+"'>"+               
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Tipo:*</label>"+
+    	                "						<div class='controls'>"+
+    	                							optionTypeUpdate(""+building.get("type")+"")+
+    	                "						</div>"+
+    	                "					</div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Barrio:*</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='neighborhood' value='"+building.get("neighborhood")+"'>"+
+    	                "						</div>"+
+    	                "					</div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Calle:*</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='street' value='"+building.get("street")+"'>"+
+    	                "						</div>"+
+    	                "					</div>"+ 
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Numero:*</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='n_street' value='"+building.get("n_street")+"'>"+
+    	                "						</div>"+
+    	                "					</div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Descripción:</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<textarea style='width: 394px; height: 115px;;' name= 'description' value='"+building.get("description")+"'></textarea>"+
+    	                "						</div>"+
+    	                "					</div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Precio:</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='price' value='"+building.get("price")+"'>"+
+    	                "						</div>"+
+    	                "					</div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Operación:</label>"+
+    	                "						<div class='controls'>"+
+    	                							optionOperationUpdate(""+building.get("operation")+"")+
+    	                "						</div>"+
+    	                "					</div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Dueño:*</label>"+
+    	                "						<div class='controls'>"+
+    	                							optionOwnerUpdate(""+building.get("owner_id")+"")+
+    	                "						</div>"+
+    	                "					</div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Ciudad:*</label>"+
+    	                "						<div class='controls'>"+
+    	                							optionCityUpdate(""+building.get("city_id")+"")+
+    	                "						</div>"+
+    	                "					</div>"+
+    	                "					<div class='form-actions'>"+
+    	                "						<button class='btn btn-large btn-primary' type='submit'>Guardar</button>"+
+    	                "					</div>"+
+    	                "				</form>"+
+    	                "			</div>"+
+    	                "		</div>"+		
+    	                "		<footer>"+
+    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                "		</footer>"+
+    	                "	</div> <!-- /container -->"+
+    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
+    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+    	    			"</body>"+
+    	  				"</html>";
+            }
+        });
+        
+        Spark.post(new Route("/updatebuilding/:id"){
+            @Override
+            public Object handle(Request request, Response response){
+            	response.redirect("/buildings/");
+            	crudBuilding building = new crudBuilding();
+    			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+    			building.update(request.params(":id"), request.params("type"), request.params("owner_id"), request.params("city_id"), request.params("neighborhood"), request.params("street"), request.params("n_street"), request.params("description"), request.params("price"), request.params("operation"));			
+                Base.close();
+    		
+                return "";    
+            }
+        });
+        
         Spark.get(new Route("/deleteowner/:id"){
             @Override
             public Object handle(Request request, Response response){
@@ -975,11 +1218,9 @@ public class Inmoweb {
         Spark.get(new Route("/updateowner/:id"){
             @Override
             public Object handle(Request request, Response response){
-            	//response.redirect("/owners/");
             	response.type("text/html");
                 Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
     			Owner owner = Owner.findFirst("id = ?", request.params(":id"));
-                //crudOwner owner = new crudOwner();
                 Base.close();
 
                 return ""+
@@ -994,7 +1235,6 @@ public class Inmoweb {
                 "			<p><input name='email'  value='"+owner.get("email")+"'></p>"+ 
                 "			<input type='submit' value='Modificar'>"+
     			"		</form></center>";
-                
             }
         });
         
@@ -1007,8 +1247,7 @@ public class Inmoweb {
     			o.update(request.params(":id"),request.queryParams("first_name"), request.queryParams("last_name"), request.queryParams("city_id"),request.queryParams("neighborhood"),request.queryParams("street"),request.queryParams("n_street"),request.queryParams("email"));			
                 Base.close();
     		
-                return "";
-                
+                return "";    
             }
         });
     }

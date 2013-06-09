@@ -1146,7 +1146,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Descripción:</label>"+
     	                "						<div class='controls'>"+
-    	                "							<textarea style='width: 394px; height: 115px;;' name= 'description' value='"+building.get("description")+"'></textarea>"+
+    	                "							<textarea style='width: 394px; height: 115px;;' name= 'description'>"+building.get("description")+"</textarea>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
@@ -1196,7 +1196,7 @@ public class Inmoweb {
             	response.redirect("/buildings/");
             	crudBuilding building = new crudBuilding();
     			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
-    			building.update(request.params(":id"), request.params("type"), request.params("owner_id"), request.params("city_id"), request.params("neighborhood"), request.params("street"), request.params("n_street"), request.params("description"), request.params("price"), request.params("operation"));			
+    			building.update(request.params(":id"), request.queryParams("type"), request.queryParams("owner_id"), request.queryParams("city_id"), request.queryParams("neighborhood"), request.queryParams("street"), request.queryParams("n_street"), request.queryParams("description"), request.queryParams("price"), request.queryParams("operation"));			
                 Base.close();
     		
                 return "";    

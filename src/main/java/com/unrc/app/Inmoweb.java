@@ -87,7 +87,7 @@ public class Inmoweb {
                 "			body {"+
                 "				padding-top: 60px;"+
                 "				padding-bottom: 40px;"+
-                "			}"+
+                "			}"+			
                 "		</style>"+
                 "		<link href='../bootstrap/css/bootstrap-responsive.css' rel='stylesheet'>"+
                 "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+

@@ -404,7 +404,9 @@ public class Inmoweb {
 							  "<td>"+r.get("n_street")+"</td>"+
 							  "<td>"+r.get("phone")+"</td>"+
 							  "<td>"+r.get("email")+"</td>" +
-							  "<td>"+r.get("site_web")+"</td>";
+							  "<td>"+r.get("site_web")+"</td>"+
+                              "<td><a href='/updaterealestate/"+r.get("id")+"'><img src='../bootstrap/img/update.png'></a></td>"+
+                              "<td><a href='/deleterealestate/"+r.get("id")+"'><img src='../bootstrap/img/delete.png'></a></td>";
      			}   
      			ret = ret +"</tbody></table>";
      			Base.close();  			
@@ -866,6 +868,52 @@ public class Inmoweb {
                 re.create(request.queryParams("name"), request.queryParams("phone"), request.queryParams("email"), request.queryParams("city_id"), request.queryParams("neighborhood"), request.queryParams("street"), request.queryParams("n_street"), request.queryParams("site_web"));
                 Base.close();
                 return "Inmobiliaria ingresada!";
+            }
+        });
+        Spark.get(new Route("/deleterealestate/:id"){
+            @Override
+            public Object handle(Request request, Response response){
+                response.redirect("/realestates/");
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+                crudRealEstate rs = new crudRealEstate();
+                rs.delete(request.params(":id"));
+                Base.close();
+                return "";
+            }
+        });
+        Spark.get(new Route("/updaterealestate/:id"){
+            @Override
+            public Object handle(Request request, Response response){
+                response.type("text/html");
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+                RealEstate rs = RealEstate.findFirst("id = ?", request.params(":id"));
+                Base.close();
+                return ""+
+                "<center><h1>Agregar Inmobiliaria</h1>"+
+                "<form method='POST' action='/updaterealestate/"+request.params(":id")+"'>"+
+                    "<p><input name='name' value='"+rs.get("name")+"'></p>"+
+                    optionCityUpdate(""+rs.get("city_id")+"")+
+                    "<p><input name='street' value='"+rs.get("street")+"'></p>"+
+                    "<p><input name='n_street' value='"+rs.get("n_street")+"'></p>"+
+                    "<p><input name='neighborhood' value='"+rs.get("neighborhood")+"'></p>"+
+                    "<p><input name='phone' value='"+rs.get("phone")+"'></p>"+
+                    "<p><input name='email' value='"+rs.get("email")+"'></p>"+
+                    "<p><input name='site_web' value='"+rs.get("site_web")+"'></p>"+
+                    "<input type='submit' value='Modificar'>"+
+                "</form></center>";
+                
+            }
+        });
+        Spark.post(new Route("/updaterealestate/:id"){
+            @Override
+            public Object handle(Request request, Response response){
+                response.redirect("/realestates/");
+                crudRealEstate rs = new crudRealEstate();
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+                rs.update(request.params(":id"),request.queryParams("name"),request.queryParams("phone"),request.queryParams("email"),request.queryParams("city_id"),request.queryParams("neighborhood"),request.queryParams("street"),request.queryParams("n_street"),request.queryParams("site_web"));
+                Base.close();
+                return "";
+                
             }
         });
         Spark.get(new Route("/search/"){

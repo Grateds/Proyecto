@@ -66,7 +66,7 @@ public class Inmoweb {
     public static String searchEngine(){
         return  "<form method='POST' action='/search/'>"+
                     optionType()+
-                    optionOperation()+
+                    optionOperation()+"  "+
                 "<input type='submit' value='Buscar'></form>";
     }
     
@@ -920,7 +920,28 @@ public class Inmoweb {
             @Override
             public Object handle(Request request, Response response){
                 response.type("text/html");
-                return searchEngine();
+                return
+                EncabezadoHTML1+
+                EncabezadoHTML2+
+                EncabezadoHTML3+
+                "<div class='container'>"+
+                    "<!-- Main hero unit for a primary marketing message or call to action -->"+
+                    "<div class='form-actions'>" +
+                        "<div class='page-header'>" +
+                            "<center><h1>Busqueda</h1></center>" +
+                        "</div>"+
+                        "<div>"+
+                            searchEngine()+
+                        "</div>"+
+                    "</div>"+
+                    "<footer>"+
+                        "<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+                    "</footer>"+
+                "</div> <!-- /container -->"+
+                "<script src='../bootstrap/js/jquery.js'></script>"+
+                "<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+                "</body>"+
+                "</html>";
             }
         });
         Spark.post(new Route("/search/"){

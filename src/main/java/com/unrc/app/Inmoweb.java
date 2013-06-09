@@ -66,8 +66,9 @@ public class Inmoweb {
     public static String searchEngine(){
         return  "<form method='POST' action='/search/'>"+
                     optionType()+
-                    optionOperation()+"  "+
-                "<input type='submit' value='Buscar'></form>";
+                    optionOperation()+" " +
+                    "<button class='btn btn-small btn-primary type='sumit'>Buscar</buton>"+
+                "</form>";
     }
     
     public static void main( String[] args ) {
@@ -926,8 +927,8 @@ public class Inmoweb {
                 EncabezadoHTML3+
                 "<div class='container'>"+
                     "<!-- Main hero unit for a primary marketing message or call to action -->"+
-                    "<div class='form-actions'>" +
-                        "<div class='page-header'>" +
+                    "<div class='hero-unit'>" +
+                        "<div>" +
                             "<center><h1>Busqueda</h1></center>" +
                         "</div>"+
                         "<div>"+

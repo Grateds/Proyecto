@@ -2,8 +2,6 @@ package com.unrc.app;
 
 import com.unrc.app.models.RealEstate;
 
-import java.util.List;
-
 public class crudRealEstate {
     
     public void create(String name, String phone, String email, String city, String neighborhood, String street, String n_street, String site_web){

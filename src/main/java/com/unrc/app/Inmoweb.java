@@ -90,9 +90,9 @@ public class Inmoweb {
                 "			}"+
                 "		</style>"+
                 "		<link href='../bootstrap/css/bootstrap-responsive.css' rel='stylesheet'>"+
-                "		<link rel='shortcut icon' href=../bootstrapt/img/inmoapp.png'>"+
+                "		<link rel='shortcut icon' href='http://icons.iconarchive.com/icons/deleket/3d-cartoon-vol3/24/Axialis-Icon-Workshop-Classic-icon.png'>"+
                 "	</head>"+
-  				"<body background = '../bootstrapt/img/background.jpg'>"+
+  				"<body background ='http://loadpaper.com/large/Sky_wallpapers_171.jpg'>"+
    				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
    				"		<div class='navbar-inner'>"+
    				"   		<div class='container'>"+
@@ -145,7 +145,7 @@ public class Inmoweb {
                         "				<div class='span6'>"+
                         "					<center><h1>¡Bienvenido!</h1>"+
                         "					<p>This is a template for a simple marketing or informational website.</p>"+
-                        "					<img src='../bootstrapt/img/index.png'></center>"+
+                        "					<img src='https://upload.wikimedia.org/wikipedia/commons/c/ce/Office_building_icon.png'></center>"+
                         "				</div>"+
                         "				<div class='span4'>"+
                         "					<form class='form' method='POST' action='/adduser/'>"+
@@ -265,8 +265,8 @@ public class Inmoweb {
 							  "<td>"+o.get("street")+"</td>"+
 							  "<td>"+o.get("n_street")+"</td>"+
 							  "<td>"+o.get("email")+"</td>"+
-							  "<td><a href='/updateowner/"+o.get("id")+"'><img src='../bootstrapt/img/update.png'></a></td>"+
-							  "<td><a href='/deleteowner/"+o.get("id")+"'><img src='../bootstrapt/img/delete.png'></a></td>";					
+							  "<td><a href='/updateowner/"+o.get("id")+"'><img src='http://www.topstudiodev.com/envato/contactformgenerator/img/update.png'></a></td>"+
+							  "<td><a href='/deleteowner/"+o.get("id")+"'><img src='http://www.projectlinkr.com/plcontent/delete.png'></a></td>";					
      			}   
      			ret = ret +"</tbody></table>";
      			Base.close();  			
@@ -720,7 +720,7 @@ public class Inmoweb {
     	                "			<div>"+
     	                "				<center>"+
     	    	        "					<h1>En construcción..</h1>" +
-    	    	        "					<img src='../bootstrapt/img/about.png'>" +		
+    	    	        "					<img src='http://tiendasuzuki.com/hombre.png'>" +		
     	    	        "					<p>Lamentamos las molestas ocasionadas.</p>" +
     	    	        "				</center>"+
     	                "			</div>"+

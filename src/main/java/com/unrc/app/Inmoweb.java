@@ -458,7 +458,7 @@ public class Inmoweb {
                 response.type("text/html");
                 
     			return 
-    				EncabezadoHTML1+
+    					EncabezadoHTML1+
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
     	                "	<div class='container'>"+
@@ -471,13 +471,12 @@ public class Inmoweb {
     	                "			<hr></hr>"+
     	                "			<div>"+
     	                "				<form class='form-horizontal' method='POST' action='/addowner/'>"+       
-                        "                                       </div>"+
-    	                "					<div class='control-group'>"+
+                        "					<div class='control-group'>"+
     	                "						<label class='control-label'>Nombre:*</label>"+
     	                "						<div class='controls'>"+
     	                "							<input type='text' name='first_name'>"+
     	                "						</div>"+  
-                        "                                       </div>"+
+                        "                   </div>"+
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Apellido:*</label>"+
     	                "						<div class='controls'>"+
@@ -485,25 +484,25 @@ public class Inmoweb {
     	                "						</div>"+  
                         "					</div>"+
     	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Ciudad:*</label>"+
+    	                "						<label class='control-label'>Ciudad:</label>"+
     	                "						<div class='controls'>"+
     	                							optionCity()+
     	                "						</div>"+                 
     	                "					</div>"+
     	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Barrio:*</label>"+
+    	                "						<label class='control-label'>Barrio:</label>"+
     	                "						<div class='controls'>"+
     	                "							<input type='text' name='neighborhood'>"+
     	                "						</div>"+   
     	                "					</div>"+
     	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Calle:*</label>"+
+    	                "						<label class='control-label'>Calle:</label>"+
     	                "						<div class='controls'>"+
     	                "							<input type='text' name='street'>"+
     	                "						</div>"+  
     	                "					</div>"+ 
     	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Numero:*</label>"+
+    	                "						<label class='control-label'>Numero:</label>"+
     	                "						<div class='controls'>"+
     	                "							<input type='text' name='n_street'>"+
     	                "						</div>"+   	                	  	               	     

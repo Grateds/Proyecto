@@ -26,7 +26,7 @@ public class Inmo {
 //        crudRealEstate r = new crudRealEstate();
 //        
 //        r.create("msida", "436554", "mierd24@gmail.com", "3", "la villa", "lavalle", "456", "www.clsd4d4e.com");
-       
+        
         crudBuildingRealEstate cBR = new crudBuildingRealEstate();
         cBR.create("1", "6");
         cBR.create("2", "4");

@@ -963,29 +963,29 @@ public class Inmoweb {
             public Object handle(Request request, Response response){
                 response.type("text/html");
                 return
-                EncabezadoHTML1+
-                EncabezadoHTML2+
-                EncabezadoHTML3+
-                "<div class='container'>"+
-                    "<!-- Main hero unit for a primary marketing message or call to action -->"+
-                    "<div class='hero-unit'>" +
-                        "<div>" +
-                            "<center><h1>Busqueda</h1></center>" +
+                    EncabezadoHTML1+
+                    EncabezadoHTML2+
+                    EncabezadoHTML3+
+                    "<div class='container'>"+
+                        "<!-- Main hero unit for a primary marketing message or call to action -->"+
+                        "<div class='hero-unit'>" +
+                            "<div>" +
+                                "<center><h2>Busqueda</h2></center>" +
+                            "</div>"+
+                            "<div>"+
+                                searchEngine()+
+                            "</div>"+
                         "</div>"+
-                        "<div>"+
-                            searchEngine()+
-                        "</div>"+
-                    "</div>"+
-                    "<footer>"+
-                        "<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-                    "</footer>"+
-                "</div> <!-- /container -->"+
-                "<script src='../bootstrap/js/jquery.js'></script>"+
-                "<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
-                "</body>"+
-                "</html>";
+                        "<footer>"+
+                            "<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+                        "</footer>"+
+                    "</div> <!-- /container -->"+
+                    "<script src='../bootstrap/js/jquery.js'></script>"+
+                    "<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+                    "</body>"+
+                    "</html>";
             }
-        });
+        }); //end get search
         
         Spark.post(new Route("/search/"){
             @Override

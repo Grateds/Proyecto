@@ -69,7 +69,7 @@ CREATE TABLE buildings_real_estates(
 	id INT(11) NOT NULL AUTO_INCREMENT,
 	building_id INT(11),
 	real_estate_id INT(11),
-  CONSTRAINT have_pk PRIMARY KEY (id)
+  CONSTRAINT buildings_real_estates_pk PRIMARY KEY (id)
 );
 
 INSERT INTO cities (name)

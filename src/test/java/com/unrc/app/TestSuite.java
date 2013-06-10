@@ -10,6 +10,6 @@ import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("unused")
 @RunWith(Suite.class)
-@Suite.SuiteClasses( { InmoTest.class, UserSpec.class, OwnerSpec.class, BuildingSpec.class, CitySpec.class, RealEstateSpec.class } )
+@Suite.SuiteClasses( { InmoTest.class, UserSpec.class, OwnerSpec.class, BuildingSpec.class, CitySpec.class, RealEstateSpec.class, BuildingRealEstateSpec.class } )
 public class TestSuite {
 }

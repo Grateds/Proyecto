@@ -30,7 +30,7 @@ CREATE TABLE real_estates(
 	neighborhood VARCHAR(30) DEFAULT NULL,
 	street VARCHAR(30) DEFAULT NULL,
  	n_street INT (10) DEFAULT NULL,
-	phone INT(15) DEFAULT NULL,
+	phone INT(15) DEFAULT NULL UNIQUE,
 	email VARCHAR(60) UNIQUE,
 	site_web VARCHAR(25) UNIQUE,
   CONSTRAINT real_states_pk PRIMARY KEY (id)

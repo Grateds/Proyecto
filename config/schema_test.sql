@@ -25,12 +25,12 @@ CREATE TABLE cities(
 DROP TABLE IF EXISTS real_estates; -- Inmobiliarias
 CREATE TABLE real_estates(
 	id INT(20) NOT NULL AUTO_INCREMENT,
-	name VARCHAR(30),
+	name VARCHAR(30) UNIQUE,
 	city_id INT(20),
 	neighborhood VARCHAR(30) DEFAULT NULL,
 	street VARCHAR(30) DEFAULT NULL,
  	n_street INT (10) DEFAULT NULL,
-	phone INT(15) DEFAULT NULL,
+	phone INT(15) DEFAULT NULL UNIQUE,
 	email VARCHAR(60) UNIQUE,
 	site_web VARCHAR(25) UNIQUE,
   CONSTRAINT real_states_pk PRIMARY KEY (id)
@@ -64,11 +64,11 @@ CREATE TABLE buildings(
   CONSTRAINT buildings_pk PRIMARY KEY (id)
 );
 
-DROP TABLE IF EXISTS building_real_estates; -- Relacion entre Inmuebles e Inmobiliaria
-CREATE TABLE building_real_estates(
+DROP TABLE IF EXISTS buildings_real_estates; -- Relacion entre Inmuebles e Inmobiliaria
+CREATE TABLE buildings_real_estates(
 	id INT(11) NOT NULL AUTO_INCREMENT,
 	building_id INT(11),
-	real_estates_id INT(11),
+	real_estate_id INT(11),
   CONSTRAINT have_pk PRIMARY KEY (id)
 );
 
@@ -107,14 +107,13 @@ INSERT INTO cities (name)
  	('San Luis'), 	
  	('Moreno'), 	
  	('Concordia'), 	
- 	('La Rioja'), 
-	('San Fernando del Valle de Catamarca'),
- 	('Río Cuarto'), 	 	
+ 	('La Rioja'), 	
+	('San Nicolas de los Arroyos'), 
+ 	('Río Cuarto'), 		
  	('Comodoro Rivadavia'), 
  	('Isidro Casanova'), 
  	('San Rafael'), 	
  	('Ituzaingo'), 	
- 	('San Nicolas de los Arroyos'), 	
  	('Florencio Varela'), 	
  	('San Juan'), 	
 	('Lomas de Zamora'),

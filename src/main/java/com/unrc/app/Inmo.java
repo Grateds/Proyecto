@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 @SuppressWarnings("unused")
 public class Inmo {
     public static void main( String[] args ) {
+
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         
 //       crudUser e = new crudUser();

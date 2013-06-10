@@ -877,24 +877,86 @@ public class Inmoweb {
         
         Spark.get(new Route("/addrealestate/"){
             @Override
-            public Object handle(Request request, Response response){
+    		public Object handle(Request request, Response response) {	
                 response.type("text/html");
-                return ""+
-                "<center><h1>Agregar Inmobiliaria</h1>"+
-                "<form method='POST' action='/addrealestate/'>"+
-                    "<p><input name='name' placeholder='Nombre'></p>"+
-                    optionCity()+
-                    "<p><input name='street' placeholder='Calle'></p>"+
-                    "<p><input name='n_street' placeholder='Numero'></p>"+
-                    "<p><input name='neighborhood' placeholder='Barrio'></p>"+
-                    "<p><input name='phone' placeholder='Telefono'></p>"+
-                    "<p><input name='email' placeholder='Email'></p>"+
-                    "<p><input name='site_web' placeholder='Sitio Web'></p>"+
-                    "<input type='submit' value='Add'>"+
-    	    		"<input type='reset' value='Reset'>" +
-                "</form></center>";
-               
-           }
+                
+    			return 
+    				EncabezadoHTML1+
+                		EncabezadoHTML2+
+                		EncabezadoHTML3+
+    	                "	<div class='container'>"+
+    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                "		<div class='hero-unit'>"+
+    	                "			<div class='container'>"+
+    	                "				<h2>Registrar Inmobiliaria</h2>"+
+    	                "				<label>* Datos obligatorios </label>"+
+    	                "			</div>"+
+    	                "			<hr></hr>"+
+    	                "			<div>"+
+    	                "				<form class='form-horizontal' method='POST' action='/addrealestate/'>"+  
+                        "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Nombre:*</label>"+
+    	                "						<div class='controls'>"+ 
+    	                "							<input type='text' name='name'>"+
+    	                "						</div>"+
+    	                "					</div>"+
+                        "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Ciudad:*</label>"+
+    	                "						<div class='controls'>"+
+    	                							optionCity()+      
+    	                "						</div>"+
+    	                "					</div>"+                     
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Calle:*</label>"+
+    	                "						<div class='controls'>"+   
+    	                "							<input type='text' name='street'>"+
+    	                "						</div>"+
+    	                "					</div>"+ 
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Numero:*</label>"+
+    	                "						<div class='controls'>"+   
+    	                "							<input type='text' name='n_street'>"+
+    	                "						</div>"+
+    	                "					</div>"+                                                        
+                        "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Barrio:*</label>"+
+    	                "						<div class='controls'>"+ 
+    	                "							<input type='text' name='neighborhood'>"+
+    	                "						</div>"+
+    	                "					</div>"+                             
+                        "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Telefono:</label>"+
+    	                "						<div class='controls'>"+ 
+    	                "							<input type='text' name='phone'>"+
+    	                "						</div>"+
+    	                "					</div>"+
+                        "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Email:</label>"+
+    	                "						<div class='controls'>"+ 
+    	                "							<input type='text' name='email'>"+
+    	                "						</div>"+
+    	                "					</div>"+
+                        "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Sitio Web:</label>"+
+    	                "						<div class='controls'>"+ 
+    	                "							<input type='text' name='site_web'>"+
+    	                "						</div>"+
+    	                "					</div>"+
+    	                "					<div class='form-actions'>"+
+    	                "						<button class='btn btn-large btn-primary' type='submit'>Registrar</button>"+
+    	                "					</div>"+
+    	                "				</form>"+
+    	                "			</div>"+
+    	                "		</div>"+		
+    	                "		<footer>"+
+    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                "		</footer>"+
+    	                "	</div> <!-- /container -->"+
+    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
+    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+    	    			"</body>"+
+    	  				"</html>";
+    		}
         });
         
         Spark.post(new Route("/addrealestate/"){
@@ -966,24 +1028,24 @@ public class Inmoweb {
                     EncabezadoHTML1+
                     EncabezadoHTML2+
                     EncabezadoHTML3+
-                    "<div class='container'>"+
+                        "<div class='container'>"+
                         "<!-- Main hero unit for a primary marketing message or call to action -->"+
                         "<div class='hero-unit'>" +
-                            "<div>" +
-                                "<center><h2>Busqueda</h2></center>" +
+                             "<div>" +
+                                 "<center><h2>Busqueda</h2></center>" +
+                             "</div>"+
+                             "<div>"+
+                                 searchEngine()+
+                             "</div>"+
                             "</div>"+
-                            "<div>"+
-                                searchEngine()+
-                            "</div>"+
-                        "</div>"+
-                        "<footer>"+
-                            "<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-                        "</footer>"+
-                    "</div> <!-- /container -->"+
-                    "<script src='../bootstrap/js/jquery.js'></script>"+
-                    "<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
-                    "</body>"+
-                    "</html>";
+                            "<footer>"+
+                                "<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+                            "</footer>"+
+                        "</div> <!-- /container -->"+
+                        "<script src='../bootstrap/js/jquery.js'></script>"+
+                        "<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+                        "</body>"+
+                 "</html>";
             }
         }); //end get search
         

@@ -972,9 +972,30 @@ public class Inmoweb {
                 Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
                 re.create(request.queryParams("name"), request.queryParams("phone"), request.queryParams("email"), request.queryParams("city_id"), request.queryParams("neighborhood"), request.queryParams("street"), request.queryParams("n_street"), request.queryParams("site_web"));
                 Base.close();
-                return "Inmobiliaria ingresada!";
-            }
-        });
+                return 
+    					EncabezadoHTML1+
+                		EncabezadoHTML2+
+                		EncabezadoHTML3+
+		                "<div class='container'>"+
+		                "	<!-- Main hero unit for a primary marketing message or call to action -->"+
+		                "	<div class='hero-unit'>"+
+		                "		<center>"+
+    	                "			<h3>Inmobiliaria registrada exitosamente.</h3>" +
+    	                "			<a href='/'>" +
+    	                "				<button class='btn btn-success btn-primary'>Volver</button>" +
+    	                "			</a>"+
+    	                "		</center>"+ 
+		                "	</div>"+
+		                "	<footer>"+
+		                "		<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+		                "	</footer>"+
+		                "</div> <!-- /container -->"+
+		    			"<script src='../bootstrap/js/jquery.js'></script>"+
+		    			"<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+		    			"	</body>"+
+		  				"</html>"; 
+    		}
+    	});
         
         Spark.get(new Route("/deleterealestate/:id"){
             @Override

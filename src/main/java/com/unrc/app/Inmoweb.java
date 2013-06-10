@@ -1028,39 +1028,101 @@ public class Inmoweb {
         });
         
         Spark.get(new Route("/updaterealestate/:id"){
-            @Override
+           @Override
             public Object handle(Request request, Response response){
-                response.type("text/html");
+            	response.type("text/html");
                 Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
-                RealEstate rs = RealEstate.findFirst("id = ?", request.params(":id"));
+                        RealEstate rs = RealEstate.findFirst("id = ?", request.params(":id"));
                 Base.close();
-                return ""+
-                "<center><h1>Agregar Inmobiliaria</h1>"+
-                "<form method='POST' action='/updaterealestate/"+request.params(":id")+"'>"+
-                    "<p><input name='name' value='"+rs.get("name")+"'></p>"+
-                    optionCityUpdate(""+rs.get("city_id")+"")+
-                    "<p><input name='street' value='"+rs.get("street")+"'></p>"+
-                    "<p><input name='n_street' value='"+rs.get("n_street")+"'></p>"+
-                    "<p><input name='neighborhood' value='"+rs.get("neighborhood")+"'></p>"+
-                    "<p><input name='phone' value='"+rs.get("phone")+"'></p>"+
-                    "<p><input name='email' value='"+rs.get("email")+"'></p>"+
-                    "<p><input name='site_web' value='"+rs.get("site_web")+"'></p>"+
-                    "<input type='submit' value='Modificar'>"+
-                "</form></center>";
-                
-            }
+                return 
+                		EncabezadoHTML1+
+                		EncabezadoHTML2+
+                		EncabezadoHTML3+
+                	"               <div class='container'>"+
+    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                "		<div class='hero-unit'>"+
+    	                "			<div class='container'>"+
+    	                "				<h2>Modificar Datos</h2>"+
+    	                "				<label>* Datos obligatorios </label>"+
+    	                "			</div>"+
+    	                "			<hr></hr>"+
+    	                "			<div>"+
+    	                "				<form class='form-horizontal' method='POST' action='/updaterealestate/"+request.params(":id")+"'>"+                 
+                        "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Nombre:*</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='name' value='"+rs.get("name")+"'>"+
+    	                "						</div>"+             
+    	                "					</div>"+ 
+                        "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Ciudad:</label>"+
+    	                "						<div class='controls'>"+
+    	                							optionCityUpdate(""+rs.get("city_id")+"")+
+    	                "						</div>"+            
+    	                "					</div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Calle:</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='street' value='"+rs.get("street")+"'>"+
+    	                "						</div>"+             
+    	                "					</div>"+ 
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Numero:</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='n_street' value='"+rs.get("n_street")+"'>"+
+    	                "						</div>"+            
+    	                "					</div>"+
+                        "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Barrio:</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='neighborhood' value='"+rs.get("neighborhood")+"'>"+
+    	                "						</div>"+             
+    	                "					</div>"+                     
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Telefono:*</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='phone' value='"+rs.get("phone")+"'>"+
+    	                "						</div>"+            
+    	                "					</div>"+
+                        "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Email:</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='email' value='"+rs.get("email")+"'>"+
+    	                "						</div>"+            
+    	                "					</div>"+
+                        "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Sitio Web:*</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='site_web' value='"+rs.get("site_web")+"'>"+
+    	                "						</div>"+            
+    	                "					</div>"+
+    	                "					<div class='form-actions'>"+
+    	                "						<button class='btn btn-large btn-primary' type='submit'>Guardar</button>"+
+    	                "					</div>"+
+    	                "				</form>"+
+    	                "			</div>"+
+    	                "		</div>"+		
+    	                "		<footer>"+
+    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                "		</footer>"+
+    	                "	</div> <!-- /container -->"+
+    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
+    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+    	    			"</body>"+
+                                        "</html>";
+            }   
         });
         
         Spark.post(new Route("/updaterealestate/:id"){
-            @Override
+             @Override
             public Object handle(Request request, Response response){
-                response.redirect("/realestates/");
-                crudRealEstate rs = new crudRealEstate();
-                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
-                rs.update(request.params(":id"),request.queryParams("name"),request.queryParams("phone"),request.queryParams("email"),request.queryParams("city_id"),request.queryParams("neighborhood"),request.queryParams("street"),request.queryParams("n_street"),request.queryParams("site_web"));
+            	response.redirect("/realestates/");
+            	crudRealEstate realestate = new crudRealEstate();
+    			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+    			realestate.update(request.params(":id"), request.queryParams("name"), request.queryParams("phone"), request.queryParams("email"), request.queryParams("city_id"), request.queryParams("neighborhood"), request.queryParams("street"), request.queryParams("n_street"), request.queryParams("site_web"));			
                 Base.close();
-                return "";
                 
+                return "";    
             }
         });
         

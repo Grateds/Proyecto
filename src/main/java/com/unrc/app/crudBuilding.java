@@ -14,10 +14,9 @@ public class crudBuilding {
 	
 	/** Pre: city.exist() && owner.exist() = true **/
 	/** Pos: Created building **/
-	public void create(String type, String owner_id, String city_id, String neighborhood, String street, String n_street, String description, String price, String operation){
-        BuildingRealEstate bRE = new BuildingRealEstate();
-        
-		Building b = new Building();
+
+	public void create(String real_estate_id, String type, String owner_id, String city_id, String neighborhood, String street, String n_street, String description, String price, String operation){
+        Building b = new Building();
 		b.set("type", type);
 		b.set("neighborhood", neighborhood);
 		b.set("street", street);
@@ -28,8 +27,11 @@ public class crudBuilding {
 		b.set("owner_id", owner_id);
         b.set("city_id", city_id);
        	b.saveIt();
-       	
-       	
+
+        BuildingRealEstate bre = new BuildingRealEstate();
+        bre.set("building_id",b.get("id"));
+        bre.set("real_estate_id", real_estate_id);
+        bre.saveIt();
 	}
 	
 	/** Pre: building.exist() = true **/

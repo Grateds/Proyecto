@@ -901,31 +901,31 @@ public class Inmoweb {
     	                "						</div>"+
     	                "					</div>"+
                         "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Ciudad:*</label>"+
+    	                "						<label class='control-label'>Ciudad:</label>"+
     	                "						<div class='controls'>"+
     	                							optionCity()+      
     	                "						</div>"+
     	                "					</div>"+                     
     	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Calle:*</label>"+
+    	                "						<label class='control-label'>Calle:</label>"+
     	                "						<div class='controls'>"+   
     	                "							<input type='text' name='street'>"+
     	                "						</div>"+
     	                "					</div>"+ 
     	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Numero:*</label>"+
+    	                "						<label class='control-label'>Numero:</label>"+
     	                "						<div class='controls'>"+   
     	                "							<input type='text' name='n_street'>"+
     	                "						</div>"+
     	                "					</div>"+                                                        
                         "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Barrio:*</label>"+
+    	                "						<label class='control-label'>Barrio:</label>"+
     	                "						<div class='controls'>"+ 
     	                "							<input type='text' name='neighborhood'>"+
     	                "						</div>"+
     	                "					</div>"+                             
                         "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Telefono:</label>"+
+    	                "						<label class='control-label'>Telefono:*</label>"+
     	                "						<div class='controls'>"+ 
     	                "							<input type='text' name='phone'>"+
     	                "						</div>"+

@@ -1238,13 +1238,13 @@ public class Inmoweb {
     	                "			<div>"+
     	                "				<form class='form-horizontal' method='POST' action='/updateowner/"+request.params(":id")+"'>"+ 
                         "                                       <div class='control-group'>"+
-    	                "                                           <label class='control-label'>Nombre:</label>"+
+    	                "                                           <label class='control-label'>Nombre:*</label>"+
     	                "                                           <div class='controls'>"+
     	                "							<input type='text' name='first_name' value='"+owner.get("first_name")+"'>"+
     	                "						</div>"+
     	                "					</div>"+
                         "                                       <div class='control-group'>"+
-    	                "                                           <label class='control-label'>Apellido:</label>"+
+    	                "                                           <label class='control-label'>Apellido:*</label>"+
     	                "                                           <div class='controls'>"+
     	                "							<input type='text' name='last_name' value='"+owner.get("last_name")+"'>"+
     	                "						</div>"+
@@ -1274,7 +1274,7 @@ public class Inmoweb {
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Email:</label>"+
+    	                "						<label class='control-label'>Email:*</label>"+
     	                "						<div class='controls'>"+
     	                "							<input type='text' name='email' value='"+owner.get("email")+"'>"+
     	                "						</div>"+

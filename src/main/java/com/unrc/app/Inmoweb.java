@@ -511,7 +511,7 @@ public class Inmoweb {
                 response.type("text/html");
                 
     			return 
-    					EncabezadoHTML1+
+                                EncabezadoHTML1+
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
     	                "	<div class='container'>"+
@@ -1198,7 +1198,7 @@ public class Inmoweb {
     			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
     			building.update(request.params(":id"), request.queryParams("type"), request.queryParams("owner_id"), request.queryParams("city_id"), request.queryParams("neighborhood"), request.queryParams("street"), request.queryParams("n_street"), request.queryParams("description"), request.queryParams("price"), request.queryParams("operation"));			
                 Base.close();
-    		
+                
                 return "";    
             }
         });
@@ -1223,18 +1223,76 @@ public class Inmoweb {
     			Owner owner = Owner.findFirst("id = ?", request.params(":id"));
                 Base.close();
 
-                return ""+
-                "<center><h1>Update dueño</h1>" +     			
-    			"		<form method='POST' action='/updateowner/"+request.params(":id")+"'>"+
-    			"			<p><input name='first_name'  value='"+owner.get("first_name")+"'></p>"+
-    			"			<p><input name='last_name' value='"+owner.get("last_name")+"'></p>"+
-                			optionCityUpdate(""+owner.get("city_id")+"")+
-                "			<p><input name='neighborhood' value='"+owner.get("neighborhood")+"'></p>"+ 
-                "			<p><input name='street'  value='"+owner.get("street")+"'>"+ 
-                "			<p><input name='n_street' value='"+owner.get("n_street")+"'></p>"+ 
-                "			<p><input name='email'  value='"+owner.get("email")+"'></p>"+ 
-                "			<input type='submit' value='Modificar'>"+
-    			"		</form></center>";
+                return 
+                		EncabezadoHTML1+
+                		EncabezadoHTML2+
+                		EncabezadoHTML3+
+                		"	<div class='container'>"+
+    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                "		<div class='hero-unit'>"+
+    	                "			<div class='container'>"+
+    	                "				<h2>Modificar Datos</h2>"+
+    	                "				<label>* Datos obligatorios </label>"+
+    	                "			</div>"+
+    	                "			<hr></hr>"+
+    	                "			<div>"+
+    	                "				<form class='form-horizontal' method='POST' action='/updateowner/"+request.params(":id")+"'>"+ 
+                        "                                       <div class='control-group'>"+
+    	                "                                           <label class='control-label'>Nombre:</label>"+
+    	                "                                           <div class='controls'>"+
+    	                "							<input type='text' name='first_name' value='"+owner.get("first_name")+"'>"+
+    	                "						</div>"+
+    	                "					</div>"+
+                        "                                       <div class='control-group'>"+
+    	                "                                           <label class='control-label'>Apellido:</label>"+
+    	                "                                           <div class='controls'>"+
+    	                "							<input type='text' name='last_name' value='"+owner.get("last_name")+"'>"+
+    	                "						</div>"+
+    	                "					</div>"+
+                        "                                       <div class='control-group'>"+
+    	                "                                           <label class='control-label'>Ciudad:</label>"+
+    	                "                                           <div class='controls'>"+
+    	                						optionCityUpdate(""+owner.get("city_id")+"")+
+    	                "                                           </div>"+
+    	                "					</div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Barrio:</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='neighborhood' value='"+owner.get("neighborhood")+"'>"+
+    	                "						</div>"+
+    	                "					</div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Calle:</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='street' value='"+owner.get("street")+"'>"+
+    	                "						</div>"+
+    	                "					</div>"+ 
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Numero:</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='n_street' value='"+owner.get("n_street")+"'>"+
+    	                "						</div>"+
+    	                "					</div>"+
+    	                "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Email:</label>"+
+    	                "						<div class='controls'>"+
+    	                "							<input type='text' name='email' value='"+owner.get("email")+"'>"+
+    	                "						</div>"+
+    	                "					</div>"+
+    	                "					<div class='form-actions'>"+
+    	                "						<button class='btn btn-large btn-primary' type='submit'>Guardar</button>"+
+    	                "					</div>"+
+    	                "				</form>"+
+    	                "			</div>"+
+    	                "		</div>"+		
+    	                "		<footer>"+
+    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                "		</footer>"+
+    	                "	</div> <!-- /container -->"+
+    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
+    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+    	    			"</body>"+
+    	  				"</html>";
             }
         });
         

@@ -1,16 +1,23 @@
 package com.unrc.app;
 
+import java.util.ArrayList;
+
 import com.unrc.app.models.Building;
+import com.unrc.app.models.BuildingRealEstate;
 
 /**
  * Class crudBuilding
  */
 public class crudBuilding {
-
+	
+	ArrayList<String> RealEstates = new ArrayList<String>();
+	
 	/** Pre: city.exist() && owner.exist() = true **/
 	/** Pos: Created building **/
 	public void create(String type, String owner_id, String city_id, String neighborhood, String street, String n_street, String description, String price, String operation){
-        Building b = new Building();
+        BuildingRealEstate bRE = new BuildingRealEstate();
+        
+		Building b = new Building();
 		b.set("type", type);
 		b.set("neighborhood", neighborhood);
 		b.set("street", street);
@@ -21,6 +28,8 @@ public class crudBuilding {
 		b.set("owner_id", owner_id);
         b.set("city_id", city_id);
        	b.saveIt();
+       	
+       	
 	}
 	
 	/** Pre: building.exist() = true **/

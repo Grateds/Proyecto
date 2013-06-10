@@ -33,7 +33,7 @@ CREATE TABLE real_estates(
 	phone INT(15) DEFAULT NULL UNIQUE,
 	email VARCHAR(60) UNIQUE,
 	site_web VARCHAR(25) UNIQUE,
-  CONSTRAINT real_states_pk PRIMARY KEY (id)
+  CONSTRAINT real_estates_pk PRIMARY KEY (id)
 );
 
 DROP TABLE IF EXISTS owners; -- Dueños

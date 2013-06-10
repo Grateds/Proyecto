@@ -145,6 +145,8 @@ public class Inmoweb {
                 "								<li><a href='/owners/'>Listar Dueños</a></li>"+
                 "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
                 "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
+                "								<li class='divider'></li>"+
+                "								<li class='nav-header'>Registro</li>"+
                 "								<li><a href='/addowner/'>Registrar Dueño</a></li>"+
                 "								<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
                 "								<li><a href='/addrealestate/'>Registrar Inmobiliaria</a></li>"+
@@ -1063,7 +1065,7 @@ public class Inmoweb {
                 Base.close();
                 
                 return 
-    				EncabezadoHTML1+
+                		EncabezadoHTML1+
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
 		        "               <div class='container'>"+

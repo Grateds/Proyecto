@@ -999,8 +999,31 @@ public class Inmoweb {
                     ret = ret+" "+b.get("street")+" "+b.get("n_street")+"<br><br>";
                 }
                 Base.close();
-                return ret;
-            }
+                
+                return 
+    				EncabezadoHTML1+
+                		EncabezadoHTML2+
+                		EncabezadoHTML3+
+		        "               <div class='container'>"+
+		        "               <!-- Main hero unit for a primary marketing message or call to action -->"+
+		        "               <div class='hero-unit'>"+
+		        "                   <center>"+                    
+    	                "			<h2>Resultado de Busqueda</h2>" +
+                                                    ret+
+    	                "			<a href='/'>" +
+    	                "				<button class='btn btn-success btn-primary'>Volver</button>" +
+    	                "			</a>"+
+    	                "                   </center>"+ 
+		        "               </div>"+
+		        "               <footer>"+
+		        "               	<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+		        "                       </footer>"+
+		        "               </div> <!-- /container -->"+
+		        "               <script src='../bootstrap/js/jquery.js'></script>"+
+		        "               <script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+		    	"	</body>"+
+		  	"</html>"; 
+    		}
         });
         
         Spark.get(new Route("/deleteuser/:id"){

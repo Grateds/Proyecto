@@ -141,18 +141,21 @@ public class Inmoweb {
                 "						<li class='dropdown'>"+
                 "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
                 "							<ul class='dropdown-menu'>"+
-                "								<li><a href='/users/'>Listar Usuarios</a></li>"+
-                "								<li><a href='/owners/'>Listar Dueños</a></li>"+
-                "								<li><a href='/buildings/'>Listar Inmuebles</a></li>" +
-                "								<li><a href='/realestates/'>Listar Inmobiliarias</a></li>"+
-                "								<li class='divider'></li>"+
-                "								<li class='nav-header'>Registro</li>"+
-                "								<li><a href='/addowner/'>Registrar Dueño</a></li>"+
-                "								<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
-                "								<li><a href='/addrealestate/'>Registrar Inmobiliaria</a></li>"+
+                "								<li><a href='/users/'>Ver Usuarios</a></li>"+
+                "								<li><a href='/owners/'>Ver Dueños</a></li>"+
+                "								<li><a href='/buildings/'>Ver Inmuebles</a></li>" +
+                "								<li><a href='/realestates/'>Ver Inmobiliarias</a></li>"+
                 "								<li class='divider'></li>"+
                 "								<li class='nav-header'>Administración</li>"+
                 "								<li><a href='/search/'>Buscar</a></li>"+
+                "							</ul>"+
+                "						</li>"+
+                "						<li class='dropdown'>"+
+                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Registro <b class='caret'></b></a>"+
+                "							<ul class='dropdown-menu'>"+
+                "								<li><a href='/addowner/'>Registrar Dueño</a></li>"+
+                "								<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
+                "								<li><a href='/addrealestate/'>Registrar Inmobiliaria</a></li>"+
                 "							</ul>"+
                 "						</li>"+
                 "					</ul>"+

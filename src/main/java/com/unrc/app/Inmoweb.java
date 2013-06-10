@@ -147,7 +147,7 @@ public class Inmoweb {
                 "								<li><a href='/realestates/'><img src='../bootstrap/img/list.png'> Ver Inmobiliarias</a></li>"+
                 "								<li class='divider'></li>"+
                 "								<li class='nav-header'>Administración</li>"+
-                "								<li><a href='/search/'><img src='../bootstrap/img/search-icon.png'> Search</a></li>"+
+                "								<li><a href='/search/'><img src='../bootstrap/img/search-icon.png'> Buscar</a></li>"+
                 "							</ul>"+
                 "						</li>"+
                 "						<li class='dropdown'>"+

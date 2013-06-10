@@ -141,21 +141,21 @@ public class Inmoweb {
                 "						<li class='dropdown'>"+
                 "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
                 "							<ul class='dropdown-menu'>"+
-                "								<li><a href='/users/'>Ver Usuarios</a></li>"+
-                "								<li><a href='/owners/'>Ver Dueños</a></li>"+
-                "								<li><a href='/buildings/'>Ver Inmuebles</a></li>" +
-                "								<li><a href='/realestates/'>Ver Inmobiliarias</a></li>"+
+                "								<li><a href='/users/'><img src='../bootstrap/img/list.png'> Ver Usuarios</a></li>"+
+                "								<li><a href='/owners/'><img src='../bootstrap/img/list.png'> Ver Dueños</a></li>"+
+                "								<li><a href='/buildings/'><img src='../bootstrap/img/list.png'> Ver Inmuebles</a></li>" +
+                "								<li><a href='/realestates/'><img src='../bootstrap/img/list.png'> Ver Inmobiliarias</a></li>"+
                 "								<li class='divider'></li>"+
                 "								<li class='nav-header'>Administración</li>"+
-                "								<li><a href='/search/'>Buscar</a></li>"+
+                "								<li><a href='/search/'><img src='../bootstrap/img/search-icon.png'> Search</a></li>"+
                 "							</ul>"+
                 "						</li>"+
                 "						<li class='dropdown'>"+
                 "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Registro <b class='caret'></b></a>"+
                 "							<ul class='dropdown-menu'>"+
-                "								<li><a href='/addowner/'>Registrar Dueño</a></li>"+
-                "								<li><a href='/addbuilding/'>Registrar Inmueble</a></li>"+
-                "								<li><a href='/addrealestate/'>Registrar Inmobiliaria</a></li>"+
+                "								<li><a href='/addowner/'><img src='../bootstrap/img/owner-add.png'> Registrar Dueño</a></li>"+
+                "								<li><a href='/addbuilding/'><img src='../bootstrap/img/building-add.png'> Registrar Inmueble</a></li>"+
+                "								<li><a href='/addrealestate/'><img src='../bootstrap/img/inmo-add.png'> Registrar Inmobiliaria</a></li>"+
                 "							</ul>"+
                 "						</li>"+
                 "					</ul>"+
@@ -237,8 +237,8 @@ public class Inmoweb {
      							  "<td>"+u.get("first_name")+"</td>" +
      							  "<td>"+u.get("last_name")+"</td>" +
      							  "<td>"+u.get("email")+"</td>"+
-                                  "<td><a href='/updateuser/"+u.get("id")+"'><img src='../bootstrap/img/update.png'></a></td>"+
-                                  "<td><a href='/deleteuser/"+u.get("id")+"'><img src='../bootstrap/img/delete.png'></a></td>";
+                                  "<td><a href='/updateuser/"+u.get("id")+"'><img src='../bootstrap/img/edit-update.png'></a></td>"+
+                                  "<td><a href='/deleteuser/"+u.get("id")+"'><img src='../bootstrap/img/edit-delete.png'></a></td>";
      			}
      			ret = ret +"</tbody></table>";
      			Base.close(); 
@@ -304,8 +304,8 @@ public class Inmoweb {
 							  "<td>"+o.get("street")+"</td>"+
 							  "<td>"+o.get("n_street")+"</td>"+
 							  "<td>"+o.get("email")+"</td>"+
-							  "<td><a href='/updateowner/"+o.get("id")+"'><img src='../bootstrap/img/update.png'></a></td>"+
-							  "<td><a href='/deleteowner/"+o.get("id")+"'><img src='../bootstrap/img/delete.png'></a></td>";					
+							  "<td><a href='/updateowner/"+o.get("id")+"'><img src='../bootstrap/img/edit-update.png'></a></td>"+
+							  "<td><a href='/deleteowner/"+o.get("id")+"'><img src='../bootstrap/img/edit-delete.png'></a></td>";					
      			}   
      			ret = ret +"</tbody></table>";
      			Base.close();  			
@@ -377,8 +377,8 @@ public class Inmoweb {
 							  "<td>"+b.get("description")+"</td>"+
 							  "<td>"+b.get("price")+"</td>" +
 							  "<td>"+b.get("operation")+"</td>"+
-							  "<td><a href='/updatebuilding/"+b.get("id")+"'><img src='../bootstrap/img/update.png'></a></td>"+
-                              "<td><a href='/deletebuilding/"+b.get("id")+"'><img src='../bootstrap/img/delete.png'></a></td>";
+							  "<td><a href='/updatebuilding/"+b.get("id")+"'><img src='../bootstrap/img/edit-update.png'></a></td>"+
+							  "<td><a href='/deletebuilding/"+b.get("id")+"'><img src='../bootstrap/img/edit-delete.png'></a></td>";
      			}   
      			ret = ret +"</tbody></table>";
      			Base.close();  			
@@ -446,8 +446,8 @@ public class Inmoweb {
 							  "<td>"+r.get("phone")+"</td>"+
 							  "<td>"+r.get("email")+"</td>" +
 							  "<td>"+r.get("site_web")+"</td>"+
-                              "<td><a href='/updaterealestate/"+r.get("id")+"'><img src='../bootstrap/img/update.png'></a></td>"+
-                              "<td><a href='/deleterealestate/"+r.get("id")+"'><img src='../bootstrap/img/delete.png'></a></td>";
+                              "<td><a href='/updaterealestate/"+r.get("id")+"'><img src='../bootstrap/img/edit-update.png'></a></td>"+
+                              "<td><a href='/deleterealestate/"+r.get("id")+"'><img src='../bootstrap/img/edit-delete.png'></a></td>";
      			}   
      			ret = ret +"</tbody></table>";
      			Base.close();  			

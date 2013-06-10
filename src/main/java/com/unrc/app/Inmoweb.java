@@ -93,6 +93,18 @@ public class Inmoweb {
          Base.close();  			
      	return ret;
     }
+    public static String optionRealEstate(){
+        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
+        List<RealEstate> realestates = RealEstate.findAll();
+        String ret = "<select class='span3' NAME='real_estate_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='' disabled selected style='display:none;'>Seleccionar inmobiliaria</option><br>";
+        for(int i=0; i < realestates.size(); i++){
+            RealEstate re = realestates.get(i);
+            ret = ret+"<option value="+re.get("id")+">"+re.get("name")+"</option><br>";
+        }
+        ret= ret + "</select>";
+        Base.close();  			
+     	return ret;
+    }
     
     public static String searchEngine(){
         return  "<form method='POST' action='/search/'>"+
@@ -640,7 +652,13 @@ public class Inmoweb {
     	                "			</div>"+
     	                "			<hr></hr>"+
     	                "			<div>"+
-    	                "				<form class='form-horizontal' method='POST' action='/addbuilding/'>"+               
+    	                "				<form class='form-horizontal' method='POST' action='/addbuilding/'>"+
+                        "					<div class='control-group'>"+
+    	                "						<label class='control-label'>Tipo:*</label>"+
+    	                "						<div class='controls'>"+
+    	                							optionRealEstate()+
+    	                "						</div>"+
+    	                "					</div>"+
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Tipo:*</label>"+
     	                "						<div class='controls'>"+
@@ -718,7 +736,7 @@ public class Inmoweb {
     			response.type("text/html");
     			crudBuilding b = new crudBuilding();
     			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
-    			b.create(request.queryParams("type"), request.queryParams("owner_id"), request.queryParams("city_id"), request.queryParams("neighborhood"), request.queryParams("street"), request.queryParams("n_street"), request.queryParams("description"), request.queryParams("price"), request.queryParams("operation"));
+    			b.create(request.queryParams("real_estate_id"), request.queryParams("type"), request.queryParams("owner_id"), request.queryParams("city_id"), request.queryParams("neighborhood"), request.queryParams("street"), request.queryParams("n_street"), request.queryParams("description"), request.queryParams("price"), request.queryParams("operation"));
     			Base.close();
     		
     			return 

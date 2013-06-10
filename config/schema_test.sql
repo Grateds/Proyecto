@@ -65,7 +65,7 @@ CREATE TABLE buildings(
 );
 
 DROP TABLE IF EXISTS building_real_estates; -- Relacion entre Inmuebles e Inmobiliaria
-CREATE TABLE buildings_real_estates(
+CREATE TABLE building_real_estates(
 	id INT(11) NOT NULL AUTO_INCREMENT,
 	building_id INT(11),
 	real_estate_id INT(11),

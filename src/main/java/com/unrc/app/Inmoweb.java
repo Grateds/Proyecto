@@ -9,11 +9,11 @@ import com.unrc.app.models.*;
 public class Inmoweb {
 
 
-    public static String optionCity(String option){
+    public static String optionCity(String option, String required){
 
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         List<City> cities = City.findAll();
-        String ret = "<select class='span3' NAME='city_id' required='required'>"+"<option value=''>"+option+"</option><br>";
+        String ret = "<select class='span3' NAME='city_id' "+required+">"+"<option value=''>"+option+"</option><br>";
         for(int i=0; i < cities.size(); i++){
             City c = cities.get(i);
             ret = ret+"<option value="+c.get("id")+">"+c.get("name")+"</option><br>";
@@ -37,8 +37,8 @@ public class Inmoweb {
      	return ret;
     }
     
-    public static String optionOperation(String option){
-    	String ret = "<select class='span3' NAME='operation' required='required'>"+"<option value=''>"+option+"</option><br>";
+    public static String optionOperation(String option, String required){
+    	String ret = "<select class='span3' NAME='operation' "+required+">"+"<option value=''>"+option+"</option><br>";
 		ret = ret+"<option value='venta'>Venta</option><br>" +
 				  "<option value='alquiler'>Alquiler</option><br>";
     	return ret+"</select>";
@@ -51,8 +51,8 @@ public class Inmoweb {
     	return ret+"</select>";
     }
     
-    public static String optionType(String option){
-    	String ret = "<select class='span3' NAME='type' required='required'>"+"<option value=''>"+option+"</option><br>";
+    public static String optionType(String option, String required){
+    	String ret = "<select class='span3' NAME='type' "+required+">"+"<option value=''>"+option+"</option><br>";
 		ret = ret+"<option value='land'>Land</option><br>" +
 				  "<option value='farm'>Farm</option><br>" +
 	        	  "<option value='house'>House</option><br>" +
@@ -95,10 +95,10 @@ public class Inmoweb {
          Base.close();  			
      	return ret;
     }
-    public static String optionRealEstate(String option){
+    public static String optionRealEstate(String option, String required){
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         List<RealEstate> realestates = RealEstate.findAll();
-        String ret = "<select class='span3' NAME='real_estate_id' required='required'>"+"<option value='' '>"+option+"</option><br>";
+        String ret = "<select class='span3' NAME='real_estate_id' "+required+">"+"<option value='' '>"+option+"</option><br>";
         for(int i=0; i < realestates.size(); i++){
             RealEstate re = realestates.get(i);
             ret = ret+"<option value="+re.get("id")+">"+re.get("name")+"</option><br>";
@@ -107,57 +107,13 @@ public class Inmoweb {
         Base.close();  			
      	return ret;
     }
-    
-      public static String optionType2(String option){
-    	String ret = "<select class='span3' NAME='type'>"+"<option value=''>"+option+"</option><br>";
-		ret = ret+"<option value='land'>Land</option><br>" +
-				  "<option value='farm'>Farm</option><br>" +
-	        	  "<option value='house'>House</option><br>" +
-				  "<option value='garage'>Garage</option><br>";
-    	return ret+"</select>";
-    }
-    
-    public static String optionOperation2(String option){
-    	String ret = "<select class='span3' NAME='operation'>"+"<option value=''>"+option+"</option><br>";
-		ret = ret+"<option value='venta'>Venta</option><br>" +
-				  "<option value='alquiler'>Alquiler</option><br>";
-    	return ret+"</select>";
-    }
-    
-    public static String optionCity2(String option){
-
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
-        List<City> cities = City.findAll();
-        String ret = "<select class='span3' NAME='city_id'>"+"<option value=''>"+option+"</option><br>";
-        for(int i=0; i < cities.size(); i++){
-            City c = cities.get(i);
-            ret = ret+"<option value="+c.get("id")+">"+c.get("name")+"</option><br>";
-        }
-        ret= ret + "</select>";
-         Base.close();  			
-     	return ret;
-    }
-    
-    public static String optionRealEstate2(String option){
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
-        List<RealEstate> realestates = RealEstate.findAll();
-        String ret = "<select class='span3' NAME='real_estate_id'>"+"<option value='' '>"+option+"</option><br>";
-        for(int i=0; i < realestates.size(); i++){
-            RealEstate re = realestates.get(i);
-            ret = ret+"<option value="+re.get("id")+">"+re.get("name")+"</option><br>";
-        }
-        ret= ret + "</select>";
-        Base.close();  			
-     	return ret;
-    }
-   
     public static String searchEngine(){
     	
         return  "<form method='POST' action='/search/'>"+
-                    optionType2("Todos")+" "+
-                    optionOperation2("Todos")+" "+
-                    optionCity2("Todos")+" "+
-                    optionRealEstate2("Todos")+" "+
+                    optionType("Todos","")+""+
+                    optionOperation("Todos","")+" "+
+                    optionCity("Todos","")+""+
+                    optionRealEstate("Todos","")+" "+
                     "<button class='btn btn-small btn-primary type='sumit'>Buscar</buton>"+
                 "</form>";
     }
@@ -604,7 +560,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Ciudad:</label>"+
     	                "						<div class='controls'>"+
-    	                							optionCity("Seleccionar ciudad")+
+    	                							optionCity("Seleccionar ciudad","required='required'")+
     	                "						</div>"+                 
     	                "					</div>"+
     	                "					<div class='control-group'>"+
@@ -704,13 +660,13 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Inmobiliaria:*</label>"+
     	                "						<div class='controls'>"+
-    	                							optionRealEstate("Seleccionar inmobiliaria")+
+    	                							optionRealEstate("Seleccionar inmobiliaria","required='required'")+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Tipo:*</label>"+
     	                "						<div class='controls'>"+
-    	                							optionType("Seleccionar tipo")+
+    	                							optionType("Seleccionar tipo","required='required'")+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
@@ -746,7 +702,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Operación:*</label>"+
     	                "						<div class='controls'>"+
-    	                							optionOperation("+Seleccionar operación+")+
+    	                							optionOperation("Seleccionar operación","required='required'")+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
@@ -758,7 +714,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Ciudad:*</label>"+
     	                "						<div class='controls'>"+
-    	                							optionCity("Seleccionar ciudad")+
+    	                							optionCity("Seleccionar ciudad","required='required'")+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='form-actions'>"+
@@ -929,7 +885,7 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Ciudad:*</label>"+
     	                "						<div class='controls'>"+
-    	                							optionCity("Seleccionar ciudad")+      
+    	                							optionCity("Seleccionar ciudad","required='required'")+      
     	                "						</div>"+
     	                "					</div>"+                     
     	                "					<div class='control-group'>"+

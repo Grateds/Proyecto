@@ -98,7 +98,7 @@ public class Inmoweb {
     public static String optionRealEstate(String option){
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         List<RealEstate> realestates = RealEstate.findAll();
-        String ret = "<select class='span3' NAME='real_estate_id'>"+"<option value='' '>"+option+"</option><br>";
+        String ret = "<select class='span3' NAME='real_estate_id' required='required'>"+"<option value='' '>"+option+"</option><br>";
         for(int i=0; i < realestates.size(); i++){
             RealEstate re = realestates.get(i);
             ret = ret+"<option value="+re.get("id")+">"+re.get("name")+"</option><br>";
@@ -659,7 +659,7 @@ public class Inmoweb {
     	                "			<div>"+
     	                "				<form class='form-horizontal' method='POST' action='/addbuilding/'>"+
                         "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Inmobiliaria:</label>"+
+    	                "						<label class='control-label'>Inmobiliaria:*</label>"+
     	                "						<div class='controls'>"+
     	                							optionRealEstate("Seleccionar inmobiliaria")+
     	                "						</div>"+

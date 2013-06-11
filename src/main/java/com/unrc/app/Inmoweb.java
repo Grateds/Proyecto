@@ -7,7 +7,7 @@ import spark.*;
 import com.unrc.app.models.*;
 
 public class Inmoweb {
-	
+	// query = entityManager.createQuery("SELECT p FROM Pelicula p WHERE LOWER(p.audiencia) LIKE '%"+word+"%'");
     public static String optionCity(){
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         List<City> cities = City.findAll();

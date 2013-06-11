@@ -38,7 +38,7 @@ public class Inmoweb {
     }
     
     public static String optionOperation(String option){
-    	String ret = "<select class='span3' NAME='operation'>"+"<option value=''>"+option+"</option><br>";
+    	String ret = "<select class='span3' NAME='operation' required='required'>"+"<option value=''>"+option+"</option><br>";
 		ret = ret+"<option value='venta'>Venta</option><br>" +
 				  "<option value='alquiler'>Alquiler</option><br>";
     	return ret+"</select>";
@@ -72,7 +72,7 @@ public class Inmoweb {
     public static String optionOwner(){
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         List<Owner> owners = Owner.findAll();
-        String ret = "<select class='span3' NAME='owner_id'>"+"<option value=''>Seleccionar dueño</option><br>";
+        String ret = "<select class='span3' NAME='owner_id' required='required'>"+"<option value=''>Seleccionar dueño</option><br>";
         for(int i=0; i < owners.size(); i++){
             Owner o = owners.get(i);
             ret = ret+"<option value="+o.get("id")+">"+o.get("first_name")+" - "+o.get("last_name")+" - "+o.get("email")+"</option><br>";

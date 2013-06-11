@@ -11,7 +11,7 @@ public class Inmoweb {
     public static String optionCity(){
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         List<City> cities = City.findAll();
-        String ret = "<select class='span3' NAME='city_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='' disabled selected style='display:none;'>Seleccionar ciudad</option><br>";
+        String ret = "<select class='span3' NAME='city_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value=''>Seleccionar ciudad</option><br>";
         for(int i=0; i < cities.size(); i++){
             City c = cities.get(i);
             ret = ret+"<option value="+c.get("id")+">"+c.get("name")+"</option><br>";
@@ -50,7 +50,7 @@ public class Inmoweb {
     }
     
     public static String optionType(){
-    	String ret = "<select class='span3' NAME='type' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='' disabled selected style='display:none;'>Seleccionar tipo</option><br>";
+    	String ret = "<select class='span3' NAME='type' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value=''>Seleccionar tipo</option><br>";
 		ret = ret+"<option value='land'>Land</option><br>" +
 				  "<option value='farm'>Farm</option><br>" +
 	        	  "<option value='house'>House</option><br>" +

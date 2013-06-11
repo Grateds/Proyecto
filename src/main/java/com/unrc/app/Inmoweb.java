@@ -562,7 +562,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Barrio:</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='neighborhood' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30'>"+
+    	                "							<input type='text' name='neighborhood' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30'>"+
     	                "						</div>"+   
     	                "					</div>"+
     	                "					<div class='control-group'>"+
@@ -668,7 +668,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Barrio:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='neighborhood' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30' required='required'>"+
+    	                "							<input type='text' name='neighborhood' pattern='[a-zA-Z ]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
@@ -781,7 +781,7 @@ public class Inmoweb {
     	                "			<div>"+
     	                "				<center>"+
     	    	        "					<h1>Misión y Valores..</h1>" +
-    	    	        //"					<img src='../bootstrap/img/about.png'>" +		
+    	    	      //"					<img src='../bootstrap/img/about.png'>" +		
     	    	        "					<p>Misión: Ofrecer, con nuestro equipo multidisciplinario de profesionales comprometidos, soluciones informáticas a medida para optimizar los procesos de negocio de  nuestros clientes.</p>" +
                         "                                       <p>Valores: Nuestros valores son,</p>" +
                         "                                       <p>Responsabilidad: En nuestros proyectos.</p>" +
@@ -899,7 +899,7 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Barrio:</label>"+
     	                "						<div class='controls'>"+ 
-    	                "							<input type='text' name='neighborhood' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30'>"+
+    	                "							<input type='text' name='neighborhood' pattern='[a-zA-Z ]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30'>"+
     	                "						</div>"+
     	                "					</div>"+                             
                         "					<div class='control-group'>"+
@@ -1030,7 +1030,7 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Barrio:</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='neighborhood' value='"+rs.get("neighborhood")+" 'pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30'>"+
+    	                "							<input type='text' name='neighborhood' value='"+rs.get("neighborhood")+" 'pattern='[a-zA-Z ]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30'>"+
     	                "						</div>"+             
     	                "					</div>"+                     
     	                "					<div class='control-group'>"+

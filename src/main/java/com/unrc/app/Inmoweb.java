@@ -36,7 +36,7 @@ public class Inmoweb {
     }
     
     public static String optionOperation(){
-    	String ret = "<select class='span3' NAME='operation' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='' disabled selected style='display:none;'>Seleccionar operación</option><br>";
+    	String ret = "<select class='span3' NAME='operation' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value=''>Seleccionar operación</option><br>";
 		ret = ret+"<option value='venta'>Venta</option><br>" +
 				  "<option value='alquiler'>Alquiler</option><br>";
     	return ret+"</select>";

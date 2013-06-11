@@ -870,15 +870,15 @@ public class Inmoweb {
     	                "				<form class='navbar-form pull-left'>"+
     	                "					<dl class= 'form'>"+
     	                "						<label><b>Nombre</b></label>"+
-    	                "						<input type='text' class='input-block-level' name='name'>"+     
+    	                "						<input type='text' class='input-block-level' name='name' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56'required='required'>"+     
     	                "					</dl>"+
     	                "					<dl class= 'form'>"+
                         "						<label><b>E-mail</b></label>"+   
-                        "						<input type='text' class='input-block-level' name='email'>"+     
+                        "						<input type='text' class='input-block-level' name='email' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60' required='required'>"+     
                         "					</dl>"+
                         "					<dl class= 'form'>"+
                         "						<label><b>Asunto</b></label>"+
-                        "						<input type='text' class='input-block-level' name='subject'>"+     
+                        "						<input type='text' class='input-block-level' name='subject' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56'>"+     
                         "					</dl>"+
                         "					<dl class= 'form'>"+
                         "						<label><b>Mensaje</b></label>"+
@@ -1058,7 +1058,7 @@ public class Inmoweb {
     	                "						</div>"+             
     	                "					</div>"+ 
                         "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Ciudad:</label>"+
+    	                "						<label class='control-label'>Ciudad:*</label>"+
     	                "						<div class='controls'>"+
     	                							optionCityUpdate(""+rs.get("city_id")+"")+
     	                "						</div>"+            
@@ -1070,9 +1070,9 @@ public class Inmoweb {
     	                "						</div>"+             
     	                "					</div>"+ 
     	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Numero:</label>"+
+    	                "						<label class='control-label'>Numero:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='n_street' value='"+rs.get("n_street")+"' pattern='[0-9]+' title='Solo numeros - Sin espacios - Maxima Longitud 10' maxlength='10'>"+
+    	                "							<input type='text' name='n_street' value='"+rs.get("n_street")+"' pattern='[0-9]+' title='Solo numeros - Sin espacios - Maxima Longitud 10' maxlength='10' required='required'>"+
     	                "						</div>"+            
     	                "					</div>"+
                         "					<div class='control-group'>"+
@@ -1088,7 +1088,7 @@ public class Inmoweb {
     	                "						</div>"+            
     	                "					</div>"+
                         "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Email:</label>"+
+    	                "						<label class='control-label'>Email:*</label>"+
     	                "						<div class='controls'>"+
     	                "							<input type='text' name='email' value='"+rs.get("email")+"' placeholder='someone@example.com' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60' required='required'>"+
     	                "						</div>"+            
@@ -1096,7 +1096,7 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Sitio Web:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='site_web' value='"+rs.get("site_web")+"'>"+
+    	                "							<input type='text' name='site_web' value='"+rs.get("site_web")+"' required='required'>"+
     	                "						</div>"+            
     	                "					</div>"+
     	                "					<div class='form-actions'>"+

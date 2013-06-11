@@ -916,13 +916,13 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Email:*</label>"+
     	                "						<div class='controls'>"+ 
-    	                "							<input type='text' name='email' placeholder='someone@example.com' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60' required='required>"+
+    	                "							<input type='text' name='email' placeholder='someone@example.com' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Sitio Web:</label>"+
     	                "						<div class='controls'>"+ 
-    	                "							<input type='text' name='site_web'>"+
+    	                "							<input type='text' name='site_web' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='form-actions'>"+

@@ -8,10 +8,10 @@ import com.unrc.app.models.*;
 
 public class Inmoweb {
 	// query = entityManager.createQuery("SELECT p FROM Pelicula p WHERE LOWER(p.audiencia) LIKE '%"+word+"%'");
-    public static String optionCity(){
+    public static String optionCity(String option){
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         List<City> cities = City.findAll();
-        String ret = "<select class='span3' NAME='city_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value=''>Seleccionar ciudad</option><br>";
+        String ret = "<select class='span3' NAME='city_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value=''>"+option+"</option><br>";
         for(int i=0; i < cities.size(); i++){
             City c = cities.get(i);
             ret = ret+"<option value="+c.get("id")+">"+c.get("name")+"</option><br>";
@@ -35,8 +35,8 @@ public class Inmoweb {
      	return ret;
     }
     
-    public static String optionOperation(){
-    	String ret = "<select class='span3' NAME='operation' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value=''>Seleccionar operación</option><br>";
+    public static String optionOperation(String option){
+    	String ret = "<select class='span3' NAME='operation' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value=''>"+option+"</option><br>";
 		ret = ret+"<option value='venta'>Venta</option><br>" +
 				  "<option value='alquiler'>Alquiler</option><br>";
     	return ret+"</select>";
@@ -49,8 +49,8 @@ public class Inmoweb {
     	return ret+"</select>";
     }
     
-    public static String optionType(){
-    	String ret = "<select class='span3' NAME='type' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value=''>Seleccionar tipo</option><br>";
+    public static String optionType(String option){
+    	String ret = "<select class='span3' NAME='type' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value=''>"+option+"</option><br>";
 		ret = ret+"<option value='land'>Land</option><br>" +
 				  "<option value='farm'>Farm</option><br>" +
 	        	  "<option value='house'>House</option><br>" +
@@ -93,10 +93,10 @@ public class Inmoweb {
          Base.close();  			
      	return ret;
     }
-    public static String optionRealEstate(){
+    public static String optionRealEstate(String option){
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         List<RealEstate> realestates = RealEstate.findAll();
-        String ret = "<select class='span3' NAME='real_estate_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='' '>Seleccionar inmobiliaria</option><br>";
+        String ret = "<select class='span3' NAME='real_estate_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='' '>"+option+"</option><br>";
         for(int i=0; i < realestates.size(); i++){
             RealEstate re = realestates.get(i);
             ret = ret+"<option value="+re.get("id")+">"+re.get("name")+"</option><br>";
@@ -107,9 +107,12 @@ public class Inmoweb {
     }
     
     public static String searchEngine(){
+    	
         return  "<form method='POST' action='/search/'>"+
-                    optionType()+
-                    optionOperation()+" " +
+                    optionType("Todos")+" "+
+                    optionOperation("Todos")+" "+
+                    optionCity("Todos")+" "+
+                    optionRealEstate("Todos")+" "+
                     "<button class='btn btn-small btn-primary type='sumit'>Buscar</buton>"+
                 "</form>";
     }
@@ -556,7 +559,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Ciudad:</label>"+
     	                "						<div class='controls'>"+
-    	                							optionCity()+
+    	                							optionCity("Seleccionar ciudad")+
     	                "						</div>"+                 
     	                "					</div>"+
     	                "					<div class='control-group'>"+
@@ -656,13 +659,13 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Inmobiliaria:</label>"+
     	                "						<div class='controls'>"+
-    	                							optionRealEstate()+
+    	                							optionRealEstate("Seleccionar inmobiliaria")+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Tipo:*</label>"+
     	                "						<div class='controls'>"+
-    	                							optionType()+
+    	                							optionType("Seleccionar tipo")+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
@@ -698,7 +701,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Operación:</label>"+
     	                "						<div class='controls'>"+
-    	                							optionOperation()+
+    	                							optionOperation("+Seleccionar operación+")+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
@@ -710,7 +713,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Ciudad:*</label>"+
     	                "						<div class='controls'>"+
-    	                							optionCity()+
+    	                							optionCity("Seleccionar ciudad")+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='form-actions'>"+
@@ -929,7 +932,7 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Ciudad:</label>"+
     	                "						<div class='controls'>"+
-    	                							optionCity()+      
+    	                							optionCity("Seleccionar ciudad")+      
     	                "						</div>"+
     	                "					</div>"+                     
     	                "					<div class='control-group'>"+
@@ -1162,8 +1165,39 @@ public class Inmoweb {
             @Override
             public Object handle(Request request, Response response){
                 response.type("text/html");
+                String SubqueryType;
+                String SubqueryCity;
+                String SubqueryREst;
+                String SubqueryOper;
+                String query;
+                
                 Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
-                List<Building> buildings = Building.findBySQL("select * from buildings where type='"+request.queryParams("type")+"' AND operation='"+request.queryParams("operation")+"'");
+                if(request.queryParams("type") == "")
+                	SubqueryType = "true";
+                else
+                	SubqueryType = "type='"+request.queryParams("type")+"'";
+                if(request.queryParams("city_id") == "")
+                	SubqueryCity = "true";
+                else
+                	SubqueryCity = "city_id='"+request.queryParams("city_id")+"'";
+                if(request.queryParams("real_estate_id") == "")
+                	SubqueryREst = "true";
+                else
+                	SubqueryREst = "real_estate_id="+request.queryParams("real_estate_id");
+                if(request.queryParams("operation") == "")
+                	SubqueryOper = "true";
+                else
+                	SubqueryOper = "operation='"+request.queryParams("operation")+"'";
+              
+                System.out.println("select * from buildings where "+SubqueryType+" AND "+SubqueryCity+" AND "+SubqueryREst+" AND "+SubqueryOper);
+                if(SubqueryType+SubqueryCity+SubqueryREst+SubqueryOper=="truetruetruetrue")
+                	query = "select * from buildings";
+                else{
+                	query = "select * from buildings INNER JOIN buildings_real_estates on buildings.id=buildings_real_estates.building_id where "+SubqueryType+" AND "+SubqueryCity+" AND "+SubqueryREst+" AND "+SubqueryOper;
+                }
+                
+                
+                List<Building> buildings = Building.findBySQL(query);
                 String ret = "<br>";
                 for(int i = 0; i< buildings.size();i++){
                     Building b = buildings.get(i);

@@ -202,7 +202,7 @@ public class Inmoweb {
                         "						<label>* Datos obligatorios</label>"+
                         "						<hr></hr>"+      
                         "						<label>Nombre:*</label><input type='text' id='inputSuccess' class='input-block-level' name='fname' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' maxlength='56'required='required' placeholder='Nombre'>"+  
-                        "						<label>Apellido:*</label><input type='text' class='input-block-level' name='lname' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' required='required' placeholder='Apellido' maxlength='56'>"+
+                        "						<label>Apellido:*</label><input type='text' class='input-block-level' name='lname' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' required='required' placeholder='Apellido' maxlength='56'>"+
                         "						<label>E-mail:*</label><input type='text' class='input-block-level' name='email' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' required='required' placeholder='someone@example.com' maxlength='60'>"+                   
                         "						<dl class= 'form'>"+
                         "							<button class='btn btn-large btn-primary' type='submit'>Registrarme</button>"+
@@ -544,7 +544,7 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Nombre:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='first_name' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' maxlength='56'required='required'>"+
+    	                "							<input type='text' name='first_name' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56'required='required'>"+
     	                "						</div>"+  
                         "                   </div>"+
     	                "					<div class='control-group'>"+
@@ -875,7 +875,7 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Nombre:*</label>"+
     	                "						<div class='controls'>"+ 
-    	                "							<input type='text' name='name' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30' required='required'>"+
+    	                "							<input type='text' name='name' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
                         "					<div class='control-group'>"+
@@ -1006,7 +1006,7 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Nombre:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='name' value='"+rs.get("name")+"' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30' required='required'>"+
+    	                "							<input type='text' name='name' value='"+rs.get("name")+"' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30' required='required'>"+
     	                "						</div>"+             
     	                "					</div>"+ 
                         "					<div class='control-group'>"+
@@ -1186,7 +1186,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Nombre:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='first_name' value='"+user.get("first_name")+"' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' maxlength='56' required='required'>"+
+    	                "							<input type='text' name='first_name' value='"+user.get("first_name")+"' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
@@ -1274,13 +1274,13 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Barrio:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='neighborhood' value='"+building.get("neighborhood")+"'>"+
+    	                "							<input type='text' name='neighborhood' value='"+building.get("neighborhood")+"' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Calle:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='street' value='"+building.get("street")+"'>"+
+    	                "							<input type='text' name='street' value='"+building.get("street")+"' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+ 
     	                "					<div class='control-group'>"+
@@ -1386,7 +1386,7 @@ public class Inmoweb {
                         "                                       <div class='control-group'>"+
     	                "                                           <label class='control-label'>Nombre:*</label>"+
     	                "                                           <div class='controls'>"+
-    	                "							<input type='text' name='first_name' value='"+owner.get("first_name")+"' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' maxlength='56' required='required'>"+
+    	                "							<input type='text' name='first_name' value='"+owner.get("first_name")+"' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
                         "                                       <div class='control-group'>"+

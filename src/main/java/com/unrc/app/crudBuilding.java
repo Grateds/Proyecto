@@ -3,7 +3,7 @@ package com.unrc.app;
 import java.util.ArrayList;
 
 import com.unrc.app.models.Building;
-import com.unrc.app.models.BuildingRealEstate;
+import com.unrc.app.models.BuildingsRealEstates;
 
 /**
  * Class crudBuilding
@@ -28,7 +28,7 @@ public class crudBuilding {
         b.set("city_id", city_id);
        	b.saveIt();
 
-        BuildingRealEstate bre = new BuildingRealEstate();
+        BuildingsRealEstates bre = new BuildingsRealEstates();
         bre.set("building_id",b.get("id"));
         bre.set("real_estate_id", real_estate_id);
         bre.saveIt();

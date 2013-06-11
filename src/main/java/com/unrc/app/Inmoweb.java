@@ -96,7 +96,7 @@ public class Inmoweb {
     public static String optionRealEstate(){
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         List<RealEstate> realestates = RealEstate.findAll();
-        String ret = "<select class='span3' NAME='real_estate_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='' disabled selected style='display:none;'>Seleccionar inmobiliaria</option><br>";
+        String ret = "<select class='span3' NAME='real_estate_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='' '>Seleccionar inmobiliaria</option><br>";
         for(int i=0; i < realestates.size(); i++){
             RealEstate re = realestates.get(i);
             ret = ret+"<option value="+re.get("id")+">"+re.get("name")+"</option><br>";

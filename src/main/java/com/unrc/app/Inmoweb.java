@@ -668,19 +668,19 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Barrio:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='neighborhood'>"+
+    	                "							<input type='text' name='neighborhood' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Calle:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='street'>"+
+    	                "							<input type='text' name='street' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+ 
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Numero:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='n_street'>"+
+    	                "							<input type='text' name='n_street' pattern='[0-9]+' title='Solo numeros - Sin espacios - Maxima Longitud 10' maxlength='10' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
@@ -704,7 +704,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Dueño:*</label>"+
     	                "						<div class='controls'>"+
-    	                							optionOwner()+
+    	                							optionOwner()+ 
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
@@ -875,7 +875,7 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Nombre:*</label>"+
     	                "						<div class='controls'>"+ 
-    	                "							<input type='text' name='name'>"+
+    	                "							<input type='text' name='name' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
                         "					<div class='control-group'>"+
@@ -887,31 +887,31 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Calle:</label>"+
     	                "						<div class='controls'>"+   
-    	                "							<input type='text' name='street'>"+
+    	                "							<input type='text' name='street' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30'>"+
     	                "						</div>"+
     	                "					</div>"+ 
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Numero:</label>"+
     	                "						<div class='controls'>"+   
-    	                "							<input type='text' name='n_street'>"+
+    	                "							<input type='text' name='n_street' pattern='[0-9]+' title='Solo numeros - Sin espacios - Maxima Longitud 10' maxlength='10' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+                                                        
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Barrio:</label>"+
     	                "						<div class='controls'>"+ 
-    	                "							<input type='text' name='neighborhood'>"+
+    	                "							<input type='text' name='neighborhood' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30'>"+
     	                "						</div>"+
     	                "					</div>"+                             
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Telefono:*</label>"+
     	                "						<div class='controls'>"+ 
-    	                "							<input type='text' name='phone'>"+
+    	                "							<input type='text' name='phone' pattern='[0-9]+' title='Solo numeros - Sin espacios - Maxima Longitud 15' maxlength='15' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Email:</label>"+
     	                "						<div class='controls'>"+ 
-    	                "							<input type='text' name='email'>"+
+    	                "							<input type='text' name='email' placeholder='someone@example.com' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60'>"+
     	                "						</div>"+
     	                "					</div>"+
                         "					<div class='control-group'>"+
@@ -1006,7 +1006,7 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Nombre:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='name' value='"+rs.get("name")+"'>"+
+    	                "							<input type='text' name='name' value='"+rs.get("name")+"' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30' required='required'>"+
     	                "						</div>"+             
     	                "					</div>"+ 
                         "					<div class='control-group'>"+
@@ -1018,7 +1018,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Calle:</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='street' value='"+rs.get("street")+"'>"+
+    	                "							<input type='text' name='street' value='"+rs.get("street")+" 'pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30'>"+
     	                "						</div>"+             
     	                "					</div>"+ 
     	                "					<div class='control-group'>"+
@@ -1030,7 +1030,7 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Barrio:</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='neighborhood' value='"+rs.get("neighborhood")+"'>"+
+    	                "							<input type='text' name='neighborhood' value='"+rs.get("neighborhood")+" 'pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30'>"+
     	                "						</div>"+             
     	                "					</div>"+                     
     	                "					<div class='control-group'>"+
@@ -1042,7 +1042,7 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Email:</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='email' value='"+rs.get("email")+"'>"+
+    	                "							<input type='text' name='email' value='"+rs.get("email")+"' placeholder='someone@example.com' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60'>"+
     	                "						</div>"+            
     	                "					</div>"+
                         "					<div class='control-group'>"+

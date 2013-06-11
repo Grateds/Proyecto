@@ -70,7 +70,7 @@ public class Inmoweb {
     public static String optionOwner(){
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         List<Owner> owners = Owner.findAll();
-        String ret = "<select class='span3' NAME='owner_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='' disabled selected style='display:none;'>Seleccionar dueño</option><br>";
+        String ret = "<select class='span3' NAME='owner_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value=''>Seleccionar dueño</option><br>";
         for(int i=0; i < owners.size(); i++){
             Owner o = owners.get(i);
             ret = ret+"<option value="+o.get("id")+">"+o.get("first_name")+" - "+o.get("last_name")+" - "+o.get("email")+"</option><br>";

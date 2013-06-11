@@ -95,6 +95,7 @@ public class Inmoweb {
          Base.close();  			
      	return ret;
     }
+    
     public static String optionRealEstate(String option, String required){
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         List<RealEstate> realestates = RealEstate.findAll();
@@ -115,59 +116,59 @@ public class Inmoweb {
         final String EncabezadoHTML1 =
         		"<!DOCTYPE html>"+
                 "<html lang='en'>"+
-                "	<head>"+
-                "		<meta charset='utf-8'>"+
-                "		<title>Inmobiliario Web</title>"+
-                "		<!-- Le styles -->"+
-                "		<link href='../bootstrap/css/bootstrap.css' rel='stylesheet'>"+
-                "		<link rel='stylesheet' href='../bootstrap/css/docs.css'></link>"+
-                "		<style type='text/css'>"+
-                "			body {"+
-                "				padding-top: 60px;"+
-                "				padding-bottom: 40px;"+
-                "			}"+			
-                "		</style>"+
-                "		<link href='../bootstrap/css/bootstrap-responsive.css' rel='stylesheet'>"+
-                "		<link rel='shortcut icon' href='../bootstrap/img/inmoapp.png'>"+
-                "	</head>"+
+                	"<head>"+
+                		"<meta charset='utf-8'>"+
+                		"<title>Inmobiliario Web</title>"+
+                		"<!-- Le styles -->"+
+                		"<link href='../bootstrap/css/bootstrap.css' rel='stylesheet'>"+
+                		"<link rel='stylesheet' href='../bootstrap/css/docs.css'></link>"+
+                		"<style type='text/css'>"+
+                			"body {"+
+                				"padding-top: 60px;"+
+                				"padding-bottom: 40px;"+
+                			"}"+			
+                		"</style>"+
+                		"<link href='../bootstrap/css/bootstrap-responsive.css' rel='stylesheet'>"+
+                		"<link rel='shortcut icon' href='../bootstrap/img/inmoapp.png'>"+
+                	"</head>"+
   				"<body background ='../bootstrap/img/background.jpg'>"+
-   				"	<div class='navbar navbar-inverse navbar-fixed-top'>"+
-   				"		<div class='navbar-inner'>"+
-   				"   		<div class='container'>"+
-   				"   			<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
-   				"   			</button>"+
-   				"				<a class='brand' href='/'>Inmobiliaria</a>"+           
-   				"				<div class='nav-collapse collapse'>"+
-   				"					<ul class='nav'>";
+   					"<div class='navbar navbar-inverse navbar-fixed-top'>"+
+   						"<div class='navbar-inner'>"+
+   				   			"<div class='container'>"+
+   				   				"<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>"+
+   				   				"</button>"+
+   								"<a class='brand' href='/'>Inmobiliaria</a>"+           
+   								"<div class='nav-collapse collapse'>"+
+   									"<ul class='nav'>";
    				final String EncabezadoHTML2 = 
-   		   		"						<li><a href='/'>Inicio</a></li>"+
-   		   		"						<li><a href='/about/'>Acerca</a></li>"+
-   		   		"						<li><a href='/contact/'>Contacto</a></li>";
+   		   								"<li><a href='/'>Inicio</a></li>"+
+   		   								"<li><a href='/about/'>Acerca</a></li>"+
+   		   								"<li><a href='/contact/'>Contacto</a></li>";
    				final String EncabezadoHTML3 = 
-   				"						<li class='dropdown'>"+
-   			    "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Registro <b class='caret'></b></a>"+
-   			    "							<ul class='dropdown-menu'>"+
-   			    "								<li><a href='/addowner/'><img src='../bootstrap/img/owner-add.png'> Registrar Dueño</a></li>"+
-   			    "								<li><a href='/addbuilding/'><img src='../bootstrap/img/building-add.png'> Registrar Inmueble</a></li>"+
-   			    "								<li><a href='/addrealestate/'><img src='../bootstrap/img/inmo-add.png'> Registrar Inmobiliaria</a></li>"+
-   			    "							</ul>"+
-   			    "						</li>"+
-                "						<li class='dropdown'>"+
-                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Administración <b class='caret'></b></a>"+
-                "							<ul class='dropdown-menu'>"+
-                "								<li><a href='/users/'><img src='../bootstrap/img/list.png'> Ver Usuarios</a></li>"+
-                "								<li><a href='/owners/'><img src='../bootstrap/img/list.png'> Ver Dueños</a></li>"+
-                "								<li><a href='/buildings/'><img src='../bootstrap/img/list.png'> Ver Inmuebles</a></li>" +
-                "								<li><a href='/realestates/'><img src='../bootstrap/img/list.png'> Ver Inmobiliarias</a></li>"+
-                "								<li class='divider'></li>"+
-                "								<li><a href='/search/'><img src='../bootstrap/img/search-icon.png'> Buscar</a></li>"+
-                "							</ul>"+
-                "						</li>"+
-                "					</ul>"+
-                "				</div>"+
-                "			</div>"+
-                "		</div>"+
-                "	</div>";
+   										"<li class='dropdown'>"+
+   			    							"<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Registro <b class='caret'></b></a>"+
+   			    							"<ul class='dropdown-menu'>"+
+   			    								"<li><a href='/addowner/'><img src='../bootstrap/img/owner-add.png'> Registrar Dueño</a></li>"+
+   			    								"<li><a href='/addbuilding/'><img src='../bootstrap/img/building-add.png'> Registrar Inmueble</a></li>"+
+   			    								"<li><a href='/addrealestate/'><img src='../bootstrap/img/inmo-add.png'> Registrar Inmobiliaria</a></li>"+
+   			    							"</ul>"+
+   			    						"</li>"+
+                						"<li class='dropdown'>"+
+                							"<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Administración <b class='caret'></b></a>"+
+                							"<ul class='dropdown-menu'>"+
+                								"<li><a href='/users/'><img src='../bootstrap/img/list.png'> Ver Usuarios</a></li>"+
+                								"<li><a href='/owners/'><img src='../bootstrap/img/list.png'> Ver Dueños</a></li>"+
+                								"<li><a href='/buildings/'><img src='../bootstrap/img/list.png'> Ver Inmuebles</a></li>" +
+                								"<li><a href='/realestates/'><img src='../bootstrap/img/list.png'> Ver Inmobiliarias</a></li>"+
+                								"<li class='divider'></li>"+
+                								"<li><a href='/search/'><img src='../bootstrap/img/search-icon.png'> Buscar</a></li>"+
+                							"</ul>"+
+                						"</li>"+
+                					"</ul>"+
+                				"</div>"+
+                			"</div>"+
+                		"</div>"+
+                	"</div>";
         		
         Spark.get(new Route("/"){
             @Override
@@ -176,40 +177,40 @@ public class Inmoweb {
                 
                 return 
                 		EncabezadoHTML1+
-                		"						<li class='active'><a href='/'>Inicio</a></li>"+
-                		"						<li><a href='/about/'>Acerca</a></li>"+
-                		"						<li><a href='/contact/'>Contacto</a></li>"+
+                								"<li class='active'><a href='/'>Inicio</a></li>"+
+                								"<li><a href='/about/'>Acerca</a></li>"+
+                								"<li><a href='/contact/'>Contacto</a></li>"+
    						EncabezadoHTML3+	
-                        "	<div class='container'>"+
-                        "	<!-- Main hero unit for a primary marketing message or call to action -->"+
-                        "		<div class='hero-unit'>"+
-                        "			<div class='row'>"+
-                        "				<div class='span6'>"+
-                        "					<center><h1>¡Bienvenido!</h1>"+
-                        "					<p>This is a template for a simple marketing or informational website.</p>"+
-                        "					<img src='../bootstrap/img/index.png'></center>"+
-                        "				</div>"+
-                        "				<div class='span4'>"+
-                        "					<form class='form' method='POST' action='/adduser/'>"+
-                        "						<h3>Regístrarse</h3>"+
-                        "						<label>* Datos obligatorios</label>"+
-                        "						<hr></hr>"+      
-                        "						<label>Nombre:*</label><input type='text' id='inputSuccess' class='input-block-level' name='fname' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56'required='required' placeholder='Nombre'>"+  
-                        "						<label>Apellido:*</label><input type='text' class='input-block-level' name='lname' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' placeholder='Apellido' maxlength='56' required='required'>"+
-                        "						<label>E-mail:*</label><input type='text' class='input-block-level' name='email' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' placeholder='someone@example.com' maxlength='60' required='required'>"+                   
-                        "						<dl class= 'form'>"+
-                        "							<button class='btn btn-large btn-primary' type='submit'>Registrarme</button>"+
-                        "						</dl>"+           
-                        "					</form>"+
-                        "				</div>"+
-                        "			</div>"+
-                        "		</div>"+
-                        "		<footer>"+
-                        "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-                        "		</footer>"+
-                        "	</div> <!-- /container -->"+
-            			"	<script src='../bootstrap/js/jquery.js'></script>"+
-            			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+                        	"<div class='container'>"+
+                        	"<!-- Main hero unit for a primary marketing message or call to action -->"+
+                        		"<div class='hero-unit'>"+
+                        			"<div class='row'>"+
+                        				"<div class='span6'>"+
+                        					"<center><h1>¡Bienvenido!</h1>"+
+                        					"<p>This is a template for a simple marketing or informational website.</p>"+
+                        					"<img src='../bootstrap/img/index.png'></center>"+
+                        				"</div>"+
+                        				"<div class='span4'>"+
+                        					"<form class='form' method='POST' action='/adduser/'>"+
+                        						"<h3>Regístrarse</h3>"+
+                        						"<label>* Datos obligatorios</label>"+
+                        						"<hr></hr>"+      
+                        						"<label>Nombre:*</label><input type='text' id='inputSuccess' class='input-block-level' name='fname' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56'required='required' placeholder='Nombre'>"+  
+                        						"<label>Apellido:*</label><input type='text' class='input-block-level' name='lname' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' placeholder='Apellido' maxlength='56' required='required'>"+
+                        						"<label>E-mail:*</label><input type='text' class='input-block-level' name='email' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' placeholder='someone@example.com' maxlength='60' required='required'>"+                   
+                        						"<dl class= 'form'>"+
+                        							"<button class='btn btn-large btn-primary' type='submit'>Registrarme</button>"+
+                        						"</dl>"+           
+                        					"</form>"+
+                        				"</div>"+
+                        			"</div>"+
+                        		"</div>"+
+                        		"<footer>"+
+                        			"<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+                        		"</footer>"+
+                        	"</div> <!-- /container -->"+
+            				"<script src='../bootstrap/js/jquery.js'></script>"+
+            				"<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
             			"</body>"+
           				"</html>";
                 
@@ -225,15 +226,15 @@ public class Inmoweb {
      			
                 String ret = 
                 		"<table class='table table-hover'>" +
-                		"	<thead>" +
-                		"		<tr>" +
-                		"			<th>#</th>" +
-                		"			<th>Nombre</th>" +
-                		"			<th>Apellido</th>" +
-                		"			<th>E-mail</th>" +
-                		"		</tr>" +
-                		"	</thead>" +
-                		"	<tbody>";
+                			"<thead>" +
+                				"<tr>" +
+                					"<th>#</th>" +
+                					"<th>Nombre</th>" +
+                					"<th>Apellido</th>" +
+                					"<th>E-mail</th>" +
+                				"</tr>" +
+                			"</thead>" +
+                			"<tbody>";
                 int j;
      			for(int i=0; i < users.size(); i++){
      				User u = users.get(i);
@@ -251,22 +252,22 @@ public class Inmoweb {
                 		EncabezadoHTML1+
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
-    	                "	<div class='container'>"+
-    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
-    	                "		<div class='form-actions'>" +
-    	                "			<div class='page-header'>" +
-    	                "				<center><h1> Usuarios Registrados</h1></center>" +
-    	                "			</div>"+
-    	                "			<div>"+
+    	                	"<div class='container'>"+
+    	                		"<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                		"<div class='form-actions'>" +
+    	                			"<div class='page-header'>" +
+    	                				"<center><h1> Usuarios Registrados</h1></center>" +
+    	                			"</div>"+
+    	                			"<div>"+
     	                				ret+
-    	                "			</div>"+
-    	                "		</div>"+
-    	                "		<footer>"+
-    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-    	                "		</footer>"+
-    	                "	</div> <!-- /container -->"+
-    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
-    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+    	                			"</div>"+
+    	                		"</div>"+
+    	                		"<footer>"+
+    	                			"<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                		"</footer>"+
+    	                	"</div> <!-- /container -->"+
+    	    				"<script src='../bootstrap/js/jquery.js'></script>"+
+    	    				"<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
     	    			"</body>"+
     	  				"</html>";    
                 }
@@ -281,19 +282,19 @@ public class Inmoweb {
      			
                 String ret = 
                 		"<table class='table table-hover'>" +
-                		"	<thead>" +
-                		"		<tr>" +
-                		"			<th>#</th>" +
-                		"			<th>Nombre</th>" +
-                		"			<th>Apellido</th>" +
-                		"			<th>Ciudad</th>" +
-                		"			<th>Barrio</th>" +
-                		"			<th>Calle</th>" +
-                		"			<th>Numero</th>" +
-                		"			<th>E-mail</th>" +
-                		"		</tr>" +
-                		"	</thead>" +
-                		"	<tbody>";
+                			"<thead>" +
+                				"<tr>" +
+                					"<th>#</th>" +
+                					"<th>Nombre</th>" +
+                					"<th>Apellido</th>" +
+                					"<th>Ciudad</th>" +
+                					"<th>Barrio</th>" +
+                					"<th>Calle</th>" +
+                					"<th>Numero</th>" +
+                					"<th>E-mail</th>" +
+                				"</tr>" +
+                			"</thead>" +
+                			"<tbody>";
                 int j;
 
                 City c = new City();
@@ -318,22 +319,22 @@ public class Inmoweb {
                 		EncabezadoHTML1+
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
-    	                "	<div class='container'>"+
-    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
-    	                "		<div class='form-actions'>" +
-    	                "			<div class='page-header'>" +
-    	                "				<center><h1> Dueños Registrados</h1></center>" +
-    	                "			</div>"+
-    	                "			<div>"+
+    	                	"<div class='container'>"+
+    	                		"<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                		"<div class='form-actions'>" +
+    	                			"<div class='page-header'>" +
+    	                				"<center><h1> Dueños Registrados</h1></center>" +
+    	                			"</div>"+
+    	                			"<div>"+
     	                				ret+
-    	                "			</div>"+
-    	                "		</div>"+
-    	                "		<footer>"+
-    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-    	                "		</footer>"+
-    	                "	</div> <!-- /container -->"+
-    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
-    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+    	                			"</div>"+
+    	                		"</div>"+
+    	                		"<footer>"+
+    	                			"<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                		"</footer>"+
+    	                	"</div> <!-- /container -->"+
+    	    				"<script src='../bootstrap/js/jquery.js'></script>"+
+    	    				"<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
     	    			"</body>"+
     	  				"</html>";  
         	}
@@ -348,33 +349,39 @@ public class Inmoweb {
      			
                 String ret = 
                 		"<table class='table table-hover'>" +
-                		"	<thead>" +
-                		"		<tr>" +
-                		"			<th>#</th>" +
-                		"			<th>Tipo</th>" +
-                		"			<th>Dueño</th>" +
-                		"			<th>Ciudad</th>" +
-                		"			<th>Barrio</th>" +
-                		"			<th>Calle</th>" +
-                		"			<th>Numero</th>" +
-                		"			<th>Descripción</th>" +
-                		"			<th>Precio $</th>" +
-                		"			<th>Operación</th>"+
-                		"		</tr>" +
-                		"	</thead>" +
-                		"	<tbody>";
+                			"<thead>" +
+                				"<tr>" +
+                					"<th>#</th>"+
+                					"<th>Tipo</th>"+
+                					"<th>Dueño</th>"+
+                					"<th>Inmobiliaria</th>"+
+                					"<th>Ciudad</th>"+
+                					"<th>Barrio</th>"+
+                					"<th>Calle</th>"+
+                					"<th>Numero</th>"+
+                					"<th>Descripción</th>"+
+                					"<th>Precio $</th>"+
+                					"<th>Operación</th>"+
+                				"</tr>" +
+                			"</thead>" +
+                			"<tbody>";
                 int j;
 
                 City c = new City();
                 Owner o = new Owner();
+                RealEstate r = new RealEstate();
+                BuildingsRealEstates bRE = new BuildingsRealEstates();
                 for(int i=0; i < buildings.size(); i++){
      				Building b = buildings.get(i);
      				j = i+1;
      				c = City.findFirst("id = ?", b.get("city_id"));
      				o = Owner.findFirst("id = ?", b.get("owner_id"));
+     				bRE = BuildingsRealEstates.findFirst("building_id = ?", b.getId());
+     				r = RealEstate.findFirst("id = ?", bRE.get("real_estate_id"));
      				ret = ret+"<tr><td>"+j+"</td>"+
 							  "<td>"+b.get("type")+"</td>" +
 							  "<td>"+o.get("last_name")+"</td>" +
+							  "<td>"+r.get("name")+"</td>"+
 							  "<td>"+c.get("name")+"</td>"+
 							  "<td>"+b.get("neighborhood")+"</td>"+
 							  "<td>"+b.get("street")+"</td>"+
@@ -391,22 +398,22 @@ public class Inmoweb {
                 		EncabezadoHTML1+
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
-    	                "	<div class='container'>"+
-    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
-    	                "		<div class='form-actions'>" +
-    	                "			<div class='page-header'>" +
-    	                "				<center><h1> Inmuebles Registrados</h1></center>" +
-    	                "			</div>"+
-    	                "			<div>"+
+    	                	"<div class='container'>"+
+    	                		"<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                		"<div class='form-actions'>" +
+    	                			"<div class='page-header'>" +
+    	                				"<center><h1> Inmuebles Registrados</h1></center>" +
+    	                			"</div>"+
+    	                			"<div>"+
     	                				ret+
-    	                "			</div>"+
-    	                "		</div>"+
-    	                "		<footer>"+
-    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-    	                "		</footer>"+
-    	                "	</div> <!-- /container -->"+
-    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
-    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+    	                			"</div>"+
+    	                		"</div>"+
+    	                		"<footer>"+
+    	                			"<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                		"</footer>"+
+    	                	"</div> <!-- /container -->"+
+    	    				"<script src='../bootstrap/js/jquery.js'></script>"+
+    	    				"<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
     	    			"</body>"+
     	  				"</html>";  
         	}
@@ -421,20 +428,20 @@ public class Inmoweb {
      			
                 String ret = 
                 		"<table class='table table-hover'>" +
-                		"	<thead>" +
-                		"		<tr>" +
-                		"			<th>#</th>" +
-                		"			<th>Nombre</th>" +
-                		"			<th>Ciudad</th>" +
-                		"			<th>Barrio</th>" +
-                		"			<th>Calle</th>" +
-                		"			<th>Numero</th>" +
-                		"			<th>Telefono</th>" +
-                		"			<th>E-mail</th>" +
-                		"			<th>Sitio Web</th>"+
-                		"		</tr>" +
-                		"	</thead>" +
-                		"	<tbody>";
+                			"<thead>" +
+                				"<tr>" +
+                					"<th>#</th>" +
+                					"<th>Nombre</th>" +
+                					"<th>Ciudad</th>" +
+                					"<th>Barrio</th>" +
+                					"<th>Calle</th>" +
+                					"<th>Numero</th>" +
+                					"<th>Telefono</th>" +
+                					"<th>E-mail</th>" +
+                					"<th>Sitio Web</th>"+
+                				"</tr>" +
+                			"</thead>" +
+                			"<tbody>";
                 int j;
 
                 City c = new City();
@@ -460,22 +467,22 @@ public class Inmoweb {
                 		EncabezadoHTML1+
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
-    	                "	<div class='container'>"+
-    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
-    	                "		<div class='form-actions'>" +
-    	                "			<div class='page-header'>" +
-    	                "				<center><h1> Inmobiliarias Registradas</h1></center>" +
-    	                "			</div>"+
-    	                "			<div>"+
+    	                	"<div class='container'>"+
+    	                		"<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                		"<div class='form-actions'>" +
+    	                			"<div class='page-header'>" +
+    	                				"<center><h1> Inmobiliarias Registradas</h1></center>" +
+    	                			"</div>"+
+    	                			"<div>"+
     	                				ret+
-    	                "			</div>"+
-    	                "		</div>"+
-    	                "		<footer>"+
-    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-    	                "		</footer>"+
-    	                "	</div> <!-- /container -->"+
-    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
-    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+    	                			"</div>"+
+    	                		"</div>"+
+    	                		"<footer>"+
+    	                			"<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                		"</footer>"+
+    	                	"</div> <!-- /container -->"+
+    	    				"<script src='../bootstrap/js/jquery.js'></script>"+
+    	    				"<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
     	    			"</body>"+
     	  				"</html>";  
         	}
@@ -495,22 +502,22 @@ public class Inmoweb {
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
 		                "<div class='container'>"+
-		                "	<!-- Main hero unit for a primary marketing message or call to action -->"+
-		                "	<div class='hero-unit'>"+
-		                "		<center>"+
-    	                "			<h3>Usuario registrado exitosamente.</h3>" +
-    	                "			<a href='/'>" +
-    	                "				<button class='btn btn-success btn-primary'>Volver</button>" +
-    	                "			</a>"+
-    	                "		</center>"+ 
-		                "	</div>"+
-		                "	<footer>"+
-		                "		<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-		                "	</footer>"+
+		                	"<!-- Main hero unit for a primary marketing message or call to action -->"+
+		                	"<div class='hero-unit'>"+
+		                		"<center>"+
+    	                			"<h3>Usuario registrado exitosamente.</h3>" +
+    	                			"<a href='/'>" +
+    	                				"<button class='btn btn-success btn-primary'>Volver</button>" +
+    	                			"</a>"+
+    	                		"</center>"+ 
+		                	"</div>"+
+		                	"<footer>"+
+		                		"<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+		                	"</footer>"+
 		                "</div> <!-- /container -->"+
 		    			"<script src='../bootstrap/js/jquery.js'></script>"+
 		    			"<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
-		    			"	</body>"+
+		    				"</body>"+
 		  				"</html>"; 
     		}
     	}); //end post adduser
@@ -547,7 +554,7 @@ public class Inmoweb {
     	                "						</div>"+  
                         "					</div>"+
     	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Ciudad:</label>"+
+    	                "						<label class='control-label'>Ciudad:*</label>"+
     	                "						<div class='controls'>"+
     	                							optionCity("Seleccionar ciudad","required='required'")+
     	                "						</div>"+                 
@@ -607,22 +614,22 @@ public class Inmoweb {
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
 		                "<div class='container'>"+
-		                "	<!-- Main hero unit for a primary marketing message or call to action -->"+
-		                "	<div class='hero-unit'>"+
-		                "		<center>"+
-    	                "			<h3>Dueño registrado exitosamente.</h3>" +
-    	                "			<a href='/'>" +
-    	                "				<button class='btn btn-success btn-primary'>Volver</button>" +
-    	                "			</a>"+
-    	                "		</center>"+ 
-		                "	</div>"+
-		                "	<footer>"+
-		                "		<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-		                "	</footer>"+
+		                	"<!-- Main hero unit for a primary marketing message or call to action -->"+
+		                	"<div class='hero-unit'>"+
+		                		"<center>"+
+    	                			"<h3>Dueño registrado exitosamente.</h3>" +
+    	                			"<a href='/'>" +
+    	                				"<button class='btn btn-success btn-primary'>Volver</button>" +
+    	                			"</a>"+
+    	                		"</center>"+ 
+		                	"</div>"+
+		                	"<footer>"+
+		                		"<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+		                	"</footer>"+
 		                "</div> <!-- /container -->"+
 		    			"<script src='../bootstrap/js/jquery.js'></script>"+
 		    			"<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
-		    			"	</body>"+
+		    				"</body>"+
 		  				"</html>"; 
     		}
     	});
@@ -737,22 +744,22 @@ public class Inmoweb {
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
 		                "<div class='container'>"+
-		                "	<!-- Main hero unit for a primary marketing message or call to action -->"+
-		                "	<div class='hero-unit'>"+
-		                "		<center>"+
-    	                "			<h3>Inmueble registrado exitosamente.</h3>" +
-    	                "			<a href='/'>" +
-    	                "				<button class='btn btn-success btn-primary'>Volver</button>" +
-    	                "			</a>"+
-    	                "		</center>"+ 
-		                "	</div>"+
-		                "	<footer>"+
-		                "		<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-		                "	</footer>"+
+		                	"<!-- Main hero unit for a primary marketing message or call to action -->"+
+		                	"<div class='hero-unit'>"+
+		                		"<center>"+
+    	                			"<h3>Inmueble registrado exitosamente.</h3>" +
+    	                			"<a href='/'>" +
+    	                				"<button class='btn btn-success btn-primary'>Volver</button>" +
+    	                			"</a>"+
+    	                		"</center>"+ 
+		                	"</div>"+
+		                	"<footer>"+
+		                		"<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+		                	"</footer>"+
 		                "</div> <!-- /container -->"+
 		    			"<script src='../bootstrap/js/jquery.js'></script>"+
 		    			"<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
-		    			"	</body>"+
+		    				"</body>"+
 		  				"</html>"; 
     		}
     	}); //end post adduser
@@ -768,26 +775,26 @@ public class Inmoweb {
     					"						<li class='active'><a href='/about/'>Acerca</a></li>"+
     					"						<li><a href='/contact/'>Contacto</a></li>"+
    		   				EncabezadoHTML3+
-    	                "	<div class='container'>"+
-    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
-    	                "		<div class='hero-unit'>"+
-    	                "			<div>"+
-    	                "				<center>"+
-    	    	        "					<h1>Misión y Valores..</h1>" +
-    	    	      //"					<img src='../bootstrap/img/about.png'>" +		
-    	    	        "					<p>Misión: Ofrecer, con nuestro equipo multidisciplinario de profesionales comprometidos, soluciones informáticas a medida para optimizar los procesos de negocio de  nuestros clientes.</p>" +
-                        "                                       <p>Valores: Nuestros valores son,</p>" +
-                        "                                       <p>Responsabilidad: En nuestros proyectos.</p>" +
-                        "                                       <p>Trabajo en Equipo: Es la base de nuestra organización</p>" +
-    	    	        "				</center>"+
-    	                "			</div>"+
-    	                "		</div>"+
-    	                "		<footer>"+
-    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-    	                "		</footer>"+
-    	                "	</div> <!-- /container -->"+
-    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
-    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+    	                	"<div class='container'>"+
+    	                		"<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                		"<div class='hero-unit'>"+
+    	                			"<div>"+
+    	                				"<center>"+
+    	    	        					"<h1>Misión y Valores..</h1>" +
+    	    	        					"<img src='../bootstrap/img/about.png'>" +		
+    	    	        					"<p>Misión: Ofrecer, con nuestro equipo multidisciplinario de profesionales comprometidos, soluciones informáticas a medida para optimizar los procesos de negocio de  nuestros clientes.</p>" +
+                                            "<p>Valores: Nuestros valores son,</p>" +
+                                            "<p>Responsabilidad: En nuestros proyectos.</p>" +
+                                            "<p>Trabajo en Equipo: Es la base de nuestra organización</p>" +
+    	    	        				"</center>"+
+    	                			"</div>"+
+    	                		"</div>"+
+    	                		"<footer>"+
+    	                			"<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                		"</footer>"+
+    	                	"</div> <!-- /container -->"+
+    	    				"<script src='../bootstrap/js/jquery.js'></script>"+
+    	    				"<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
     	    			"</body>"+
     	  				"</html>";
     		}
@@ -799,48 +806,48 @@ public class Inmoweb {
                 response.type("text/html");
     			
     			return EncabezadoHTML1+
-    					"						<li><a href='/'>Inicio</a></li>"+
-    	   				"						<li><a href='/about/'>Acerca</a></li>"+
-    	   				"						<li class='active'><a href='/contact/'>Contacto</a></li>"+
+    											"<li><a href='/'>Inicio</a></li>"+
+    	   										"<li><a href='/about/'>Acerca</a></li>"+
+    	   										"<li class='active'><a href='/contact/'>Contacto</a></li>"+
     					EncabezadoHTML3+
-    	                "	<div class='container'>"+
-    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
-    	                "		<div class='hero-unit'>"+
-    	                "			<div class='container'>"+
-    	                "				<h2>Contactanos</h2>"+
-    	                "				<label>Estamos aquí para ayudar con cualquier pregunta o comentario. </label>"+
-    	                "			</div>"+
-    	                "			<hr></hr>"+
-    	                "			<div class='container'>"+
-    	                "				<form class='navbar-form pull-left'>"+
-    	                "					<dl class= 'form'>"+
-    	                "						<label><b>Nombre</b></label>"+
-    	                "						<input type='text' class='input-block-level' name='name' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56'required='required'>"+     
-    	                "					</dl>"+
-    	                "					<dl class= 'form'>"+
-                        "						<label><b>E-mail</b></label>"+   
-                        "						<input type='text' class='input-block-level' name='email' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60' required='required'>"+     
-                        "					</dl>"+
-                        "					<dl class= 'form'>"+
-                        "						<label><b>Asunto</b></label>"+
-                        "						<input type='text' class='input-block-level' name='subject' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56' required='required'>"+     
-                        "					</dl>"+
-                        "					<dl class= 'form'>"+
-                        "						<label><b>Mensaje</b></label>"+
-                        "						<textarea style='width: 403px; height: 180px;' name='body' required='required'></textarea><br>"+    					
-                        "					</dl>" +
-                        "					<dl class= 'form'>" +
-                        "						<button class='btn btn-large btn-primary' type='submit'>Enviar</button>"+ 
-                        "					</dl>"+
-                       	"				</form>"+
-                        "			</div>"+
-    	                "		</div>"+
-    	                "		<footer>"+
-    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-    	                "		</footer>"+
-    	                "	</div> <!-- /container -->"+
-    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
-    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+    	                	"<div class='container'>"+
+    	                		"<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                		"<div class='hero-unit'>"+
+    	                			"<div class='container'>"+
+    	                				"<h2>Contactanos</h2>"+
+    	                				"<label>Estamos aquí para ayudar con cualquier pregunta o comentario. </label>"+
+    	                			"</div>"+
+    	                			"<hr></hr>"+
+    	                			"<div class='container'>"+
+    	                				"<form class='navbar-form pull-left'>"+
+    	                					"<dl class= 'form'>"+
+    	                						"<label><b>Nombre</b></label>"+
+    	                						"<input type='text' class='input-block-level' name='name' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56'required='required'>"+     
+    	                					"</dl>"+
+    	                					"<dl class= 'form'>"+
+                        						"<label><b>E-mail</b></label>"+   
+                        						"<input type='text' class='input-block-level' name='email' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60' required='required'>"+     
+                        					"</dl>"+
+                        					"<dl class= 'form'>"+
+                        						"<label><b>Asunto</b></label>"+
+                        						"<input type='text' class='input-block-level' name='subject' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56' required='required'>"+     
+                        					"</dl>"+
+                        					"<dl class= 'form'>"+
+                        						"<label><b>Mensaje</b></label>"+
+                        						"<textarea style='width: 403px; height: 180px;' name='body' required='required'></textarea><br>"+    					
+                        					"</dl>" +
+                        					"<dl class= 'form'>" +
+                        						"<button class='btn btn-large btn-primary' type='submit'>Enviar</button>"+ 
+                        					"</dl>"+
+                       					"</form>"+
+                        			"</div>"+
+    	                		"</div>"+
+    	                		"<footer>"+
+    	                			"<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                		"</footer>"+
+    	                	"</div> <!-- /container -->"+
+    	    				"<script src='../bootstrap/js/jquery.js'></script>"+
+    	    				"<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
     	    			"</body>"+
     	  				"</html>";
     		}
@@ -943,22 +950,22 @@ public class Inmoweb {
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
 		                "<div class='container'>"+
-		                "	<!-- Main hero unit for a primary marketing message or call to action -->"+
-		                "	<div class='hero-unit'>"+
-		                "		<center>"+
-    	                "			<h3>Inmobiliaria registrada exitosamente.</h3>" +
-    	                "			<a href='/'>" +
-    	                "				<button class='btn btn-success btn-primary'>Volver</button>" +
-    	                "			</a>"+
-    	                "		</center>"+ 
-		                "	</div>"+
-		                "	<footer>"+
-		                "		<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-		                "	</footer>"+
+		                	"<!-- Main hero unit for a primary marketing message or call to action -->"+
+		                	"<div class='hero-unit'>"+
+		                		"<center>"+
+    	                			"<h3>Inmobiliaria registrada exitosamente.</h3>" +
+    	                			"<a href='/'>" +
+    	                				"<button class='btn btn-success btn-primary'>Volver</button>" +
+    	                			"</a>"+
+    	                		"</center>"+ 
+		                	"</div>"+
+		                	"<footer>"+
+		                		"<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+		                	"</footer>"+
 		                "</div> <!-- /container -->"+
 		    			"<script src='../bootstrap/js/jquery.js'></script>"+
 		    			"<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
-		    			"	</body>"+
+		    				"</body>"+
 		  				"</html>"; 
     		}
     	});
@@ -1137,20 +1144,59 @@ public class Inmoweb {
                 else
                 	SubqueryOper = "operation='"+request.queryParams("operation")+"'";
               
-                System.out.println("select * from buildings where "+SubqueryType+" AND "+SubqueryCity+" AND "+SubqueryREst+" AND "+SubqueryOper);
                 if(SubqueryType+SubqueryCity+SubqueryREst+SubqueryOper=="truetruetruetrue")
                 	query = "select * from buildings";
                 else{
                 	query = "select * from buildings INNER JOIN buildings_real_estates on buildings.id=buildings_real_estates.building_id where "+SubqueryType+" AND "+SubqueryCity+" AND "+SubqueryREst+" AND "+SubqueryOper;
                 }
                 
-                
                 List<Building> buildings = Building.findBySQL(query);
-                String ret = "<br>";
-                for(int i = 0; i< buildings.size();i++){
-                    Building b = buildings.get(i);
-                    ret = ret+" "+b.get("street")+" "+b.get("n_street")+"<br><br>";
-                }
+                String ret = 
+                		"<table class='table table-hover'>" +
+                			"<thead>" +
+                				"<tr>" +
+                					"<th>#</th>"+
+                					"<th>Tipo</th>"+
+                					"<th>Dueño</th>"+
+                					"<th>Inmobiliaria</th>"+
+                					"<th>Ciudad</th>"+
+                					"<th>Barrio</th>"+
+                					"<th>Calle</th>"+
+                					"<th>Numero</th>"+
+                					"<th>Descripción</th>"+
+                					"<th>Precio $</th>"+
+                					"<th>Operación</th>"+
+                				"</tr>" +
+                			"</thead>" +
+                			"<tbody>";
+                int j;
+
+                City c = new City();
+                Owner o = new Owner();
+                RealEstate r = new RealEstate();
+                BuildingsRealEstates bRE = new BuildingsRealEstates();
+                for(int i=0; i < buildings.size(); i++){
+     				Building b = buildings.get(i);
+     				j = i+1;
+     				c = City.findFirst("id = ?", b.get("city_id"));
+     				o = Owner.findFirst("id = ?", b.get("owner_id"));
+     				bRE = BuildingsRealEstates.findFirst("building_id = ?", b.getId());
+     				r = RealEstate.findFirst("id = ?", bRE.get("real_estate_id"));
+     				ret = ret+"<tr><td>"+j+"</td>"+
+							  "<td>"+b.get("type")+"</td>" +
+							  "<td>"+o.get("last_name")+"</td>" +
+							  "<td>"+r.get("name")+"</td>"+
+							  "<td>"+c.get("name")+"</td>"+
+							  "<td>"+b.get("neighborhood")+"</td>"+
+							  "<td>"+b.get("street")+"</td>"+
+							  "<td>"+b.get("n_street")+"</td>"+
+							  "<td>"+b.get("description")+"</td>"+
+							  "<td>"+b.get("price")+"</td>" +
+							  "<td>"+b.get("operation")+"</td>"+
+							  "<td><a href='/updatebuilding/"+b.get("id")+"'><img src='../bootstrap/img/edit-update.png'></a></td>"+
+							  "<td><a href='/deletebuilding/"+b.get("id")+"'><img src='../bootstrap/img/edit-delete.png'></a></td>";
+     			}   
+     			ret = ret +"</tbody></table>";
                 Base.close();
                 
                 return 
@@ -1159,7 +1205,7 @@ public class Inmoweb {
                 		EncabezadoHTML3+
 		        "               <div class='container'>"+
 		        "               <!-- Main hero unit for a primary marketing message or call to action -->"+
-		        "               <div class='hero-unit'>"+
+		        "               <div class='form-actions'>"+
 		        "                   <center>"+                    
     	                "			<h2>Resultado de Busqueda</h2>" +
                                                     ret+
@@ -1203,46 +1249,46 @@ public class Inmoweb {
                 		EncabezadoHTML1+
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
-    	                "	<div class='container'>"+
-    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
-    	                "		<div class='hero-unit'>"+
-    	                "			<div class='container'>"+
-    	                "				<h2>Modificar Datos</h2>"+
-    	                "				<label>* Datos obligatorios </label>"+
-    	                "			</div>"+
-    	                "			<hr></hr>"+
-    	                "			<div>"+
-    	                "				<form class='form-horizontal' method='POST' action='/updateuser/"+request.params(":id")+"'>"+               
-    	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Nombre:*</label>"+
-    	                "						<div class='controls'>"+
-    	                "							<input type='text' name='first_name' value='"+user.get("first_name")+"' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56' required='required'>"+
-    	                "						</div>"+
-    	                "					</div>"+
-    	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Apellido:*</label>"+
-    	                "						<div class='controls'>"+
-    	                "							<input type='text' name='last_name' value='"+user.get("last_name")+"' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56' required='required'>"+
-    	                "						</div>"+
-    	                "					</div>"+
-    	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Email:*</label>"+
-    	                "						<div class='controls'>"+
-    	                "							<input type='text' name='email' value='"+user.get("email")+"' placeholder='someone@example.com' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60' required='required'>"+
-    	                "						</div>"+
-    	                "					</div>"+     	               
-    	                "					<div class='form-actions'>"+
-    	                "						<button class='btn btn-large btn-primary' type='submit'>Guardar</button>"+
-    	                "					</div>"+
-    	                "				</form>"+
-    	                "			</div>"+
-    	                "		</div>"+		
-    	                "		<footer>"+
-    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-    	                "		</footer>"+
-    	                "	</div> <!-- /container -->"+
-    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
-    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+    	                	"<div class='container'>"+
+    	                		"<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                		"<div class='hero-unit'>"+
+    	                			"<div class='container'>"+
+    	                				"<h2>Modificar Datos</h2>"+
+    	                				"<label>* Datos obligatorios </label>"+
+    	                			"</div>"+
+    	                			"<hr></hr>"+
+    	                			"<div>"+
+    	                				"<form class='form-horizontal' method='POST' action='/updateuser/"+request.params(":id")+"'>"+               
+    	                					"<div class='control-group'>"+
+    	                						"<label class='control-label'>Nombre:*</label>"+
+    	                						"<div class='controls'>"+
+    	                							"<input type='text' name='first_name' value='"+user.get("first_name")+"' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56' required='required'>"+
+    	                						"</div>"+
+    	                					"</div>"+
+    	                					"<div class='control-group'>"+
+    	                						"<label class='control-label'>Apellido:*</label>"+
+    	                						"<div class='controls'>"+
+    	                							"<input type='text' name='last_name' value='"+user.get("last_name")+"' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56' required='required'>"+
+    	                						"</div>"+
+    	                					"</div>"+
+    	                					"<div class='control-group'>"+
+    	                						"<label class='control-label'>Email:*</label>"+
+    	                						"<div class='controls'>"+
+    	                							"<input type='text' name='email' value='"+user.get("email")+"' placeholder='someone@example.com' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60' required='required'>"+
+    	                						"</div>"+
+    	                					"</div>"+     	               
+    	                					"<div class='form-actions'>"+
+    	                						"<button class='btn btn-large btn-primary' type='submit'>Guardar</button>"+
+    	                					"</div>"+
+    	                				"</form>"+
+    	                			"</div>"+
+    	                		"</div>"+		
+    	                		"<footer>"+
+    	                			"<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                		"</footer>"+
+    	                	"</div> <!-- /container -->"+
+    	    				"<script src='../bootstrap/js/jquery.js'></script>"+
+    	    				"<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
     	    			"</body>"+
     	  				"</html>";               
             }
@@ -1285,82 +1331,82 @@ public class Inmoweb {
                 		EncabezadoHTML1+
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
-                		"	<div class='container'>"+
-    	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
-    	                "		<div class='hero-unit'>"+
-    	                "			<div class='container'>"+
-    	                "				<h2>Modificar Datos</h2>"+
-    	                "				<label>* Datos obligatorios </label>"+
-    	                "			</div>"+
-    	                "			<hr></hr>"+
-    	                "			<div>"+
-    	                "				<form class='form-horizontal' method='POST' action='/updatebuilding/"+request.params(":id")+"'>"+               
-    	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Tipo:*</label>"+
-    	                "						<div class='controls'>"+
+                			"<div class='container'>"+
+    	                		"<!-- Main hero unit for a primary marketing message or call to action -->"+
+    	                		"<div class='hero-unit'>"+
+    	                			"<div class='container'>"+
+    	                				"<h2>Modificar Datos</h2>"+
+    	                				"<label>* Datos obligatorios </label>"+
+    	                			"</div>"+
+    	                			"<hr></hr>"+
+    	                			"<div>"+
+    	                				"<form class='form-horizontal' method='POST' action='/updatebuilding/"+request.params(":id")+"'>"+               
+    	                					"<div class='control-group'>"+
+    	                						"<label class='control-label'>Tipo:*</label>"+
+    	                						"<div class='controls'>"+
     	                							optionTypeUpdate(""+building.get("type")+"")+
-    	                "						</div>"+
-    	                "					</div>"+
-    	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Barrio:*</label>"+
-    	                "						<div class='controls'>"+
-    	                "							<input type='text' name='neighborhood' value='"+building.get("neighborhood")+"' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30' required='required'>"+
-    	                "						</div>"+
-    	                "					</div>"+
-    	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Calle:*</label>"+
-    	                "						<div class='controls'>"+
-    	                "							<input type='text' name='street' value='"+building.get("street")+"' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30' required='required'>"+
-    	                "						</div>"+
-    	                "					</div>"+ 
-    	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Numero:*</label>"+
-    	                "						<div class='controls'>"+
-    	                "							<input type='text' name='n_street' value='"+building.get("n_street")+"' pattern='[0-9]+' title='Solo numeros - Sin espacios - Maxima Longitud 10' maxlength='10' required='required'>"+
-    	                "						</div>"+
-    	                "					</div>"+
-    	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Descripción:</label>"+
-    	                "						<div class='controls'>"+
-    	                "							<textarea style='width: 394px; height: 115px;;' name= 'description'>"+building.get("description")+"</textarea>"+
-    	                "						</div>"+
-    	                "					</div>"+
-    	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Precio:*</label>"+
-    	                "						<div class='controls'>"+
-    	                "							<input type='text' name='price' value='"+building.get("price")+"' pattern='[0-9-.]+' title='Solo numeros - Sin espacios - Maxima Longitud 10' maxlength='10' required='required'>"+
-    	                "						</div>"+
-    	                "					</div>"+
-    	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Operación:*</label>"+
-    	                "						<div class='controls'>"+
+    	                						"</div>"+
+    	                					"</div>"+
+    	                					"<div class='control-group'>"+
+    	                						"<label class='control-label'>Barrio:*</label>"+
+    	                						"<div class='controls'>"+
+    	                							"<input type='text' name='neighborhood' value='"+building.get("neighborhood")+"' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30' required='required'>"+
+    	                						"</div>"+
+    	                					"</div>"+
+    	                					"<div class='control-group'>"+
+    	                						"<label class='control-label'>Calle:*</label>"+
+    	                						"<div class='controls'>"+
+    	                							"<input type='text' name='street' value='"+building.get("street")+"' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30' required='required'>"+
+    	                						"</div>"+
+    	                					"</div>"+ 
+    	                					"<div class='control-group'>"+
+    	                						"<label class='control-label'>Numero:*</label>"+
+    	                						"<div class='controls'>"+
+    	                							"<input type='text' name='n_street' value='"+building.get("n_street")+"' pattern='[0-9]+' title='Solo numeros - Sin espacios - Maxima Longitud 10' maxlength='10' required='required'>"+
+    	                						"</div>"+
+    	                					"</div>"+
+    	                					"<div class='control-group'>"+
+    	                						"<label class='control-label'>Descripción:</label>"+
+    	                						"<div class='controls'>"+
+    	                							"<textarea style='width: 394px; height: 115px;;' name= 'description'>"+building.get("description")+"</textarea>"+
+    	                						"</div>"+
+    	                					"</div>"+
+    	                					"<div class='control-group'>"+
+    	                						"<label class='control-label'>Precio:*</label>"+
+    	                						"<div class='controls'>"+
+    	                							"<input type='text' name='price' value='"+building.get("price")+"' pattern='[0-9-.]+' title='Solo numeros - Sin espacios - Maxima Longitud 10' maxlength='10' required='required'>"+
+    	                						"</div>"+
+    	                					"</div>"+
+    	                					"<div class='control-group'>"+
+    	                						"<label class='control-label'>Operación:*</label>"+
+    	                						"<div class='controls'>"+
     	                							optionOperationUpdate(""+building.get("operation")+"")+
-    	                "						</div>"+
-    	                "					</div>"+
-    	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Dueño:*</label>"+
-    	                "						<div class='controls'>"+
+    	                						"</div>"+
+    	                					"</div>"+
+    	                					"<div class='control-group'>"+
+    	                						"<label class='control-label'>Dueño:*</label>"+
+    	                						"<div class='controls'>"+
     	                							optionOwnerUpdate(""+building.get("owner_id")+"")+
-    	                "						</div>"+
-    	                "					</div>"+
-    	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Ciudad:*</label>"+
-    	                "						<div class='controls'>"+
+    	                						"</div>"+
+    	                					"</div>"+
+    	                					"<div class='control-group'>"+
+    	                						"<label class='control-label'>Ciudad:*</label>"+
+    	                						"<div class='controls'>"+
     	                							optionCityUpdate(""+building.get("city_id")+"")+
-    	                "						</div>"+
-    	                "					</div>"+
-    	                "					<div class='form-actions'>"+
-    	                "						<button class='btn btn-large btn-primary' type='submit'>Guardar</button>"+
-    	                "					</div>"+
-    	                "				</form>"+
-    	                "			</div>"+
-    	                "		</div>"+		
-    	                "		<footer>"+
-    	                "			<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-    	                "		</footer>"+
-    	                "	</div> <!-- /container -->"+
-    	    			"	<script src='../bootstrap/js/jquery.js'></script>"+
-    	    			"	<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+    	                						"</div>"+
+    	                					"</div>"+
+    	                					"<div class='form-actions'>"+
+    	                						"<button class='btn btn-large btn-primary' type='submit'>Guardar</button>"+
+    	                					"</div>"+
+    	                				"</form>"+
+    	                			"</div>"+
+    	                		"</div>"+		
+    	                		"<footer>"+
+    	                			"<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+    	                		"</footer>"+
+    	                	"</div> <!-- /container -->"+
+    	    				"<script src='../bootstrap/js/jquery.js'></script>"+
+    	    				"<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
     	    			"</body>"+
     	  				"</html>";
             }

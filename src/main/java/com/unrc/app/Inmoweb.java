@@ -53,18 +53,18 @@ public class Inmoweb {
     
     public static String optionType(String option, String required){
     	String ret = "<select class='span3' NAME='type' "+required+">"+"<option value=''>"+option+"</option><br>";
-		ret = ret+"<option value='land'>Land</option><br>" +
-				  "<option value='farm'>Farm</option><br>" +
-	        	  "<option value='house'>House</option><br>" +
+		ret = ret+"<option value='land'>Campo</option><br>" +
+				  "<option value='farm'>Quinta</option><br>" +
+	        	  "<option value='house'>Casa</option><br>" +
 				  "<option value='garage'>Garage</option><br>";
     	return ret+"</select>";
     }
     
     public static String optionTypeUpdate(String type){
     	String ret = "<select class='span3' NAME='type' required='required'>"+"<option value='"+type+"' style='display:none;'>"+type+"</option><br>";
-		ret = ret+"<option value='land'>Land</option><br>" +
-				  "<option value='farm'>Farm</option><br>" +
-	        	  "<option value='house'>House</option><br>" +
+		ret = ret+"<option value='land'>Campo</option><br>" +
+				  "<option value='farm'>Quinta</option><br>" +
+	        	  "<option value='house'>Casa</option><br>" +
 				  "<option value='garage'>Garage</option><br>";
     	return ret+"</select>";
     }
@@ -894,9 +894,9 @@ public class Inmoweb {
     	                "						</div>"+
     	                "					</div>"+ 
     	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Numero:*</label>"+
+    	                "						<label class='control-label'>Numero:</label>"+
     	                "						<div class='controls'>"+   
-    	                "							<input type='text' name='n_street' pattern='[0-9]+' title='Solo numeros - Sin espacios - Maxima Longitud 10' maxlength='10' required='required'>"+
+    	                "							<input type='text' name='n_street' pattern='[0-9]+' title='Solo numeros - Sin espacios - Maxima Longitud 10' maxlength='10'>"+
     	                "						</div>"+
     	                "					</div>"+                                                        
                         "					<div class='control-group'>"+
@@ -920,7 +920,7 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Sitio Web:*</label>"+
     	                "						<div class='controls'>"+ 
-    	                "							<input type='text' name='site_web' required='required'>"+
+    	                "							<input type='text' name='site_web' paceholder='www.example.com' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='form-actions'>"+

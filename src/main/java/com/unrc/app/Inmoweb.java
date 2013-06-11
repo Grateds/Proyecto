@@ -200,10 +200,10 @@ public class Inmoweb {
                         "					<form class='form' method='POST' action='/adduser/'>"+
                         "						<h3>Regístrarse</h3>"+
                         "						<label>* Datos obligatorios</label>"+
-                        "						<hr></hr>"+
-                        "						<label>Nombre:*</label><input type='text' class='input-block-level' name='fname' placeholder='Nombre'>"+  
-                        "						<label>Apellido:*</label><input type='text' class='input-block-level' name='lname'placeholder='Apellido'>"+
-                        "						<label>E-mail:*</label><input type='text' class='input-block-level' name='email' placeholder='someone@example.com'>"+      
+                        "						<hr></hr>"+      
+                        "						<label>Nombre:*</label><input type='text' id='inputSuccess' class='input-block-level' name='fname' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Tamaño maximo 56' placeholder='Nombre'>"+  
+                        "						<label>Apellido:*</label><input type='text' class='input-block-level' name='lname' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Tamaño maximo 56' placeholder='Apellido'>"+
+                        "						<label>E-mail:*</label><input type='text' class='input-block-level' name='email' placeholder='someone@example.com'>"+   
                         "						<dl class= 'form'>"+
                         "							<button class='btn btn-large btn-primary' type='submit'>Registrarme</button>"+
                         "						</dl>"+           
@@ -498,7 +498,7 @@ public class Inmoweb {
     			Base.close();
     		
     			return 
-    					EncabezadoHTML1+
+    				EncabezadoHTML1+
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
 		                "<div class='container'>"+

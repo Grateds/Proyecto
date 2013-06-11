@@ -155,14 +155,13 @@ public class Inmoweb {
    		   		"						<li><a href='/contact/'>Contacto</a></li>";
    				final String EncabezadoHTML3 = 
                 "						<li class='dropdown'>"+
-                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Acciones <b class='caret'></b></a>"+
+                "							<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Administración <b class='caret'></b></a>"+
                 "							<ul class='dropdown-menu'>"+
                 "								<li><a href='/users/'><img src='../bootstrap/img/list.png'> Ver Usuarios</a></li>"+
                 "								<li><a href='/owners/'><img src='../bootstrap/img/list.png'> Ver Dueños</a></li>"+
                 "								<li><a href='/buildings/'><img src='../bootstrap/img/list.png'> Ver Inmuebles</a></li>" +
                 "								<li><a href='/realestates/'><img src='../bootstrap/img/list.png'> Ver Inmobiliarias</a></li>"+
                 "								<li class='divider'></li>"+
-                "								<li class='nav-header'>Administración</li>"+
                 "								<li><a href='/search/'><img src='../bootstrap/img/search-icon.png'> Buscar</a></li>"+
                 "							</ul>"+
                 "						</li>"+
@@ -834,11 +833,11 @@ public class Inmoweb {
                         "					</dl>"+
                         "					<dl class= 'form'>"+
                         "						<label><b>Asunto</b></label>"+
-                        "						<input type='text' class='input-block-level' name='subject' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56'>"+     
+                        "						<input type='text' class='input-block-level' name='subject' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56' required='required'>"+     
                         "					</dl>"+
                         "					<dl class= 'form'>"+
                         "						<label><b>Mensaje</b></label>"+
-                        "						<textarea style='width: 394px; height: 52px;' name='body'></textarea><br>"+    					
+                        "						<textarea style='width: 403px; height: 180px;' name='body' required='required'></textarea><br>"+    					
                         "					</dl>" +
                         "					<dl class= 'form'>" +
                         "						<button class='btn btn-large btn-primary' type='submit'>Enviar</button>"+ 

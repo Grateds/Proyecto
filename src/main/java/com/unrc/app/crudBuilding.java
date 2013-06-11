@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.unrc.app.models.Building;
 import com.unrc.app.models.BuildingsRealEstates;
+import com.unrc.app.models.RealEstate;
 
 /**
  * Class crudBuilding
@@ -25,20 +26,21 @@ public class crudBuilding {
 		b.set("price", price);
 		b.set("operation", operation);
 		b.set("owner_id", owner_id);
-        b.set("city_id", city_id);
+        b.set("city_id", city_id).saveIt();
+        
+       	RealEstate realEstate = RealEstate.findFirst("id = ?", real_estate_id);
+       	b.add(realEstate);
        	b.saveIt();
-
-        BuildingsRealEstates bre = new BuildingsRealEstates();
-        bre.set("building_id",b.get("id"));
-        bre.set("real_estate_id", real_estate_id);
-        bre.saveIt();
 	}
 	
 	/** Pre: building.exist() = true **/
 	/** Pos: Deleted building **/
 	public void delete(String id){   
    		Building b = Building.findFirst("id = ?", id);
-    	b.deleteCascade();
+   		BuildingsRealEstates bRE = BuildingsRealEstates.findFirst("building_id = ?", id);
+   		RealEstate re = RealEstate.findFirst("id = ?", bRE.get("real_estate_id"));
+   		b.remove(re);
+   		b.delete();
     }
 
 	/** Pre: building.exist() = true **/

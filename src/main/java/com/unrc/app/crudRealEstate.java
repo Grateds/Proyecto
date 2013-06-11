@@ -18,7 +18,7 @@ public class crudRealEstate {
     }
     public void delete(String id){
         RealEstate rs = RealEstate.findFirst("id = ?", id);
-        rs.deleteCascade();
+        rs.delete();
     }
     public void update(String id, String name, String phone, String email, String city, String neighborhood, String street, String n_street, String site_web){
         RealEstate rs = RealEstate.findFirst("id = ?", id);

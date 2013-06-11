@@ -201,8 +201,8 @@ public class Inmoweb {
                         "						<h3>Regístrarse</h3>"+
                         "						<label>* Datos obligatorios</label>"+
                         "						<hr></hr>"+      
-                        "						<label>Nombre:*</label><input type='text' id='inputSuccess' class='input-block-level' name='fname' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' placeholder='Nombre' maxlength='56'>"+  
-                        "						<label>Apellido:*</label><input type='text' class='input-block-level' name='lname' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' placeholder='Apellido' maxlength='56'>"+
+                        "						<label>Nombre:*</label><input type='text' id='inputSuccess' class='input-block-level' name='fname' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' required='required' placeholder='Nombre' maxlength='56'>"+  
+                        "						<label>Apellido:*</label><input type='text' class='input-block-level' name='lname' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' required='required' placeholder='Apellido' maxlength='56'>"+
                         "						<label>E-mail:*</label><input type='text' class='input-block-level' name='email' title='Maxima Longitud 60' required='required' placeholder='someone@example.com' maxlength='60'>"+                   
                         "						<dl class= 'form'>"+
                         "							<button class='btn btn-large btn-primary' type='submit'>Registrarme</button>"+

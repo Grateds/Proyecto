@@ -52,7 +52,7 @@ public class Inmoweb {
     }
     
     public static String optionType(String option){
-    	String ret = "<select class='span3' NAME='type'>"+"<option value=''>"+option+"</option><br>";
+    	String ret = "<select class='span3' NAME='type' required='required'>"+"<option value=''>"+option+"</option><br>";
 		ret = ret+"<option value='land'>Land</option><br>" +
 				  "<option value='farm'>Farm</option><br>" +
 	        	  "<option value='house'>House</option><br>" +
@@ -61,7 +61,7 @@ public class Inmoweb {
     }
     
     public static String optionTypeUpdate(String type){
-    	String ret = "<select class='span3' NAME='type'>"+"<option value='"+type+"' style='display:none;'>"+type+"</option><br>";
+    	String ret = "<select class='span3' NAME='type' required='required'>"+"<option value='"+type+"' style='display:none;'>"+type+"</option><br>";
 		ret = ret+"<option value='land'>Land</option><br>" +
 				  "<option value='farm'>Farm</option><br>" +
 	        	  "<option value='house'>House</option><br>" +
@@ -697,7 +697,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Precio:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='price' required='required'>"+
+    	                "							<input type='text' name='price' pattern='[0-9-.]+' title='Solo numeros - Sin espacios - Maxima Longitud 10' maxlength='10' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
@@ -1322,7 +1322,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Numero:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='n_street' value='"+building.get("n_street")+"'>"+
+    	                "							<input type='text' name='n_street' value='"+building.get("n_street")+"' pattern='[0-9]+' title='Solo numeros - Sin espacios - Maxima Longitud 10' maxlength='10' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
@@ -1332,9 +1332,9 @@ public class Inmoweb {
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Precio:</label>"+
+    	                "						<label class='control-label'>Precio:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='price' value='"+building.get("price")+"'>"+
+    	                "							<input type='text' name='price' value='"+building.get("price")+"' pattern='[0-9-.]+' title='Solo numeros - Sin espacios - Maxima Longitud 10' maxlength='10' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+

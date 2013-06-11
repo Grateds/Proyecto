@@ -201,7 +201,7 @@ public class Inmoweb {
                         "						<h3>Regístrarse</h3>"+
                         "						<label>* Datos obligatorios</label>"+
                         "						<hr></hr>"+      
-                        "						<label>Nombre:*</label><input type='text' id='inputSuccess' class='input-block-level' name='fname' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' maxlength='56'required='required' placeholder='Nombre' >"+  
+                        "						<label>Nombre:*</label><input type='text' id='inputSuccess' class='input-block-level' name='fname' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' maxlength='56'required='required' placeholder='Nombre'>"+  
                         "						<label>Apellido:*</label><input type='text' class='input-block-level' name='lname' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' required='required' placeholder='Apellido' maxlength='56'>"+
                         "						<label>E-mail:*</label><input type='text' class='input-block-level' name='email' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' required='required' placeholder='someone@example.com' maxlength='60'>"+                   
                         "						<dl class= 'form'>"+
@@ -1024,7 +1024,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Numero:</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='n_street' value='"+rs.get("n_street")+"'>"+
+    	                "							<input type='text' name='n_street' value='"+rs.get("n_street")+"' pattern='[0-9]+' title='Solo numeros - Sin espacios - Maxima Longitud 10' maxlength='10'>"+
     	                "						</div>"+            
     	                "					</div>"+
                         "					<div class='control-group'>"+
@@ -1036,7 +1036,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Telefono:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='phone' value='"+rs.get("phone")+"'>"+
+    	                "							<input type='text' name='phone' value='"+rs.get("phone")+"' pattern='[0-9]+' title='Solo numeros - Sin espacios - Maxima Longitud 15' maxlength='15' required='required'>"+
     	                "						</div>"+            
     	                "					</div>"+
                         "					<div class='control-group'>"+
@@ -1186,19 +1186,19 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Nombre:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='first_name' value='"+user.get("first_name")+"'>"+
+    	                "							<input type='text' name='first_name' value='"+user.get("first_name")+"' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' maxlength='56' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Apellido:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='last_name' value='"+user.get("last_name")+"'>"+
+    	                "							<input type='text' name='last_name' value='"+user.get("last_name")+"' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' maxlength='56' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Email:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='email' value='"+user.get("email")+"'>"+
+    	                "							<input type='text' name='email' value='"+user.get("email")+"' placeholder='someone@example.com' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60' >"+
     	                "						</div>"+
     	                "					</div>"+     	               
     	                "					<div class='form-actions'>"+

@@ -27,7 +27,7 @@ public class Inmoweb {
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         City city = City.findFirst("id = ?", id);
         List<City> cities = City.findAll();
-        String ret = "<select class='span3' NAME='city_id'>"+"<option value='"+id+"' style='display:none;'>"+city.get("name")+"</option><br>";
+        String ret = "<select class='span3' NAME='city_id' required='required'>"+"<option value='"+id+"' style='display:none;'>"+city.get("name")+"</option><br>";
         for(int i=0; i < cities.size(); i++){
             City c = cities.get(i);
             ret = ret+"<option value="+c.get("id")+">"+c.get("name")+"</option><br>";
@@ -207,8 +207,8 @@ public class Inmoweb {
                         "						<label>* Datos obligatorios</label>"+
                         "						<hr></hr>"+      
                         "						<label>Nombre:*</label><input type='text' id='inputSuccess' class='input-block-level' name='fname' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56'required='required' placeholder='Nombre'>"+  
-                        "						<label>Apellido:*</label><input type='text' class='input-block-level' name='lname' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' required='required' placeholder='Apellido' maxlength='56'>"+
-                        "						<label>E-mail:*</label><input type='text' class='input-block-level' name='email' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' required='required' placeholder='someone@example.com' maxlength='60'>"+                   
+                        "						<label>Apellido:*</label><input type='text' class='input-block-level' name='lname' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' placeholder='Apellido' maxlength='56' required='required'>"+
+                        "						<label>E-mail:*</label><input type='text' class='input-block-level' name='email' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' placeholder='someone@example.com' maxlength='60' required='required'>"+                   
                         "						<dl class= 'form'>"+
                         "							<button class='btn btn-large btn-primary' type='submit'>Registrarme</button>"+
                         "						</dl>"+           
@@ -1428,11 +1428,11 @@ public class Inmoweb {
                         "                                       <div class='control-group'>"+
     	                "                                           <label class='control-label'>Apellido:*</label>"+
     	                "                                           <div class='controls'>"+
-    	                "							<input type='text' name='last_name' value='"+owner.get("last_name")+"' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' maxlength='56' required='required'>"+
+    	                "							<input type='text' name='last_name' value='"+owner.get("last_name")+"' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
                         "                                       <div class='control-group'>"+
-    	                "                                           <label class='control-label'>Ciudad:</label>"+
+    	                "                                           <label class='control-label'>Ciudad:*</label>"+
     	                "                                           <div class='controls'>"+
     	                						optionCityUpdate(""+owner.get("city_id")+"")+
     	                "                                           </div>"+
@@ -1452,13 +1452,13 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Numero:</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='n_street' value='"+owner.get("n_street")+"'>"+
+    	                "							<input type='text' name='n_street' value='"+owner.get("n_street")+"' pattern='[0-9]+' title='Solo numeros - Sin espacios - Maxima Longitud 10' maxlength='10'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Email:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='email' value='"+owner.get("email")+"' placeholder='someone@example.com' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60'>"+
+    	                "							<input type='text' name='email' value='"+owner.get("email")+"' placeholder='someone@example.com' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='form-actions'>"+

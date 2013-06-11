@@ -780,9 +780,12 @@ public class Inmoweb {
     	                "		<div class='hero-unit'>"+
     	                "			<div>"+
     	                "				<center>"+
-    	    	        "					<h1>En construcción..</h1>" +
-    	    	        "					<img src='../bootstrap/img/about.png'>" +		
-    	    	        "					<p>Lamentamos las molestas ocasionadas.</p>" +
+    	    	        "					<h1>Misión y Valores..</h1>" +
+    	    	        //"					<img src='../bootstrap/img/about.png'>" +		
+    	    	        "					<p>Misión: Ofrecer, con nuestro equipo multidisciplinario de profesionales comprometidos, soluciones informáticas a medida para optimizar los procesos de negocio de  nuestros clientes.</p>" +
+                        "                                       <p>Valores: Nuestros valores son,</p>" +
+                        "                                       <p>Responsabilidad: En nuestros proyectos.</p>" +
+                        "                                       <p>Trabajo en Equipo: Es la base de nuestra organización</p>" +
     	    	        "				</center>"+
     	                "			</div>"+
     	                "		</div>"+

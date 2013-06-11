@@ -568,7 +568,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Calle:</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='street' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30'>"+
+    	                "							<input type='text' name='street' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30'>"+
     	                "						</div>"+  
     	                "					</div>"+ 
     	                "					<div class='control-group'>"+
@@ -668,13 +668,13 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Barrio:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='neighborhood' pattern='[a-zA-Z ]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30' required='required'>"+
+    	                "							<input type='text' name='neighborhood' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Calle:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='street' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30' required='required'>"+
+    	                "							<input type='text' name='street' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+ 
     	                "					<div class='control-group'>"+
@@ -887,7 +887,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Calle:</label>"+
     	                "						<div class='controls'>"+   
-    	                "							<input type='text' name='street' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30'>"+
+    	                "							<input type='text' name='street' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30'>"+
     	                "						</div>"+
     	                "					</div>"+ 
     	                "					<div class='control-group'>"+
@@ -899,7 +899,7 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Barrio:</label>"+
     	                "						<div class='controls'>"+ 
-    	                "							<input type='text' name='neighborhood' pattern='[a-zA-Z ]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30'>"+
+    	                "							<input type='text' name='neighborhood' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30'>"+
     	                "						</div>"+
     	                "					</div>"+                             
                         "					<div class='control-group'>"+
@@ -1018,7 +1018,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Calle:</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='street' value='"+rs.get("street")+" 'pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 30' maxlength='30'>"+
+    	                "							<input type='text' name='street' value='"+rs.get("street")+" 'pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30'>"+
     	                "						</div>"+             
     	                "					</div>"+ 
     	                "					<div class='control-group'>"+
@@ -1386,13 +1386,13 @@ public class Inmoweb {
                         "                                       <div class='control-group'>"+
     	                "                                           <label class='control-label'>Nombre:*</label>"+
     	                "                                           <div class='controls'>"+
-    	                "							<input type='text' name='first_name' value='"+owner.get("first_name")+"'>"+
+    	                "							<input type='text' name='first_name' value='"+owner.get("first_name")+"' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' maxlength='56' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
                         "                                       <div class='control-group'>"+
     	                "                                           <label class='control-label'>Apellido:*</label>"+
     	                "                                           <div class='controls'>"+
-    	                "							<input type='text' name='last_name' value='"+owner.get("last_name")+"'>"+
+    	                "							<input type='text' name='last_name' value='"+owner.get("last_name")+"' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' maxlength='56' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
                         "                                       <div class='control-group'>"+
@@ -1404,13 +1404,13 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Barrio:</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='neighborhood' value='"+owner.get("neighborhood")+"'>"+
+    	                "							<input type='text' name='neighborhood' value='"+owner.get("neighborhood")+"' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Calle:</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='street' value='"+owner.get("street")+"'>"+
+    	                "							<input type='text' name='street' value='"+owner.get("street")+"' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30'>"+
     	                "						</div>"+
     	                "					</div>"+ 
     	                "					<div class='control-group'>"+
@@ -1422,7 +1422,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Email:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='email' value='"+owner.get("email")+"'>"+
+    	                "							<input type='text' name='email' value='"+owner.get("email")+"' placeholder='someone@example.com' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='form-actions'>"+

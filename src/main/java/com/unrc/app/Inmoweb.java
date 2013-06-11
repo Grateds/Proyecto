@@ -13,7 +13,7 @@ public class Inmoweb {
 
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         List<City> cities = City.findAll();
-        String ret = "<select class='span3' NAME='city_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value=''>"+option+"</option><br>";
+        String ret = "<select class='span3' NAME='city_id' required='required'>"+"<option value=''>"+option+"</option><br>";
         for(int i=0; i < cities.size(); i++){
             City c = cities.get(i);
             ret = ret+"<option value="+c.get("id")+">"+c.get("name")+"</option><br>";
@@ -27,7 +27,7 @@ public class Inmoweb {
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         City city = City.findFirst("id = ?", id);
         List<City> cities = City.findAll();
-        String ret = "<select class='span3' NAME='city_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='"+id+"' style='display:none;'>"+city.get("name")+"</option><br>";
+        String ret = "<select class='span3' NAME='city_id'>"+"<option value='"+id+"' style='display:none;'>"+city.get("name")+"</option><br>";
         for(int i=0; i < cities.size(); i++){
             City c = cities.get(i);
             ret = ret+"<option value="+c.get("id")+">"+c.get("name")+"</option><br>";
@@ -38,21 +38,21 @@ public class Inmoweb {
     }
     
     public static String optionOperation(String option){
-    	String ret = "<select class='span3' NAME='operation' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value=''>"+option+"</option><br>";
+    	String ret = "<select class='span3' NAME='operation'>"+"<option value=''>"+option+"</option><br>";
 		ret = ret+"<option value='venta'>Venta</option><br>" +
 				  "<option value='alquiler'>Alquiler</option><br>";
     	return ret+"</select>";
     }
     
     public static String optionOperationUpdate(String operation){
-    	String ret = "<select class='span3' NAME='operation' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='"+operation+"' style='display:none;'>"+operation+"</option><br>";
+    	String ret = "<select class='span3' NAME='operation'>"+"<option value='"+operation+"' style='display:none;'>"+operation+"</option><br>";
     	ret = ret+"<option value='venta'>Venta</option><br>" +
 				  "<option value='alquiler'>Alquiler</option><br>";
     	return ret+"</select>";
     }
     
     public static String optionType(String option){
-    	String ret = "<select class='span3' NAME='type' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value=''>"+option+"</option><br>";
+    	String ret = "<select class='span3' NAME='type'>"+"<option value=''>"+option+"</option><br>";
 		ret = ret+"<option value='land'>Land</option><br>" +
 				  "<option value='farm'>Farm</option><br>" +
 	        	  "<option value='house'>House</option><br>" +
@@ -61,7 +61,7 @@ public class Inmoweb {
     }
     
     public static String optionTypeUpdate(String type){
-    	String ret = "<select class='span3' NAME='type' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='"+type+"' style='display:none;'>"+type+"</option><br>";
+    	String ret = "<select class='span3' NAME='type'>"+"<option value='"+type+"' style='display:none;'>"+type+"</option><br>";
 		ret = ret+"<option value='land'>Land</option><br>" +
 				  "<option value='farm'>Farm</option><br>" +
 	        	  "<option value='house'>House</option><br>" +
@@ -72,7 +72,7 @@ public class Inmoweb {
     public static String optionOwner(){
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         List<Owner> owners = Owner.findAll();
-        String ret = "<select class='span3' NAME='owner_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value=''>Seleccionar dueño</option><br>";
+        String ret = "<select class='span3' NAME='owner_id'>"+"<option value=''>Seleccionar dueño</option><br>";
         for(int i=0; i < owners.size(); i++){
             Owner o = owners.get(i);
             ret = ret+"<option value="+o.get("id")+">"+o.get("first_name")+" - "+o.get("last_name")+" - "+o.get("email")+"</option><br>";
@@ -86,7 +86,7 @@ public class Inmoweb {
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         Owner owner = Owner.findFirst("id = ?", id);
         List<Owner> owners = Owner.findAll();
-        String ret = "<select class='span3' NAME='owner_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='"+id+"' style='display:none;'>"+owner.get("first_name")+" - "+owner.get("last_name")+" - "+owner.get("email")+"</option><br>";
+        String ret = "<select class='span3' NAME='owner_id'>"+"<option value='"+id+"' style='display:none;'>"+owner.get("first_name")+" - "+owner.get("last_name")+" - "+owner.get("email")+"</option><br>";
         for(int i=0; i < owners.size(); i++){
             Owner o = owners.get(i);
             ret = ret+"<option value="+o.get("id")+">"+o.get("first_name")+" - "+o.get("last_name")+" - "+o.get("email")+"</option><br>";
@@ -98,7 +98,7 @@ public class Inmoweb {
     public static String optionRealEstate(String option){
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
         List<RealEstate> realestates = RealEstate.findAll();
-        String ret = "<select class='span3' NAME='real_estate_id' SIZE=1 onChange='javascript:alert('prueba');'>"+"<option value='' '>"+option+"</option><br>";
+        String ret = "<select class='span3' NAME='real_estate_id'>"+"<option value='' '>"+option+"</option><br>";
         for(int i=0; i < realestates.size(); i++){
             RealEstate re = realestates.get(i);
             ret = ret+"<option value="+re.get("id")+">"+re.get("name")+"</option><br>";
@@ -206,7 +206,7 @@ public class Inmoweb {
                         "						<h3>Regístrarse</h3>"+
                         "						<label>* Datos obligatorios</label>"+
                         "						<hr></hr>"+      
-                        "						<label>Nombre:*</label><input type='text' id='inputSuccess' class='input-block-level' name='fname' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' maxlength='56'required='required' placeholder='Nombre'>"+  
+                        "						<label>Nombre:*</label><input type='text' id='inputSuccess' class='input-block-level' name='fname' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56'required='required' placeholder='Nombre'>"+  
                         "						<label>Apellido:*</label><input type='text' class='input-block-level' name='lname' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' required='required' placeholder='Apellido' maxlength='56'>"+
                         "						<label>E-mail:*</label><input type='text' class='input-block-level' name='email' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' required='required' placeholder='someone@example.com' maxlength='60'>"+                   
                         "						<dl class= 'form'>"+
@@ -555,7 +555,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Apellido:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='last_name' pattern='[a-zA-Z]+' title='Solo letras - Sin espacios - Maxima Longitud 56' maxlength='56' required='required'>"+
+    	                "							<input type='text' name='last_name' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56' required='required'>"+
     	                "						</div>"+  
                         "					</div>"+
     	                "					<div class='control-group'>"+
@@ -585,7 +585,7 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Email:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='email' placeholder='someone@example.com' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' required='required' maxlength='60'>"+
+    	                "							<input type='text' name='email' placeholder='someone@example.com' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60' required='required'>"+
     	                "						</div>"+   	                	  	               	     
     	                "					</div>"+
     	                "					<div class='form-actions'>"+
@@ -695,13 +695,13 @@ public class Inmoweb {
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Precio:</label>"+
+    	                "						<label class='control-label'>Precio:*</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='price'>"+
+    	                "							<input type='text' name='price' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Operación:</label>"+
+    	                "						<label class='control-label'>Operación:*</label>"+
     	                "						<div class='controls'>"+
     	                							optionOperation("+Seleccionar operación+")+
     	                "						</div>"+
@@ -914,9 +914,9 @@ public class Inmoweb {
     	                "						</div>"+
     	                "					</div>"+
                         "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Email:</label>"+
+    	                "						<label class='control-label'>Email:*</label>"+
     	                "						<div class='controls'>"+ 
-    	                "							<input type='text' name='email' placeholder='someone@example.com' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60'>"+
+    	                "							<input type='text' name='email' placeholder='someone@example.com' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60' required='required>"+
     	                "						</div>"+
     	                "					</div>"+
                         "					<div class='control-group'>"+
@@ -1047,7 +1047,7 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Email:</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='email' value='"+rs.get("email")+"' placeholder='someone@example.com' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60'>"+
+    	                "							<input type='text' name='email' value='"+rs.get("email")+"' placeholder='someone@example.com' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' maxlength='60' required='required'>"+
     	                "						</div>"+            
     	                "					</div>"+
                         "					<div class='control-group'>"+

@@ -1138,7 +1138,6 @@ public class Inmoweb {
                 else
                 	SubqueryOper = "operation='"+request.queryParams("operation")+"'";
               
-                System.out.println("select * from buildings where "+SubqueryType+" AND "+SubqueryCity+" AND "+SubqueryREst+" AND "+SubqueryOper);
                 if(SubqueryType+SubqueryCity+SubqueryREst+SubqueryOper=="truetruetruetrue")
                 	query = "select * from buildings";
                 else{

@@ -45,7 +45,8 @@ public class crudBuilding {
 
 	/** Pre: building.exist() = true **/
 	/** Pos: Updated building **/
-	public void update(String id, String type, String owner_id, String city_id, String neighborhood, String street, String n_street, String description, String price, String operation){   
+	public void update(String id, String real_estate_id, String type, String owner_id, String city_id, String neighborhood, String street, String n_street, String description, String price, String operation){   
+		
 		Building b = Building.findFirst("id = ?", id);
 		b.set("type",type);
 		b.set("owner_id",owner_id);
@@ -57,5 +58,9 @@ public class crudBuilding {
 		b.set("price",price);
 		b.set("operation",operation);
 		b.saveIt();
+		
+		BuildingsRealEstates bRE = BuildingsRealEstates.first("building_id = ?", id);
+		bRE.set("real_estate_id", real_estate_id);
+		bRE.saveIt();
 	}
 }

@@ -187,12 +187,12 @@ public class Inmoweb {
                         			"<div class='row'>"+
                         				"<div class='span6'>"+
                         					"<center><h1>¡Bienvenido!</h1>"+
-                        					"<p>This is a template for a simple marketing or informational website.</p>"+
+                        					"<p>Inmobiliario Web, el mejor sitio para nuestros inmuebles.</p>"+
                         					"<img src='../bootstrap/img/index.png'></center>"+
                         				"</div>"+
                         				"<div class='span4'>"+
                         					"<form class='form' method='POST' action='/adduser/'>"+
-                        						"<h3>Regístrarse</h3>"+
+                        						"<h3>Registrarse gratis</h3>"+
                         						"<label>* Datos obligatorios</label>"+
                         						"<hr></hr>"+      
                         						"<label>Nombre:*</label><input type='text' id='inputSuccess' class='input-block-level' name='fname' pattern='[a-zA-Z-ñ ]+' title='Solo letras - Maxima Longitud 56' maxlength='56'required='required' placeholder='Nombre'>"+  

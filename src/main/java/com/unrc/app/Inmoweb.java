@@ -351,15 +351,16 @@ public class Inmoweb {
                 		"<table class='table table-hover'>" +
                 			"<thead>" +
                 				"<tr>" +
-                					"<th>#</th>" +
-                					"<th>Tipo</th>" +
-                					"<th>Dueño</th>" +
-                					"<th>Ciudad</th>" +
-                					"<th>Barrio</th>" +
-                					"<th>Calle</th>" +
-                					"<th>Numero</th>" +
-                					"<th>Descripción</th>" +
-                					"<th>Precio $</th>" +
+                					"<th>#</th>"+
+                					"<th>Tipo</th>"+
+                					"<th>Dueño</th>"+
+                					"<th>Inmobiliaria</th>"+
+                					"<th>Ciudad</th>"+
+                					"<th>Barrio</th>"+
+                					"<th>Calle</th>"+
+                					"<th>Numero</th>"+
+                					"<th>Descripción</th>"+
+                					"<th>Precio $</th>"+
                 					"<th>Operación</th>"+
                 				"</tr>" +
                 			"</thead>" +
@@ -368,14 +369,19 @@ public class Inmoweb {
 
                 City c = new City();
                 Owner o = new Owner();
+                RealEstate r = new RealEstate();
+                BuildingsRealEstates bRE = new BuildingsRealEstates();
                 for(int i=0; i < buildings.size(); i++){
      				Building b = buildings.get(i);
      				j = i+1;
      				c = City.findFirst("id = ?", b.get("city_id"));
      				o = Owner.findFirst("id = ?", b.get("owner_id"));
+     				bRE = BuildingsRealEstates.findFirst("building_id = ?", b.getId());
+     				r = RealEstate.findFirst("id = ?", bRE.get("real_estate_id"));
      				ret = ret+"<tr><td>"+j+"</td>"+
 							  "<td>"+b.get("type")+"</td>" +
 							  "<td>"+o.get("last_name")+"</td>" +
+							  "<td>"+r.get("name")+"</td>"+
 							  "<td>"+c.get("name")+"</td>"+
 							  "<td>"+b.get("neighborhood")+"</td>"+
 							  "<td>"+b.get("street")+"</td>"+

@@ -45,7 +45,7 @@ public class BuildingSpec {
         the(building.errors().get("street")).shouldBeEqual("value is missing");
         the(building.errors().get("n_street")).shouldBeEqual("value is missing");
         
-        building.set("type","land");
+        building.set("type","Campo");
         building.set("owner_id",owner.getId());
         building.set("city_id",city.getId());
         building.set("neighborhood","Santa Rosa");
@@ -70,7 +70,7 @@ public class BuildingSpec {
         
         Building building = new Building();
         
-        building.set("type","land");
+        building.set("type","Campo");
         building.set("owner_id",owner.getId());
         building.set("city_id",city.getId());
         building.set("neighborhood","Santa Rosa");

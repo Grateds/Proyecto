@@ -1144,13 +1144,53 @@ public class Inmoweb {
                 	query = "select * from buildings INNER JOIN buildings_real_estates on buildings.id=buildings_real_estates.building_id where "+SubqueryType+" AND "+SubqueryCity+" AND "+SubqueryREst+" AND "+SubqueryOper;
                 }
                 
-                
                 List<Building> buildings = Building.findBySQL(query);
-                String ret = "<br>";
-                for(int i = 0; i< buildings.size();i++){
-                    Building b = buildings.get(i);
-                    ret = ret+" "+b.get("street")+" "+b.get("n_street")+"<br><br>";
-                }
+                String ret = 
+                		"<table class='table table-hover'>" +
+                			"<thead>" +
+                				"<tr>" +
+                					"<th>#</th>"+
+                					"<th>Tipo</th>"+
+                					"<th>Dueño</th>"+
+                					"<th>Inmobiliaria</th>"+
+                					"<th>Ciudad</th>"+
+                					"<th>Barrio</th>"+
+                					"<th>Calle</th>"+
+                					"<th>Numero</th>"+
+                					"<th>Descripción</th>"+
+                					"<th>Precio $</th>"+
+                					"<th>Operación</th>"+
+                				"</tr>" +
+                			"</thead>" +
+                			"<tbody>";
+                int j;
+
+                City c = new City();
+                Owner o = new Owner();
+                RealEstate r = new RealEstate();
+                BuildingsRealEstates bRE = new BuildingsRealEstates();
+                for(int i=0; i < buildings.size(); i++){
+     				Building b = buildings.get(i);
+     				j = i+1;
+     				c = City.findFirst("id = ?", b.get("city_id"));
+     				o = Owner.findFirst("id = ?", b.get("owner_id"));
+     				bRE = BuildingsRealEstates.findFirst("building_id = ?", b.getId());
+     				r = RealEstate.findFirst("id = ?", bRE.get("real_estate_id"));
+     				ret = ret+"<tr><td>"+j+"</td>"+
+							  "<td>"+b.get("type")+"</td>" +
+							  "<td>"+o.get("last_name")+"</td>" +
+							  "<td>"+r.get("name")+"</td>"+
+							  "<td>"+c.get("name")+"</td>"+
+							  "<td>"+b.get("neighborhood")+"</td>"+
+							  "<td>"+b.get("street")+"</td>"+
+							  "<td>"+b.get("n_street")+"</td>"+
+							  "<td>"+b.get("description")+"</td>"+
+							  "<td>"+b.get("price")+"</td>" +
+							  "<td>"+b.get("operation")+"</td>"+
+							  "<td><a href='/updatebuilding/"+b.get("id")+"'><img src='../bootstrap/img/edit-update.png'></a></td>"+
+							  "<td><a href='/deletebuilding/"+b.get("id")+"'><img src='../bootstrap/img/edit-delete.png'></a></td>";
+     			}   
+     			ret = ret +"</tbody></table>";
                 Base.close();
                 
                 return 
@@ -1159,7 +1199,7 @@ public class Inmoweb {
                 		EncabezadoHTML3+
 		        "               <div class='container'>"+
 		        "               <!-- Main hero unit for a primary marketing message or call to action -->"+
-		        "               <div class='hero-unit'>"+
+		        "               <div class='form-actions'>"+
 		        "                   <center>"+                    
     	                "			<h2>Resultado de Busqueda</h2>" +
                                                     ret+

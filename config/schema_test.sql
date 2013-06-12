@@ -29,7 +29,7 @@ CREATE TABLE real_estates(
 	city_id INT(20),
 	neighborhood VARCHAR(30) DEFAULT NULL,
 	street VARCHAR(30) DEFAULT NULL,
- 	n_street INT (10) DEFAULT NULL,
+ 	n_street VARCHAR(10) DEFAULT NULL,
 	phone INT(15) DEFAULT NULL UNIQUE,
 	email VARCHAR(60) UNIQUE,
 	site_web VARCHAR(25) UNIQUE,
@@ -44,7 +44,7 @@ CREATE TABLE owners(
     city_id INT (20),
     neighborhood VARCHAR(30) DEFAULT NULL,
     street VARCHAR(30) DEFAULT NULL,
-    n_street INT (10) DEFAULT NULL,
+    n_street VARCHAR(10) DEFAULT NULL,
     email VARCHAR(60) UNIQUE,
   CONSTRAINT owners_pk PRIMARY KEY (id)
 );
@@ -52,15 +52,15 @@ CREATE TABLE owners(
 DROP TABLE IF EXISTS buildings; -- Inmuebles
 CREATE TABLE buildings(
     id INT(11) NOT NULL AUTO_INCREMENT,
-    type ENUM('land','farm','house','garage'),
+    type ENUM('Campo','Quinta','Casa','Garage'),
     owner_id INT(20),
     city_id INT(20),
     neighborhood VARCHAR(30) DEFAULT NULL,
     street VARCHAR(30) DEFAULT NULL,
-    n_street INT (10) DEFAULT NULL,
+    n_street VARCHAR(10) DEFAULT NULL,
     description VARCHAR(200),
     price FLOAT(10), 
-    operation ENUM('venta','alquiler'),
+    operation ENUM('Venta','Alquiler'),
   CONSTRAINT buildings_pk PRIMARY KEY (id)
 );
 

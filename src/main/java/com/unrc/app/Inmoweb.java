@@ -110,7 +110,7 @@ public class Inmoweb {
     }
     
     public static void main( String[] args ) {
-
+    	
         externalStaticFileLocation("src/main/java/com/unrc/app/public");
 
         final String EncabezadoHTML1 =
@@ -554,7 +554,7 @@ public class Inmoweb {
     	                "						</div>"+  
                         "					</div>"+
     	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Ciudad:</label>"+
+    	                "						<label class='control-label'>Ciudad:*</label>"+
     	                "						<div class='controls'>"+
     	                							optionCity("Seleccionar ciudad","required='required'")+
     	                "						</div>"+                 
@@ -640,7 +640,7 @@ public class Inmoweb {
                 response.type("text/html");
                 
     			return 
-    				EncabezadoHTML1+
+    					EncabezadoHTML1+
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
     	                "	<div class='container'>"+
@@ -917,7 +917,7 @@ public class Inmoweb {
                         "					<div class='control-group'>"+
     	                "						<label class='control-label'>Sitio Web:*</label>"+
     	                "						<div class='controls'>"+ 
-    	                "							<input type='text' name='site_web' paceholder='www.example.com' required='required'>"+
+    	                "							<input type='text' name='site_web' placeholder='www.example.com' required='required'>"+
     	                "						</div>"+
     	                "					</div>"+
     	                "					<div class='form-actions'>"+
@@ -1325,8 +1325,10 @@ public class Inmoweb {
             	response.type("text/html");
                 Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
     			Building building = Building.findFirst("id = ?", request.params(":id"));
-                Base.close();
-
+               
+                BuildingsRealEstates bRE = BuildingsRealEstates.findFirst("building_id = ?", building.getId());
+ 				RealEstate r = RealEstate.findFirst("id = ?", bRE.get("real_estate_id"));
+ 				Base.close();
                 return 
                 		EncabezadoHTML1+
                 		EncabezadoHTML2+
@@ -1341,6 +1343,12 @@ public class Inmoweb {
     	                			"<hr></hr>"+
     	                			"<div>"+
     	                				"<form class='form-horizontal' method='POST' action='/updatebuilding/"+request.params(":id")+"'>"+               
+    	                					"<div class='control-group'>"+
+    	        	                			"<label class='control-label'>Inmobiliaria:*</label>"+
+    	        	                			"<div class='controls'>"+
+    	        	          						optionRealEstate(""+r.get("name")+"","required='required'")+
+    	        	       						"</div>"+
+    	                   					"</div>"+
     	                					"<div class='control-group'>"+
     	                						"<label class='control-label'>Tipo:*</label>"+
     	                						"<div class='controls'>"+
@@ -1418,7 +1426,7 @@ public class Inmoweb {
             	response.redirect("/buildings/");
             	crudBuilding building = new crudBuilding();
     			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/inmoapp_development", "root", "root");
-    			building.update(request.params(":id"), request.queryParams("type"), request.queryParams("owner_id"), request.queryParams("city_id"), request.queryParams("neighborhood"), request.queryParams("street"), request.queryParams("n_street"), request.queryParams("description"), request.queryParams("price"), request.queryParams("operation"));			
+    			building.update(request.params(":id"), request.queryParams("real_estate_id"), request.queryParams("type"), request.queryParams("owner_id"), request.queryParams("city_id"), request.queryParams("neighborhood"), request.queryParams("street"), request.queryParams("n_street"), request.queryParams("description"), request.queryParams("price"), request.queryParams("operation"));			
                 Base.close();
                 
                 return "";    

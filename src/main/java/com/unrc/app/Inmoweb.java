@@ -39,33 +39,33 @@ public class Inmoweb {
     
     public static String optionOperation(String option, String required){
     	String ret = "<select class='span3' NAME='operation' "+required+">"+"<option value=''>"+option+"</option><br>";
-		ret = ret+"<option value='venta'>Venta</option><br>" +
-				  "<option value='alquiler'>Alquiler</option><br>";
+		ret = ret+"<option value='Venta'>Venta</option><br>" +
+				  "<option value='Alquiler'>Alquiler</option><br>";
     	return ret+"</select>";
     }
     
     public static String optionOperationUpdate(String operation){
     	String ret = "<select class='span3' NAME='operation' required='required'>"+"<option value='"+operation+"' style='display:none;'>"+operation+"</option><br>";
-    	ret = ret+"<option value='venta'>Venta</option><br>" +
-				  "<option value='alquiler'>Alquiler</option><br>";
+    	ret = ret+"<option value='Venta'>Venta</option><br>" +
+				  "<option value='Alquiler'>Alquiler</option><br>";
     	return ret+"</select>";
     }
     
     public static String optionType(String option, String required){
     	String ret = "<select class='span3' NAME='type' "+required+">"+"<option value=''>"+option+"</option><br>";
-		ret = ret+"<option value='land'>Campo</option><br>" +
-				  "<option value='farm'>Quinta</option><br>" +
-	        	  "<option value='house'>Casa</option><br>" +
-				  "<option value='garage'>Garage</option><br>";
+		ret = ret+"<option value='Campo'>Campo</option><br>" +
+				  "<option value='Quinta'>Quinta</option><br>" +
+	        	  "<option value='Casa'>Casa</option><br>" +
+				  "<option value='Garage'>Garage</option><br>";
     	return ret+"</select>";
     }
     
     public static String optionTypeUpdate(String type){
     	String ret = "<select class='span3' NAME='type' required='required'>"+"<option value='"+type+"' style='display:none;'>"+type+"</option><br>";
-		ret = ret+"<option value='land'>Campo</option><br>" +
-				  "<option value='farm'>Quinta</option><br>" +
-	        	  "<option value='house'>Casa</option><br>" +
-				  "<option value='garage'>Garage</option><br>";
+		ret = ret+"<option value='Campo'>Campo</option><br>" +
+				  "<option value='Quinta'>Quinta</option><br>" +
+	        	  "<option value='Casa'>Casa</option><br>" +
+				  "<option value='Garage'>Garage</option><br>";
     	return ret+"</select>";
     }
     

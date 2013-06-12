@@ -43,7 +43,7 @@ public class BuildingRealEstateSpec {
         realestate.set("phone","4678963").saveIt();
 
         Building building = new Building();
-        building.set("type","land");
+        building.set("type","Campo");
         building.set("owner_id",owner.getId());
         building.set("city_id",city.getId());
         building.set("neighborhood","Santa Rosa");
@@ -79,7 +79,7 @@ public class BuildingRealEstateSpec {
         realestate.set("phone","4678963").saveIt();
 
         Building building = new Building();
-        building.set("type","land");
+        building.set("type","Campo");
         building.set("owner_id",owner.getId());
         building.set("city_id",city.getId());
         building.set("neighborhood","Santa Rosa");

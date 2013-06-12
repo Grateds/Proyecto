@@ -1,6 +1,9 @@
 package com.unrc.app;
 
 import com.unrc.app.models.RealEstate;
+import com.unrc.app.models.Building;
+import com.unrc.app.models.BuildingsRealEstates;
+import java.util.List;
 
 public class crudRealEstate {
     
@@ -18,6 +21,12 @@ public class crudRealEstate {
     }
     public void delete(String id){
         RealEstate rs = RealEstate.findFirst("id = ?", id);
+        List<BuildingsRealEstates> bREs = BuildingsRealEstates.find("real_estate_id = ?", id);
+        for(int i=0; i<bREs.size();i++){
+            Building b = Building.findFirst("id = ?", (bREs.get(i)).get("building_id"));
+            rs.remove(b);//borra en buildings_real_estates
+            b.delete();//borra en buildings
+        }
         rs.delete();
     }
     public void update(String id, String name, String phone, String email, String city, String neighborhood, String street, String n_street, String site_web){

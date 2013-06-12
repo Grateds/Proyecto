@@ -993,7 +993,7 @@ public class Inmoweb {
                 		EncabezadoHTML1+
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
-                	"               <div class='container'>"+
+                		"	<div class='container'>"+
     	                "		<!-- Main hero unit for a primary marketing message or call to action -->"+
     	                "		<div class='hero-unit'>"+
     	                "			<div class='container'>"+
@@ -1094,15 +1094,18 @@ public class Inmoweb {
                         	"<div class='hero-unit'>" +
                              	"<div>" +
                                  	"<center><h2>Busqueda</h2></center>" +
+                                 	"<hr>"+
                                  "</div>"+
                              	"<div>"+
                              		"<form method='POST' action='/search/'>"+
-                             			optionType("Todos","")+""+
-                             			optionOperation("Todos","")+" "+
-                             			optionCity("Todos","")+""+
-                             			optionRealEstate("Todos","")+" "+
-                             			"<button class='btn btn-small btn-primary type='sumit'>Buscar</buton>"+
-                             		"</form>"+
+                             			"<label>Tipo </label>"+optionType("Todos","")+""+
+                             			"<label>Operación </label>"+optionOperation("Todos","")+" "+
+                             			"<label>Ciudad </label>"+optionCity("Todos","")+""+
+                             			"<label>Inmobiliaria </label>"+optionRealEstate("Todos","")+" "+
+                             			"<div class='form-actions'>"+
+                              				"<button type='submit' class='btn btn-large btn-primary'>Buscar</button>"+			
+                              			"</div>"+
+                              		"</form>"+
                              	"</div>"+
                             "</div>"+
                             "<footer>"+
@@ -1203,25 +1206,26 @@ public class Inmoweb {
                 		EncabezadoHTML1+
                 		EncabezadoHTML2+
                 		EncabezadoHTML3+
-		        "               <div class='container'>"+
-		        "               <!-- Main hero unit for a primary marketing message or call to action -->"+
-		        "               <div class='form-actions'>"+
-		        "                   <center>"+                    
-    	                "			<h2>Resultado de Busqueda</h2>" +
-                                                    ret+
-    	                "			<a href='/'>" +
-    	                "				<button class='btn btn-success btn-primary'>Volver</button>" +
-    	                "			</a>"+
-    	                "                   </center>"+ 
-		        "               </div>"+
-		        "               <footer>"+
-		        "               	<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
-		        "                       </footer>"+
-		        "               </div> <!-- /container -->"+
-		        "               <script src='../bootstrap/js/jquery.js'></script>"+
-		        "               <script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
-		    	"	</body>"+
-		  	"</html>"; 
+		                       "<div class='container'>"+
+		                       		"<!-- Main hero unit for a primary marketing message or call to action -->"+
+		                       		"<div class='form-actions'>"+
+		                       			"<center>"+                    
+		                       				"<h2>Resultado de Busqueda</h2>" +
+		                       				"<hr>" +
+                                             ret+
+                                             "<a href='/search/'>" +
+                                             	"<button class='btn btn-success btn-primary'>Volver</button>" +
+                                             "</a>"+
+                                         "</center>"+ 
+                                    "</div>"+
+                                    "<footer>"+
+		                       			"<p>&copy; 2013 Grateds, Inc. All rights reserved.</p>"+
+		                       			"</footer>"+
+		                       	"</div> <!-- /container -->"+
+		                        "<script src='../bootstrap/js/jquery.js'></script>"+
+		                        "<script src='../bootstrap/js/bootstrap-dropdown.js'></script>"+
+		                  "</body>"+
+		                  "</html>"; 
     		}
         });
         

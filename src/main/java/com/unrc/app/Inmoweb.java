@@ -562,7 +562,7 @@ public class Inmoweb {
     	                "					<div class='control-group'>"+
     	                "						<label class='control-label'>Barrio:</label>"+
     	                "						<div class='controls'>"+
-    	                "							<input type='text' name='neighborhood' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 30' maxlength='30'>"+
+    	                "							<input type='text' name='neighborhood' pattern='[a-zA-Z-ñ ]+' title='Solo letras - Maxima Longitud 30' maxlength='30'>"+
     	                "						</div>"+   
     	                "					</div>"+
     	                "					<div class='control-group'>"+

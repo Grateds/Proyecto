@@ -11,7 +11,7 @@ public class crudUser {
 	/** Pos: Created user **/
 	public void create(String email, String first_name, String last_name){
 		User u = new User(); 		
-        	u.set("email", email).set("first_name", first_name).set("last_name", last_name).saveIt();
+        u.set("email", email).set("first_name", first_name).set("last_name", last_name).saveIt();
 	}//end create
 	
 	/** Pre: user.exist() = true **/
@@ -23,6 +23,11 @@ public class crudUser {
 
 	/** Pre: user.exist() = true **/
 	/** Pos: Updated user **/
-	public void update(){   	
-    	}//end update
+	public void update(String id, String first_name, String last_name, String email){   
+		User u = User.findFirst("id = ?", id);
+		u.set("first_name",first_name);
+		u.set("last_name",last_name);
+		u.set("email",email);
+		u.saveIt();
+	}
 }

@@ -554,7 +554,7 @@ public class Inmoweb {
     	                "						</div>"+  
                         "					</div>"+
     	                "					<div class='control-group'>"+
-    	                "						<label class='control-label'>Ciudad:</label>"+
+    	                "						<label class='control-label'>Ciudad:*</label>"+
     	                "						<div class='controls'>"+
     	                							optionCity("Seleccionar ciudad","required='required'")+
     	                "						</div>"+                 

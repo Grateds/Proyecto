@@ -195,8 +195,8 @@ public class Inmoweb {
                         						"<h3>Regístrarse</h3>"+
                         						"<label>* Datos obligatorios</label>"+
                         						"<hr></hr>"+      
-                        						"<label>Nombre:*</label><input type='text' id='inputSuccess' class='input-block-level' name='fname' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' maxlength='56'required='required' placeholder='Nombre'>"+  
-                        						"<label>Apellido:*</label><input type='text' class='input-block-level' name='lname' pattern='[a-zA-Z ]+' title='Solo letras - Maxima Longitud 56' placeholder='Apellido' maxlength='56' required='required'>"+
+                        						"<label>Nombre:*</label><input type='text' id='inputSuccess' class='input-block-level' name='fname' pattern='[a-zA-Z-ñ ]+' title='Solo letras - Maxima Longitud 56' maxlength='56'required='required' placeholder='Nombre'>"+  
+                        						"<label>Apellido:*</label><input type='text' class='input-block-level' name='lname' pattern='[a-zA-Z-ñ ]+' title='Solo letras - Maxima Longitud 56' placeholder='Apellido' maxlength='56' required='required'>"+
                         						"<label>E-mail:*</label><input type='text' class='input-block-level' name='email' pattern='[a-zA-Z0-9]+[.[a-zA-Z0-9_-]+]*@[a-z0-9][\\w\\.-]*[a-z0-9]\\.[a-z][a-z\\.]*[a-z]$'+ title='Maxima Longitud 60' placeholder='someone@example.com' maxlength='60' required='required'>"+                   
                         						"<dl class= 'form'>"+
                         							"<button class='btn btn-large btn-primary' type='submit'>Registrarme</button>"+
